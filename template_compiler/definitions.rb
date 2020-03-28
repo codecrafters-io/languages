@@ -4,7 +4,8 @@ Repo = StarterRepoDefinition
 redis = Course.new(slug: "redis", name: "Redis")
 docker = Course.new(slug: "docker", name: "Docker")
 
-python = Course.new(slug: "python", name: "Python")
+# TODO: Change py to "python"
+python = Course.new(slug: "py", name: "Python")
 go = Course.new(slug: "go", name: "Go")
 
 DEFINITIONS = [

@@ -9,6 +9,7 @@ class TemplateCompiler
   end
 
   def compile_all
+    Pathname.new(@output_directory).children.each { |p| p.rmtree }
     DEFINITIONS.each { |d| compile_definition(d) }
   end
 
