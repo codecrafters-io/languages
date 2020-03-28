@@ -13,10 +13,12 @@ end
 class Language
   attr_reader :slug
   attr_reader :name
+  attr_reader :repo_suffix
 
-  def initialize(slug:, name:)
+  def initialize(slug:, name:, repo_suffix:)
     @slug = slug
     @name = name
+    @repo_suffix = repo_suffix
   end
 end
 
@@ -46,7 +48,7 @@ class StarterRepoDefinition
   end
 
   def repo_name
-    "#{course.slug}-starter-#{language.slug}"
+    "#{course.slug}-starter-#{language.repo_suffix}"
   end
 
   def files(template_dir)
@@ -66,6 +68,7 @@ class StarterRepoDefinition
     {
       "language_name": @language.name,
       "language_slug": @language.slug,
+      "language_is_#{@language.slug}": true,
       "course_name": @course.name,
       "course_slug": @course.name,
     }.merge(@template_attrs)

@@ -1,4 +1,4 @@
-This is a starting point for {{ language }} solutions to the
+This is a starting point for {{language_name}} solutions to the
 ["Build Your Own Redis" Challenge](https://codecrafters.io/challenges/redis).
 
 In this challenge, you'll build a toy Redis clone that's capable of handling
@@ -12,7 +12,7 @@ event loops, the Redis protocol and more.
 
 1. Ensure you have `{{ required_executable }}` installed locally
 1. Run `./spawn_redis_server.sh` to run your Redis server, which is implemented in
-   `{{ source_file }}`.
+   `{{ user_editable_file }}`.
 1. Commit your changes and run `git push origin master` to submit your solution
    to CodeCrafters. Test output will be streamed to your terminal.
  
@@ -29,12 +29,12 @@ git push origin master
 You should see a failure message that says it wasn't able to connect to port
 `6379`.
 
-Go to `{{ source_file }}` and uncomment the server implementation. Commit and
+Go to `{{ user_editable_file }}` and uncomment the server implementation. Commit and
 push your changes, and you'll now see the first stage pass.
 
 Time to move on to the next stage!
 
-{%- if language == "Python" %}
+{{#language_is_python}}
 
 # Troubleshooting
 
@@ -62,4 +62,4 @@ You can fix this by installing Python 3.8 locally and using that.
 
 If you'd like to use a different version of Python, change the `language_pack`
 value in `codecrafters.yml`.
-{% endif -%}
+{{/language_is_python}}

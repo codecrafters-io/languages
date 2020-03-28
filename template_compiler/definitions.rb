@@ -5,9 +5,9 @@ redis = Course.new(slug: "redis", name: "Redis")
 docker = Course.new(slug: "docker", name: "Docker")
 
 # TODO: Change py to "python"
-python = Course.new(slug: "py", name: "Python")
+python = Language.new(slug: "python", name: "Python", repo_suffix: "py")
 # TODO: Change golang to "go"
-go = Course.new(slug: "golang", name: "Go")
+go = Language.new(slug: "go", name: "Go", repo_suffix: "golang")
 
 DEFINITIONS = [
   Repo.new(
@@ -20,7 +20,7 @@ DEFINITIONS = [
       FM.new("spawn_redis_server.sh", "redis/python/spawn_redis_server.sh", is_executable=true),
     ],
     template_attrs: {
-      "required_executable": "python (3.7)",
+      "required_executable": "python (3.8)",
       "user_editable_file": "app/main.py"
     }
   ),
