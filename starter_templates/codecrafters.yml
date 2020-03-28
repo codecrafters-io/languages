@@ -1,0 +1,29 @@
+# Set this to true if you want debug logs.
+#
+# These can be VERY verbose, so we suggest turning them off
+# unless you really need them.
+debug: false
+
+# Use this to change the {{ language }} version used to run your code
+# on Codecrafters.
+#
+{% if language == "Python" -%}
+# Available versions: python-3.7, python-3.8
+language_pack: python-3.8
+{%- endif -%}
+{% if language == "Swift" -%}
+# Available versions: swift-5.1
+language_pack: swift-5.1
+{%- endif -%}
+{% if language == "Go" -%}
+# Available versions: go-1.13 
+language_pack: go-1.13
+{%- endif -%}
+{% if language == "PHP" -%}
+# Available versions: php-7.4
+language_pack: php-7.4
+{%- endif -%}
+{% if language == "C" -%}
+# Available versions: c-9.2
+language_pack: c-9.2
+{%- endif -%}
