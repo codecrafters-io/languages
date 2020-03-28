@@ -16,7 +16,7 @@ This repository powers multiple language support for
 
 ## Objective
 
-The language one attempts a CodeCrafters challenge is an integral part of the
+The language one uses for a CodeCrafters challenge is an integral part of the
 challenge experience. A few questions to think about:
 
 - Is it easy to setup locally? 
