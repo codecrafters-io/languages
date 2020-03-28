@@ -6,11 +6,12 @@ class RepoSyncer
     @github_client = github_client
   end
 
+  # Returns the URL to PR, or nil if none
   def sync(repo_name, directory)
     repo = find_or_create_repo(repo_name)
     master = @github_client.ref(repo.full_name, "heads/master")
     master_commit_sha = master.object.sha
-    master_gh_commit = @github_client.ref(repo.full_name, master_commit_sha)
+    master_gh_commit = @github_client.commit(repo.full_name, master_commit_sha)
     master_tree_sha = master_gh_commit.commit.tree.sha
 
     commit_message = <<~EOF
@@ -19,18 +20,40 @@ class RepoSyncer
       Created by https://github.com/codecrafters-io/languages
     EOF
 
-    gh_files = Dir.glob("#{directory}/**/*").map do |file|
-      {
-        path: file,
-        mode: file.is_executable ? "100755" : "100644",
-        type: "blob",
-        content: File.read(File.join(directory, file))
-      }
-    end
+    gh_files = Dir
+                 .glob("#{directory}/**/*")
+                 .reject { |f| File.directory?(f) }
+                 .map do |file|
+                    {
+                      path: Pathname.new(file).relative_path_from(Pathname.new(directory)),
+                      mode: File.executable?(file) ? "100755" : "100644",
+                      type: "blob",
+                      content: File.read(file)
+                    }
+                 end
     tree = @github_client.create_tree(repo.full_name, gh_files)
     return if tree.sha == master_tree_sha
 
-    binding.pry
+    commit = @github_client.create_commit(repo.full_name,
+      commit_message,
+      tree.sha,
+      [master_commit_sha]
+    )
+
+    begin
+      @github_client.delete_ref(repo.full_name, "heads/sync")
+    rescue Octokit::UnprocessableEntity
+    end
+
+    @github_client.create_ref(repo.full_name, "heads/sync", commit.sha)
+    pr = @github_client.create_pull_request(
+      repo.full_name,
+      "master",
+      "sync",
+      "Sync with languages repo",
+      "This repository is maintained via https://github.com/codecrafters-io/languages"
+    )
+    pr.html_url
   end
 
   private
@@ -47,5 +70,11 @@ syncer = RepoSyncer.new(github_client)
 Dir["compiled_starters/*"].each do |dir|
   repo_name = File.basename(dir)
   puts "Syncing #{repo_name}"
-  syncer.sync(repo_name, dir)
+  pr_url = syncer.sync(repo_name, dir)
+  if pr_url
+    puts "PR: #{pr_url}"
+    `xdg-open #{pr_url}`
+  else
+    puts "No changes"
+  end
 end
