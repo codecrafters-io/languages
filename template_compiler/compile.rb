@@ -1,3 +1,3 @@
 require_relative "compiler"
 
-TemplateCompiler.new("starter_compiled").compile_all
+TemplateCompiler.new("starter_templates", "compiled_starters").compile_all

@@ -22,10 +22,13 @@ end
 
 class FileMapping
   attr_reader :destination_path
-  attr_reader :source_template
+  attr_reader :template_path
   attr_reader :is_executable
 
-  def initialize(destination_path, source_template, is_executable=false)
+  def initialize(destination_path, template_path, is_executable=false)
+    @destination_path = destination_path
+    @template_path = template_path
+    @is_executable = is_executable
   end
 end
 
@@ -35,19 +38,20 @@ class StarterRepoDefinition
   attr_reader :file_mappings
   attr_reader :template_attrs
 
-  def initialize(course:, language:, file_mappings:)
+  def initialize(course:, language:, file_mappings:, template_attrs:)
     @course = course
     @language = language
     @file_mappings = file_mappings
+    @template_attrs = template_attrs
   end
 
   def repo_name
     "#{course.slug}-starter-#{language.slug}"
   end
 
-  def files
+  def files(template_dir)
     @file_mappings.map do |mapping|
-      template_contents = File.read(mapping.source_file)
+      template_contents = File.read(File.join(template_dir, mapping.template_path))
       {
         path: mapping.destination_path,
         contents: Mustache.render(template_contents, template_context),

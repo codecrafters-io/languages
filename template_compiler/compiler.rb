@@ -3,7 +3,8 @@ require_relative 'definitions'
 require "fileutils"
 
 class TemplateCompiler
-  def initialize(output_directory)
+  def initialize(templates_path, output_directory)
+    @templates_path = templates_path
     @output_directory = output_directory
   end
 
@@ -15,7 +16,7 @@ class TemplateCompiler
 
   def compile_definition(definition)
     directory = File.join(@output_directory, definition.repo_name)
-    definition.files.each do |file|
+    definition.files(@templates_path).each do |file|
       path = File.join(directory, file[:path])
       FileUtils.mkdir_p(File.dirname(path))
       File.write(path, file[:contents])
