@@ -6,7 +6,8 @@ docker = Course.new(slug: "docker", name: "Docker")
 
 # TODO: Change py to "python"
 python = Course.new(slug: "py", name: "Python")
-go = Course.new(slug: "go", name: "Go")
+# TODO: Change golang to "go"
+go = Course.new(slug: "golang", name: "Go")
 
 DEFINITIONS = [
   Repo.new(

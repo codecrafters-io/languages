@@ -4,5 +4,5 @@ generate_toc:
 compile:
 	bundle exec ruby template_compiler/compile.rb
 
-sync:
+sync_with_github: compile
 	bundle exec ruby repo_syncer/sync.rb
