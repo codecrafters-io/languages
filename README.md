@@ -1,9 +1,20 @@
-This repository contains the code that powers multiple language support for
+This repository powers multiple language support for
 [CodeCrafters](https://codecrafters.io) challenges.
 
 <!-- toc -->
 
-# Objective
+- [Objective](#objective)
+- [Components](#components)
+  * [Dockerfile](#dockerfile)
+  * [Starter Repo](#starter-repo)
+- [Constraints](#constraints)
+  * [Fast build times](#fast-build-times)
+  * [Easy to start](#easy-to-start)
+- [[WIP] Contributing](#wip-contributing)
+
+<!-- tocstop -->
+
+## Objective
 
 The language one attempts a CodeCrafters challenge is an integral part of the
 challenge experience. A few questions to think about:
@@ -50,6 +61,13 @@ The starter repo needs to contains the following files:
 - An `app` folder, that contains boilerplate code that the user will build upon.
   This code must also include a section that can be commented out to pass the
   first stage. 
+  
+Any language-specific code must adhere to common conventions or style guides for
+that language.
+
+Since starter repos for different languages are likely to have a lot of similar
+code, we use templates to create these. The raw files are under
+`starter_templates`, the compiled versions are under `compiled_starters`.
 
 ## Constraints
 
@@ -71,3 +89,8 @@ to how CodeCrafters works.
 We make this easier by adding a concise step-by-step README, and also including
 all code needed to pass the first stage.
 
+## [WIP] Contributing
+
+Thanks for considering contributing to this project! We've made a detailed guide
+for you at `CONTRIBUTING.md`. If you need help, feel free to ask in the [early
+access](https://codecrafters.io/early-access) Discord server.
