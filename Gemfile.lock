@@ -14,6 +14,7 @@ GEM
     maruku (0.7.3)
     method_source (1.0.0)
     mini_portile2 (2.4.0)
+    minitest (5.14.0)
     multipart-post (2.1.1)
     mustache (1.1.1)
     nokogiri (1.10.9)
@@ -67,6 +68,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  minitest
   mustache
   octokit
   pry
