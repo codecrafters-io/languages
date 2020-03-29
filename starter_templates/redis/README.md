@@ -35,7 +35,6 @@ push your changes, and you'll now see the first stage pass.
 Time to move on to the next stage!
 
 {{#language_is_python}}
-
 # Troubleshooting
 
 ### module `socket` has not attribute `create_server`
