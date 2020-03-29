@@ -4,26 +4,26 @@
 # unless you really need them.
 debug: false
 
-# Use this to change the {{ language }} version used to run your code
+# Use this to change the {{ language_name }} version used to run your code
 # on Codecrafters.
 #
-{% if language == "Python" -%}
+{{# language_is_python }}
 # Available versions: python-3.7, python-3.8
 language_pack: python-3.8
-{%- endif -%}
-{% if language == "Swift" -%}
+{{/ language_is_python }}
+{{# language_is_swift }}
 # Available versions: swift-5.1
 language_pack: swift-5.1
-{%- endif -%}
-{% if language == "Go" -%}
+{{/ language_is_swift }}
+{{# language_is_go }}
 # Available versions: go-1.13 
 language_pack: go-1.13
-{%- endif -%}
-{% if language == "PHP" -%}
+{{/ language_is_go }}
+{{# language_is_php }}
 # Available versions: php-7.4
 language_pack: php-7.4
-{%- endif -%}
-{% if language == "C" -%}
+{{/ language_is_php }}
+{{# language_is_c }}
 # Available versions: c-9.2
 language_pack: c-9.2
-{%- endif -%}
+{{/ language_is_c }}
