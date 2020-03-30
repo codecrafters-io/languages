@@ -1,7 +1,5 @@
 # Usage: ruby tests/test_all.rb [course_filter] [language_filter]
 
-require "pry"
-
 require_relative "dockerfile_tester"
 require_relative "starter_repo_tester"
 
