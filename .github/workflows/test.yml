@@ -3,7 +3,7 @@ name: Test
 on: push
 
 jobs:
-  test:
+  redis:
     runs-on: ubuntu-latest
 
     steps:
@@ -11,4 +11,14 @@ jobs:
     - uses: actions/checkout@v2
     - run: gem install bundler
     - run: bundle install
-    - run: make test
+    - run: make test_redis
+
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/setup-ruby@v1
+    - uses: actions/checkout@v2
+    - run: gem install bundler
+    - run: bundle install
+    - run: make test_docker

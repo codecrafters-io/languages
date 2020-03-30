@@ -10,6 +10,9 @@ test:
 test_redis:
 	bundle exec ruby tests/test_all.rb redis
 
+test_docker:
+	bundle exec ruby tests/test_all.rb docker
+
 test_redis_python:
 	bundle exec ruby tests/test_all.rb redis python
 
