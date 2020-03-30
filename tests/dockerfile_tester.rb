@@ -25,7 +25,7 @@ class DockerfileTester < TestHarness
   end
 
   def do_test
-    log_header("Testing #{course}-#{language_pack}")
+    log_header("Testing Dockerfile: #{slug}")
 
     log_info "Building #{language} image without cache"
     time_taken = assert_time_under(300) { build_image }
@@ -36,8 +36,7 @@ class DockerfileTester < TestHarness
     log_info "Building #{language} image without cache"
     assert_time_under(5) { build_image }
 
-    log_info "Took #{time_taken} secs"
-    log_info ""
+    log_success "Took #{time_taken} secs"
   end
 
   def build_image

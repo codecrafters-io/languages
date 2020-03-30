@@ -1,6 +1,6 @@
 require_relative "logger"
 
-class StarterRepoTester
+class StarterRepoTester < TestHarness
   include Logger
 
   attr_reader :course, :language
@@ -11,44 +11,23 @@ class StarterRepoTester
   end
 
   def self.from_repo_name(repo_name)
+    course, language = repo_name.split("-starter-")
+    self.new(course, language)
   end
 
-  def test
-    log_header("Testing #{course}-starter-#{language}")
+  def do_test
+    log_header("Testing starter: #{course}-starter-#{language}")
 
     log_info "Building image"
     build_image
 
     log_info "Executing starter repo script"
+    assert_time_under(5) {
+      assert_script_output("Your code goes here")
+    }
 
-    output = nil
-    time_taken = measure_time do
-      output = run_script
-    end
-
-
-    if output.include?("Implement your Redis server here")
-      log_success "Output matched expected"
-      log_success ""
-    else
-      log_error "Output did not contain expected value"
-      log_error "Output: #{output}"
-      log_error ""
-      return false
-    end
-
-    if time_taken < 5
-      log_success "Measured time is under threshold of 5 seconds"
-      log_success ""
-    else
-      log_error "Measured time was above threshold of 5 seconds"
-      log_error ""
-      return false
-    end
-
-    return true
+    log_success "Script output verified"
   end
-
 
   def starter_dir
     "compiled_starters/#{course}-starter-#{language}"
@@ -81,7 +60,7 @@ class StarterRepoTester
     "dockerfiles/#{course}/#{language}-#{latest_version}.Dockerfile" end
 
   def starter_dir
-    "compiled_starters/#{course}-starter-py"
+    "compiled_starters/#{course}-starter-#{language}"
   end
 
   def measure_time
@@ -92,25 +71,21 @@ class StarterRepoTester
   end
 
   def build_image
-    process = IO.popen(
-      "docker build -t #{slug} -f #{dockerfile_path} #{starter_dir}"
+    assert_stdout_contains(
+      "docker build -t #{slug} -f #{dockerfile_path} #{starter_dir}",
+      "Successfully tagged #{slug}"
     )
-    output = process.read
-    unless output.include?("Successfully tagged #{slug}")
-      raise RuntimeError.new <<~EOF
-        Build failed. Output:
-
-        #{output}
-      EOF
-    end
   end
 
-  def run_script
+  def assert_script_output(expected_output)
     command = [
       "docker run",
       "-v #{File.expand_path(starter_dir)}:/app",
       "#{slug} /app/spawn_redis_server.sh"
     ].join(" ")
-    `#{command}`
+    assert_stdout_contains(
+      command,
+      expected_output
+    )
   end
 end

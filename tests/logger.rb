@@ -2,6 +2,7 @@ require "colorize"
 
 module Logger
   def log_header(msg)
+    puts ""
     puts msg.blue
     puts "-" * msg.length
     puts ""
