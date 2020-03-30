@@ -3,6 +3,17 @@ name: Test
 on: push
 
 jobs:
+  verify_templates_compiled:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/setup-ruby@v1
+    - uses: actions/checkout@v2
+    - run: gem install bundler
+    - run: bundle install
+    - run: make compile
+    - run: git diff --exit-code
+
   redis:
     runs-on: ubuntu-latest
 
