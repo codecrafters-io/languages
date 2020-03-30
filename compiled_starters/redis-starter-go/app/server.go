@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Your code goes here!")
+	fmt.Println("boot your server here!")
 
 	// Comment out the following to pass the first stage
 	//

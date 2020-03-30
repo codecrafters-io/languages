@@ -1,5 +1,5 @@
 def main():
-    print("Your code goes here!")
+    print("Implement your Redis server here!")
 
     # Uncomment this to pass the first stage
     #

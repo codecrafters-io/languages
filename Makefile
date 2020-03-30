@@ -2,6 +2,7 @@ generate_toc:
 	markdown-toc -i README.md
 
 compile:
+	sudo rm -rf compiled_starters/*
 	bundle exec ruby template_compiler/compile.rb
 
 test:
