@@ -10,7 +10,7 @@ jobs:
     - uses: actions/setup-ruby@v1
     - uses: actions/checkout@v2
     - run: gem install bundler
-    - run: bundle install
+    - run: bundle install --without=development
     - run: make compile
     - run: git diff --exit-code
 
@@ -21,7 +21,7 @@ jobs:
     - uses: actions/setup-ruby@v1
     - uses: actions/checkout@v2
     - run: gem install bundler
-    - run: bundle install
+    - run: bundle install --without=development
     - run: make test_redis
 
   docker:
@@ -31,5 +31,5 @@ jobs:
     - uses: actions/setup-ruby@v1
     - uses: actions/checkout@v2
     - run: gem install bundler
-    - run: bundle install
+    - run: bundle install --without=development
     - run: make test_docker
