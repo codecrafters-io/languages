@@ -1,0 +1,14 @@
+name: Test
+
+on: push
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/setup-ruby@v1
+    - uses: actions/checkout@v2
+    - run: gem install bundler
+    - run: bundle install
+    - run: make test
