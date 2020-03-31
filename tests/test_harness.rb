@@ -63,19 +63,19 @@ class TestHarness
 
     unless exit_code == expected_exit_code
       log_error("Process exited with code #{exit_code} (expected: #{expected_exit_code})")
-      log_error("Output: ")
-      log_error("")
-      log_plain_multiline(stdout) unless stdout.empty?
-      log_plain_multiline(stderr) unless stderr.empty?
+      # log_error("Output: ")
+      # log_error("")
+      # log_plain_multiline(stdout) unless stdout.empty?
+      # log_plain_multiline(stderr) unless stderr.empty?
       raise TestFailedError
     end
 
     unless stdout.include?(expected_stdout)
       log_error("Expected '#{expected_stdout}' to be present.")
-      log_error("Output found: ")
-      log_error("")
-      log_plain_multiline(stdout) unless stdout.empty?
-      log_plain_multiline(stderr) unless stderr.empty?
+      # log_error("Output found: ")
+      # log_error("")
+      # log_plain_multiline(stdout) unless stdout.empty?
+      # log_plain_multiline(stderr) unless stderr.empty?
       raise TestFailedError
     end
   end

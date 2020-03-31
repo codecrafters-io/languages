@@ -34,5 +34,4 @@ if testers.empty?
   exit 1
 end
 
-results = testers.map(&:test)
-exit results.all?(true) ? 0 : 1
+testers.each { |tester| tester.test || exit(1) }
