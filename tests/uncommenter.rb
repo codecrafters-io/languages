@@ -12,8 +12,6 @@ class Uncommenter
     "go" => /(^\s*)(\/\/\s*)/
   }
 
-  UNCOMMENT_PATTERN = /Uncomment this/
-
   attr_reader :language, :code, :uncomment_marker_pattern
 
   def initialize(language, code, uncomment_marker_pattern)

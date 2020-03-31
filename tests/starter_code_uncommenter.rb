@@ -1,7 +1,10 @@
 require_relative "uncommenter"
+require "diffy"
 
 class StarterCodeUncommenter
   attr_reader :dir, :language
+
+  UNCOMMENT_MARKER_PATTERN = /Uncomment this/
 
   def initialize(dir, language)
     @dir = dir
@@ -9,10 +12,17 @@ class StarterCodeUncommenter
   end
 
   def uncomment
-    code_files.each do |file_path| 
-      contents = File.read(file_path)
-      contents = Uncommenter.new(language, contents).uncommented
-      File.write(file_path, contents)
+    code_files.map do |file_path| 
+      old_contents = File.read(file_path)
+      new_contents = Uncommenter.new(
+        language,
+        old_contents,
+        UNCOMMENT_MARKER_PATTERN
+      ).uncommented
+
+      File.write(file_path, new_contents)
+
+      Diffy::Diff.new(old_contents, new_contents)
     end
   end
 

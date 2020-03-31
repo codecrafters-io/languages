@@ -1,4 +1,5 @@
 require_relative "logger"
+require_relative "starter_code_uncommenter"
 
 class StarterRepoTester < TestHarness
   include Logger
@@ -22,11 +23,30 @@ class StarterRepoTester < TestHarness
     build_image
 
     log_info "Executing starter repo script"
-    assert_time_under(5) {
+    assert_time_under(15) {
       assert_script_output("Your code goes here", expected_exit_code=1)
     }
 
     log_success "Script output verified"
+
+    log_info "Uncommenting starter code..."
+    diffs = StarterCodeUncommenter.new(starter_dir, language).uncomment
+    diffs.each do |diff| 
+      if diff.to_s.empty?
+        log_error("Expected uncommenting code to return a diff")
+        return
+      end
+      puts ""
+      puts diff.to_s(:color)
+      puts ""
+    end
+
+    log_info "Executing starter repo script with first stage uncommented"
+    time_taken = assert_time_under(15) {
+      assert_script_output("All tests ran successfully.")
+    }
+
+    log_success "Took #{time_taken} secs"
   end
 
   def starter_dir
