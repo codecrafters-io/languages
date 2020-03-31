@@ -17,6 +17,9 @@ test_docker: compile download_starter_testers
 test_redis_python: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb redis python
 
+test_redis_go: compile download_starter_testers
+	bundle exec ruby tests/test_all.rb redis go
+
 sync_with_github: compile
 	bundle exec ruby repo_syncer/sync.rb
 

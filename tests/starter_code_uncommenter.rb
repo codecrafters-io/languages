@@ -21,9 +21,24 @@ class StarterCodeUncommenter
       ).uncommented
 
       File.write(file_path, new_contents)
+      post_processors.each { |post| post.call(file_path) }
 
       Diffy::Diff.new(old_contents, new_contents)
     end
+  end
+
+  def post_processors
+    {
+      "go" => [
+        Proc.new { |file_path|
+          `goimports -w #{file_path}`
+          if $? != 0
+            raise RuntimeError.new("Running goimports failed")
+          end
+        },
+      ],
+      "python" => []
+    }.fetch(language)
   end
 
   def code_files
