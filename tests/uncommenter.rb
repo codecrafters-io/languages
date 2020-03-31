@@ -1,3 +1,11 @@
+class UncommentMarkerNotFound < Exception
+  def initialize(code, marker_pattern)
+    super <<~EOF
+      Didn't find a line that matches #{marker_pattern.inspect} in file.
+    EOF
+  end
+end
+
 class Uncommenter
   REGEX_PATTERNS = {
     "python" => /(^\s*)(#\s*)/,
@@ -15,6 +23,11 @@ class Uncommenter
   end
 
   def uncommented
+    raise UncommentMarkerNotFound.new(
+      code,
+      uncomment_marker_pattern
+    ) unless !!uncomment_line_index
+
     pattern = REGEX_PATTERNS.fetch(@language)
 
     code
