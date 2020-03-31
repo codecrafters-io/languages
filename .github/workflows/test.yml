@@ -20,26 +20,10 @@ jobs:
     steps:
     - uses: actions/setup-ruby@v1
     - uses: actions/checkout@v2
-    - name: go info
-      shell: bash
-      run: |          
-        echo $(go version) at $(which go)
-        echo go version: $(go version)
-        echo go env: $(go env GOPATH) 
-        echo cache: $(ls $RUNNER_TOOL_CACHE/go)
     - uses: actions/setup-go@v2-beta
       with:
         go-version: '^1.13.1'
-    - name: go info
-      shell: bash
-      run: |          
-        echo $(go version) at $(which go)
-        echo go version: $(go version)
-        echo go env: $(go env GOPATH) 
-        echo cache: $(ls $RUNNER_TOOL_CACHE/go)
     - run: go get golang.org/x/tools/cmd/goimports
-    - run: env | sort
-    - run: goimports --help
     - run: gem install bundler
     - run: bundle install --without=development
     - run: make test_redis
@@ -54,8 +38,6 @@ jobs:
       with:
         go-version: '^1.13.1'
     - run: go get golang.org/x/tools/cmd/goimports
-    - run: env | sort
-    - run: goimports --help
     - run: gem install bundler
     - run: bundle install --without=development
     - run: make test_docker
