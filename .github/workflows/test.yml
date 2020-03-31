@@ -20,7 +20,7 @@ jobs:
     steps:
     - uses: actions/setup-ruby@v1
     - uses: actions/checkout@v2
-    # - uses: actions/setup-go@v1
+    - uses: actions/setup-go@v1
     - run: go get golang.org/x/tools/cmd/goimports
     - run: gem install bundler
     - run: bundle install --without=development
@@ -32,7 +32,7 @@ jobs:
     steps:
     - uses: actions/setup-ruby@v1
     - uses: actions/checkout@v2
-    # - uses: actions/setup-go@v1
+    - uses: actions/setup-go@v1
     - run: go get golang.org/x/tools/cmd/goimports
     - run: gem install bundler
     - run: bundle install --without=development
