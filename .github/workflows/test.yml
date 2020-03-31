@@ -20,6 +20,8 @@ jobs:
     steps:
     - uses: actions/setup-ruby@v1
     - uses: actions/checkout@v2
+    # - uses: actions/setup-go@v1
+    - run: go get golang.org/x/tools/cmd/goimports
     - run: gem install bundler
     - run: bundle install --without=development
     - run: make test_redis
@@ -30,6 +32,8 @@ jobs:
     steps:
     - uses: actions/setup-ruby@v1
     - uses: actions/checkout@v2
+    # - uses: actions/setup-go@v1
+    - run: go get golang.org/x/tools/cmd/goimports
     - run: gem install bundler
     - run: bundle install --without=development
     - run: make test_docker
