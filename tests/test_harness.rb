@@ -13,7 +13,7 @@ class TestHarness
 
   def assert_stdout_contains(command, expected_stdout)
     _, stdout_io, stderr_io, wait_thr = process = Open3.popen3(command)
-    exit_code = wait_thr.value.to_i
+    exit_code = wait_thr.value.exitstatus
     stdout, stderr = stdout_io.read, stderr_io.read
 
     unless exit_code == 0
