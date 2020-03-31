@@ -8,6 +8,13 @@ module Logger
     puts ""
   end
 
+  def log_plain_multiline(msg)
+    lines = msg.lines
+    lines.each do |line| 
+      puts "    " + line
+    end
+  end
+
   def log_info(msg)
     puts prefix_unless_empty(msg, "  - ").yellow
   end

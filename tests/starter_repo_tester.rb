@@ -23,7 +23,7 @@ class StarterRepoTester < TestHarness
 
     log_info "Executing starter repo script"
     assert_time_under(5) {
-      assert_script_output("Your code goes here")
+      assert_script_output("Your code goes here", expected_exit_code=1)
     }
 
     log_success "Script output verified"
@@ -63,11 +63,8 @@ class StarterRepoTester < TestHarness
     "compiled_starters/#{course}-starter-#{language}"
   end
 
-  def measure_time
-    before = Time.now
-    yield
-    after = Time.now
-    after - before
+  def starter_tester_path
+    ".starter_testers/#{course}"
   end
 
   def build_image
@@ -77,15 +74,18 @@ class StarterRepoTester < TestHarness
     )
   end
 
-  def assert_script_output(expected_output)
+  def assert_script_output(expected_output, expected_exit_code=0)
     command = [
       "docker run",
       "-v #{File.expand_path(starter_dir)}:/app",
-      "#{slug} /app/spawn_redis_server.sh"
+      "-v #{File.expand_path(starter_tester_path)}:/bin/tester",
+      "#{slug} tester"
     ].join(" ")
+
     assert_stdout_contains(
       command,
-      expected_output
+      expected_output,
+      expected_exit_code=expected_exit_code,
     )
   end
 end
