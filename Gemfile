@@ -12,3 +12,7 @@ group :development do
   gem "solargraph"
   gem "pry"
 end
+
+group :test do
+  gem "minitest"
+end
