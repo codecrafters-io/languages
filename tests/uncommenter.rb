@@ -32,16 +32,18 @@ class Uncommenter
   end
 
   def within_uncomment_bounds(index)
-    (uncomment_bounds[0] <= index) && (index <= uncomment_bounds[1])
+    (index >= uncomment_bounds[0]) && (index <= uncomment_bounds[1])
   end
 
   def uncomment_bounds
     start_index = uncomment_line_index + 1
-    end_index = start_index
+    end_index = start_index - 1
     code.lines.each_with_index do |line, index| 
-      next if index <= start_index
+      next if index < start_index
 
-      break unless line_regex.match(line)
+      unless !!line_regex.match(line)
+        break
+      end
 
       end_index = index
     end

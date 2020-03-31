@@ -34,4 +34,10 @@ class TestUncommenter < Minitest::Test
     expected = SAMPLE_PY_UNCOMMENTED
     assert_equal expected, actual
   end
+
+  def test_uncomment_twice
+    actual = Uncommenter.new("python", SAMPLE_PY_UNCOMMENTED).uncommented
+    expected = SAMPLE_PY_UNCOMMENTED
+    assert_equal expected, actual
+  end
 end
