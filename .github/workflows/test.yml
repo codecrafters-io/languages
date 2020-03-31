@@ -22,7 +22,8 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-go@v2-beta
     - run: go get golang.org/x/tools/cmd/goimports
-    - run: env
+    - run: env | sort
+    - run: goimports --help
     - run: gem install bundler
     - run: bundle install --without=development
     - run: make test_redis
@@ -35,7 +36,8 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-go@v2-beta
     - run: go get golang.org/x/tools/cmd/goimports
-    - run: env
+    - run: env | sort
+    - run: goimports --help
     - run: gem install bundler
     - run: bundle install --without=development
     - run: make test_docker
