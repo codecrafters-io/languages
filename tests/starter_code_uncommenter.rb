@@ -23,6 +23,7 @@ class StarterCodeUncommenter
       File.write(file_path, new_contents)
       post_processors.each { |post| post.call(file_path) }
 
+      new_contents = File.read(file_path)
       Diffy::Diff.new(old_contents, new_contents)
     end
   end
