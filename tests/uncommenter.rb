@@ -6,11 +6,12 @@ class Uncommenter
 
   UNCOMMENT_PATTERN = /Uncomment this/
 
-  attr_reader :language, :code
+  attr_reader :language, :code, :uncomment_marker_pattern
 
-  def initialize(language, code)
+  def initialize(language, code, uncomment_marker_pattern)
     @language = language
     @code = code
+    @uncomment_marker_pattern = uncomment_marker_pattern
   end
 
   def uncommented
@@ -54,7 +55,7 @@ class Uncommenter
   def uncomment_line_index
     code
       .lines
-      .index { |line| line_regex.match?(line) && UNCOMMENT_PATTERN.match?(line) }
+      .index { |line| line_regex.match?(line) && uncomment_marker_pattern.match?(line) }
   end
 
   def line_regex

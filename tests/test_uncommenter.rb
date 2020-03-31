@@ -28,16 +28,56 @@ blah
 yay = true
 """
 
+SAMPLE_GO_COMMENTED = """
+func main() {
+  // Uncomment this to pass the first stage
+  //
+  // // This is an assignment
+  // a := 1
+  //
+  // fmt.Println('hey')
+
+  a := 2
+}
+"""
+
+SAMPLE_GO_UNCOMMENTED = """
+func main() {
+  // Uncomment this to pass the first stage
+  
+  // This is an assignment
+  a := 1
+  
+  fmt.Println('hey')
+
+  a := 2
+}
+"""
+
+UNCOMMENT_PATTERN = /Uncomment this/
+
 class TestUncommenter < Minitest::Test
   def test_python
-    actual = Uncommenter.new("python", SAMPLE_PY_COMMENTED).uncommented
+    actual = Uncommenter.new("python", SAMPLE_PY_COMMENTED, UNCOMMENT_PATTERN).uncommented
     expected = SAMPLE_PY_UNCOMMENTED
     assert_equal expected, actual
   end
 
-  def test_uncomment_twice
-    actual = Uncommenter.new("python", SAMPLE_PY_UNCOMMENTED).uncommented
+  def test_twice_python
+    actual = Uncommenter.new("python", SAMPLE_PY_UNCOMMENTED, UNCOMMENT_PATTERN).uncommented
     expected = SAMPLE_PY_UNCOMMENTED
+    assert_equal expected, actual
+  end
+
+  def test_go
+    actual = Uncommenter.new("go", SAMPLE_GO_COMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_GO_UNCOMMENTED
+    assert_equal expected, actual
+  end
+
+  def test_twice_go
+    actual = Uncommenter.new("go", SAMPLE_GO_UNCOMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_GO_UNCOMMENTED
     assert_equal expected, actual
   end
 end
