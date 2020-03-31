@@ -6,5 +6,3 @@ RUN chmod +x /usr/local/bin/docker-explorer
 
 COPY . /app
 WORKDIR /app
-
-CMD tester
