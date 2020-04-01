@@ -38,7 +38,8 @@ class StarterCodeUncommenter
           end
         },
       ],
-      "python" => []
+      "python" => [],
+      "c" => []
     }.fetch(language)
   end
 
@@ -49,7 +50,8 @@ class StarterCodeUncommenter
   def code_file_extension
     {
       "go" => "go",
-      "python" => "py"
+      "python" => "py",
+      "c" => "c"
     }.fetch(language)
   end
 end

@@ -34,6 +34,7 @@ class StarterRepoTester < TestHarness
     diffs.each do |diff| 
       if diff.to_s.empty?
         log_error("Expected uncommenting code to return a diff")
+        log_error("Are you sure there's a contiguous block of comments after the 'Uncomment this' marker?")
         return
       end
       puts ""

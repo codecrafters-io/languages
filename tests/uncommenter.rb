@@ -9,7 +9,8 @@ end
 class Uncommenter
   REGEX_PATTERNS = {
     "python" => /(^\s*)(#\s*)/,
-    "go" => /(^\s*)(\/\/\s*)/
+    "go" => /(^\s*)(\/\/\s*)/,
+    "c" => /(^\s*)(\/\/\s*)/
   }
 
   attr_reader :language, :code, :uncomment_marker_pattern
