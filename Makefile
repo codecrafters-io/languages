@@ -20,6 +20,9 @@ test_redis_python: compile download_starter_testers
 test_redis_go: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb redis go
 
+test_redis_c: compile download_starter_testers
+	bundle exec ruby tests/test_all.rb redis c
+
 sync_with_github: compile
 	bundle exec ruby repo_syncer/sync.rb
 
