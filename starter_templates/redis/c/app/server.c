@@ -23,7 +23,9 @@ int main() {
 	// 	printf("Socket creation failed: %s...\n", strerror(errno));
 	// 	return 1;
 	// }
-	// 
+	//
+	// // Since the tester restarts your program quite often, setting REUSE_PORT
+	// // ensures that we don't run into 'Address already in use' errors
 	// int reuse = 1;
 	// if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEPORT, &reuse, sizeof(reuse)) < 0) {
 	// 	printf("SO_REUSEPORT failed: %s \n", strerror(errno));
@@ -40,7 +42,8 @@ int main() {
 	// 	return 1;
 	// }
 	// 
-	// if (listen(server_fd, 5) != 0) { 
+	// int connection_backlog = 5;
+	// if (listen(server_fd, connection_backlog) != 0) {
 	// 	printf("Listen failed: %s \n", strerror(errno));
 	// 	return 1;
 	// }
