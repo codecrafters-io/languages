@@ -25,7 +25,7 @@ int main() {
 	// }
 	// 
 	// int reuse = 1;
-	// if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEPORT, (const char*)&reuse, sizeof(reuse)) < 0) {
+	// if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEPORT, &reuse, sizeof(reuse)) < 0) {
 	// 	printf("SO_REUSEPORT failed: %s \n", strerror(errno));
 	// 	return 1;
 	// }
