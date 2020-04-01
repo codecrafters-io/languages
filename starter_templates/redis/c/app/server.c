@@ -21,13 +21,13 @@ int main() {
 	// server_fd = socket(AF_INET, SOCK_STREAM, 0);
 	// if (server_fd == -1) {
 	// 	printf("Socket creation failed: %s...\n", strerror(errno));
-	// 	exit(1);
+	// 	return 1;
 	// }
 	// 
 	// int reuse = 1;
 	// if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEPORT, (const char*)&reuse, sizeof(reuse)) < 0) {
 	// 	printf("SO_REUSEPORT failed: %s \n", strerror(errno));
-	// 	return -1;
+	// 	return 1;
 	// }
 	// 
 	// struct sockaddr_in serv_addr = { .sin_family = AF_INET ,
@@ -37,12 +37,12 @@ int main() {
 	// 
 	// if (bind(server_fd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) != 0) {
 	// 	printf("Bind failed: %s \n", strerror(errno));
-	// 	exit(1);
+	// 	return 1;
 	// }
 	// 
 	// if ((listen(server_fd, 5)) != 0) { 
 	// 	printf("Listen failed: %s \n", strerror(errno));
-	// 	exit(1); 
+	// 	return 1;
 	// }
 	// 
 	// printf("Waiting for a client to connect...\n"); 
