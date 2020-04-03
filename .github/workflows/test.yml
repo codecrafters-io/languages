@@ -29,19 +29,17 @@ jobs:
     - run: bundle install --without=development
     - run: make test_redis
 
-  # Enable later!
-  # 
-  # docker:
-  #   runs-on: ubuntu-latest
+  docker:
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #   - uses: actions/setup-ruby@v1
-  #   - uses: actions/checkout@v2
-  #   - uses: actions/setup-go@v2-beta
-  #     with:
-  #       go-version: '^1.13.1'
-  #   - run: "echo ::remove-matcher owner=go::" # Messes with our output
-  #   - run: go get golang.org/x/tools/cmd/goimports
-  #   - run: gem install bundler
-  #   - run: bundle install --without=development
-  #   - run: make test_docker
+    steps:
+    - uses: actions/setup-ruby@v1
+    - uses: actions/checkout@v2
+    - uses: actions/setup-go@v2-beta
+      with:
+        go-version: '^1.13.1'
+    - run: "echo ::remove-matcher owner=go::" # Messes with our output
+    - run: go get golang.org/x/tools/cmd/goimports
+    - run: gem install bundler
+    - run: bundle install --without=development
+    - run: make test_docker

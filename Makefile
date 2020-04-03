@@ -29,7 +29,12 @@ sync_with_github: compile
 download_starter_testers:
 	mkdir -p .starter_testers
 	test -f .starter_testers/redis || make download_redis_starter_tester
+	test -f .starter_testers/docker || make download_docker_starter_tester
 
 download_redis_starter_tester:
-	curl -Lo .starter_testers/redis https://github.com/codecrafters-io/redis-starter-tester/releases/download/v54/v54_linux_amd64
+	curl --fail -Lo .starter_testers/redis https://github.com/codecrafters-io/redis-starter-tester/releases/download/v54/v54_linux_amd64
 	chmod +x ./.starter_testers/redis
+
+download_docker_starter_tester:
+	curl --fail -Lo .starter_testers/docker https://github.com/codecrafters-io/docker-starter-tester/releases/download/v24/v24_linux_amd64
+	chmod +x ./.starter_testers/docker
