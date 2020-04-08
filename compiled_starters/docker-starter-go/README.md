@@ -13,8 +13,9 @@ registry API](https://docs.docker.com/registry/spec/api/) and much more.
 # Usage
 
 1. Ensure you have `go` installed locally
-1. Download [`docker-explorer`], as [mentioned
-   here](https://github.com/codecrafters-io/docker-explorer).
+1. Download
+   [`docker-explorer`](https://github.com/codecrafters-io/docker-explorer), as
+   [mentioned here](https://github.com/codecrafters-io/docker-explorer).
 1. Follow the details below ("Running your program locally") to run your Docker
    implementation, which is implemented in `app/main.go`.
 1. Commit your changes and run `git push origin master` to submit your solution

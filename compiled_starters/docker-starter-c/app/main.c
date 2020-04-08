@@ -1,10 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <sys/wait.h>
-#include <netinet/in.h>
-#include <netinet/ip.h>
-#include <string.h>
-#include <errno.h>
 #include <unistd.h>
 
 // Usage: your_docker.sh run <image> <command> <arg1> <arg2> ...
