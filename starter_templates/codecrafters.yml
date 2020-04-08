@@ -27,3 +27,7 @@ language_pack: php-7.4
 # Available versions: c-9.2
 language_pack: c-9.2
 {{/ language_is_c }}
+{{# language_is_ruby }}
+# Available versions: ruby-2.7
+language_pack: ruby-2.7
+{{/ language_is_ruby }}
