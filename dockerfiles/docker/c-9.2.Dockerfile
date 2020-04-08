@@ -1,4 +1,4 @@
-FROM golang:1.13-alpine
+FROM n0madic/alpine-gcc:9.2.0
 
 RUN apk add curl
 

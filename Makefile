@@ -14,6 +14,15 @@ test_redis: compile download_starter_testers
 test_docker: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb docker
 
+test_docker_go: compile download_starter_testers
+	bundle exec ruby tests/test_all.rb docker go
+
+test_docker_nim: compile download_starter_testers
+	bundle exec ruby tests/test_all.rb docker nim
+
+test_docker_c: compile download_starter_testers
+	bundle exec ruby tests/test_all.rb docker c
+
 test_redis_python: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb redis python
 
