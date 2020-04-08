@@ -59,7 +59,15 @@ class RepoSyncer
   private
 
   def find_or_create_repo(repo_name)
-    @github_client.repository("codecrafters-io/#{repo_name}")
+    begin
+      @github_client.repository("codecrafters-io/#{repo_name}")
+    rescue Octokit::NotFound
+      @github_client.create_repository(
+        repo_name,
+        organization: "codecrafters-io",
+        auto_init: true # Need this to have a tree in place to create PR
+      )
+    end
   end
 end
 
