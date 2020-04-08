@@ -37,10 +37,8 @@ class StarterCodeUncommenter
             raise RuntimeError.new("Running goimports failed")
           end
         },
-      ],
-      "python" => [],
-      "c" => []
-    }.fetch(language)
+      ]
+    }.fetch(language, [])
   end
 
   def code_files
@@ -51,6 +49,7 @@ class StarterCodeUncommenter
     {
       "go" => "go",
       "python" => "py",
+      "ruby" => "rb",
       "c" => "c"
     }.fetch(language)
   end

@@ -9,6 +9,7 @@ end
 class Uncommenter
   REGEX_PATTERNS = {
     "python" => /(^\s*)(#\s*)/,
+    "ruby" => /(^\s*)(#\s*)/,
     "go" => /(^\s*)(\/\/\s*)/,
     "c" => /(^\s*)(\/\/\s*)/
   }
