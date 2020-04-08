@@ -73,6 +73,7 @@ DEFINITIONS = [
       FM.new("README.md", "docker/README.md"),
       FM.new("codecrafters.yml", "codecrafters.yml"),
       FM.new("app/main.go", "docker/go/app/main.go"),
+      FM.new("Dockerfile", "docker/go/Dockerfile"),
       FM.new("your_docker.sh", "docker/go/your_docker.sh", is_executable=true),
     ],
     template_attrs: {
@@ -87,6 +88,7 @@ DEFINITIONS = [
       FM.new("README.md", "docker/README.md"),
       FM.new("codecrafters.yml", "codecrafters.yml"),
       FM.new("app/main.c", "docker/c/app/main.c"),
+      FM.new("Dockerfile", "docker/c/Dockerfile"),
       FM.new("your_docker.sh", "docker/c/your_docker.sh", is_executable=true),
     ],
     template_attrs: {
