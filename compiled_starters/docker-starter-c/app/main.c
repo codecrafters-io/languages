@@ -23,9 +23,8 @@ int main(int argc, char *argv[]) {
 	//     execv(command, &argv[3]);
 	// } else {
 	// 	   // We're in parent
-	// 	   int status;
-	// 	   waitpid(child_pid, &status, 0);
-	// 	   printf("Child terminated with status %d", status);
+	// 	   wait(NULL);
+	// 	   printf("Child terminated");
 	// }
 
 	return 0;
