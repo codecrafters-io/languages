@@ -64,5 +64,19 @@ DEFINITIONS = [
       "required_executable": "go",
       "user_editable_file": "app/main.go"
     }
+  ),
+  Repo.new(
+    course: docker,
+    language: c,
+    file_mappings: [
+      FM.new("README.md", "docker/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.c", "docker/c/app/main.c"),
+      FM.new("your_docker.sh", "docker/c/your_docker.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "gcc",
+      "user_editable_file": "app/main.c"
+    }
   )
 ]
