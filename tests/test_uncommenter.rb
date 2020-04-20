@@ -10,6 +10,9 @@ abcd = true
 # # This is an assignment
 # a = b
 #
+# if True:
+#     pass
+#
 # blah
 
 yay = true
@@ -22,6 +25,9 @@ abcd = true
 
 # This is an assignment
 a = b
+
+if True:
+    pass
 
 blah
 

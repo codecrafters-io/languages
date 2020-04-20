@@ -3,6 +3,7 @@ Repo = StarterRepoDefinition
 
 redis = Course.new(slug: "redis", name: "Redis")
 docker = Course.new(slug: "docker", name: "Docker")
+git = Course.new(slug: "git", name: "Git")
 
 python = Language.new(slug: "python", name: "Python", repo_suffix: "python")
 go = Language.new(slug: "go", name: "Go", repo_suffix: "go")
@@ -10,6 +11,7 @@ c = Language.new(slug: "c", name: "C", repo_suffix: "c")
 ruby = Language.new(slug: "ruby", name: "Ruby", repo_suffix: "ruby")
 
 DEFINITIONS = [
+  # ------------------- REDIS ------------------------------
   Repo.new(
     course: redis,
     language: python,
@@ -66,6 +68,9 @@ DEFINITIONS = [
       "user_editable_file": "app/server.rb"
     }
   ),
+
+  # ------------------- DOCKER ------------------------------
+  
   Repo.new(
     course: docker,
     language: go,
@@ -94,6 +99,37 @@ DEFINITIONS = [
     template_attrs: {
       "required_executable": "gcc",
       "user_editable_file": "app/main.c"
+    }
+  ),
+
+  # ------------------- GIT ------------------------------
+
+  Repo.new(
+    course: git,
+    language: python,
+    file_mappings: [
+      FM.new("README.md", "git/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.py", "git/python/app/main.py"),
+      FM.new("your_git.sh", "git/python/your_git.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "python",
+      "user_editable_file": "app/main.py"
+    }
+  ),
+  Repo.new(
+    course: git,
+    language: ruby,
+    file_mappings: [
+      FM.new("README.md", "git/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.rb", "git/ruby/app/main.rb"),
+      FM.new("your_git.sh", "git/ruby/your_git.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "ruby",
+      "user_editable_file": "app/main.rb"
     }
   )
 ]
