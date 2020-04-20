@@ -62,5 +62,5 @@ download_docker_starter_tester:
 	chmod +x ./.starter_testers/docker
 
 download_git_starter_tester:
-	curl --fail -Lo .starter_testers/git https://github.com/codecrafters-io/git-starter-tester/releases/download/v54/v54_linux_amd64
+	curl --fail -Lo .starter_testers/git https://github.com/codecrafters-io/git-starter-tester/releases/download/v8/v8_linux_amd64
 	chmod +x ./.starter_testers/git

@@ -3,8 +3,10 @@ import os
 
 
 def main():
-    print("Add your implementation here!")
+    print("Your code goes here!")
 
+    # Uncomment this block to pass the first stage
+    # 
     # command = sys.argv[1]
     # if command == "init":
     #     os.mkdir(".git")
@@ -12,7 +14,6 @@ def main():
     #     os.mkdir(".git/refs")
     #     with open(".git/HEAD", "w") as f:
     #         f.write("ref: refs/heads/master\n")
-
     #     print("Initialized git directory")
     # else:
     #     raise RuntimeError(f"Unknown command #{command}")
