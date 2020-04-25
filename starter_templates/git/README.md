@@ -21,10 +21,10 @@ commits, trees etc.), Git's transfer protocols and more.
 
 The `your_git.sh` script is expected to operate on the `.git` folder inside the
 current working directory. If you're running this inside the root of this
-repository, , you might end up accidentally damaging your repository's `.git`
+repository, you might end up accidentally damaging your repository's `.git`
 folder.
 
-We suggest executing `your_git.sh` in a different folder. For example:
+We suggest executing `your_git.sh` in a different folder when testing locally. For example:
 
 ``` sh
 mkdir -p /tmp/testing && cd /tmp/testing
