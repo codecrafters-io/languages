@@ -12,7 +12,7 @@ commits, trees etc.), Git's transfer protocols and more.
 # Usage
 
 1. Ensure you have `{{ required_executable }}` installed locally
-1. Run `./your_git_.sh` to run your Git implementation, which is implemented in
+1. Run `./your_git.sh` to run your Git implementation, which is implemented in
    `{{ user_editable_file }}`.
 1. Commit your changes and run `git push origin master` to submit your solution
    to CodeCrafters. Test output will be streamed to your terminal.
