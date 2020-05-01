@@ -23,6 +23,9 @@ test_git_python: compile download_starter_testers
 test_git_ruby: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb git ruby
 
+test_git_go: compile download_starter_testers
+	bundle exec ruby tests/test_all.rb git go
+
 test_docker_go: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb docker go
 

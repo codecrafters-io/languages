@@ -131,5 +131,19 @@ DEFINITIONS = [
       "required_executable": "ruby",
       "user_editable_file": "app/main.rb"
     }
+  ),
+  Repo.new(
+    course: git,
+    language: go,
+    file_mappings: [
+      FM.new("README.md", "git/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.go", "git/go/app/main.go"),
+      FM.new("your_git.sh", "git/go/your_git.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "ruby",
+      "user_editable_file": "app/main.rb"
+    }
   )
 ]
