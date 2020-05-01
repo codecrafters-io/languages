@@ -90,6 +90,13 @@ class TestHarness
     )
   end
 
+  def assert(condition, message)
+    unless condition
+      log_error(message)
+      raise TestFailedError
+    end
+  end
+
   def assert_time_under(threshold_seconds)
     before = Time.now
     yield

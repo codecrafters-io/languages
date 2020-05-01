@@ -19,6 +19,8 @@ class StarterRepoTester < TestHarness
   def do_test
     log_header("Testing starter: #{course}-starter-#{language}")
 
+    assert dockerfiles.any?, "Expected a dockerfile to exist for #{slug}"
+
     log_info "Building image"
     build_image
 
@@ -63,11 +65,8 @@ class StarterRepoTester < TestHarness
   end
 
   def latest_version
-    dockerfiles = Dir["dockerfiles/#{course}/*.Dockerfile"]
     dockerfiles
-      .map { |dockerfile_path| File.basename(dockerfile_path) }
       .map { |dockerfile_name| dockerfile_name.sub(".Dockerfile", "") }
-      .select { |dockerfile_name| dockerfile_name.start_with?(language) }
       .map { |dockerfile_name| dockerfile_name.split("-").last }
       .sort_by { |version| Gem::Version.new(version) }
       .last
@@ -77,8 +76,15 @@ class StarterRepoTester < TestHarness
     "#{course}-#{language}-#{latest_version}"
   end
 
+  def dockerfiles
+    Dir["dockerfiles/#{course}/*.Dockerfile"]
+      .map { |dockerfile_path| File.basename(dockerfile_path) }
+      .select { |dockerfile_name| dockerfile_name.start_with?(language) }
+  end
+
   def dockerfile_path
-    "dockerfiles/#{course}/#{language}-#{latest_version}.Dockerfile" end
+    "dockerfiles/#{course}/#{language}-#{latest_version}.Dockerfile"
+  end
 
   def starter_dir
     "compiled_starters/#{course}-starter-#{language}"
