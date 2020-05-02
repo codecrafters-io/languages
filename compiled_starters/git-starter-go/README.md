@@ -11,9 +11,9 @@ commits, trees etc.), Git's transfer protocols and more.
 
 # Usage
 
-1. Ensure you have `ruby` installed locally
+1. Ensure you have `go` installed locally
 1. Run `./your_git.sh` to run your Git implementation, which is implemented in
-   `app/main.rb`.
+   `app/main.go`.
 1. Commit your changes and run `git push origin master` to submit your solution
    to CodeCrafters. Test output will be streamed to your terminal.
  
@@ -54,7 +54,7 @@ git push origin master
 You should see a failure message that says the `.git` directory wasn't
 initialized. 
 
-Go to `app/main.rb` and uncomment the implementation for the `init`
+Go to `app/main.go` and uncomment the implementation for the `init`
 command. Commit and push your changes to pass the first stage.
 
 Time to move on to the next stage!
