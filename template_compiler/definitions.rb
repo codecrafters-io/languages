@@ -142,8 +142,8 @@ DEFINITIONS = [
       FM.new("your_git.sh", "git/go/your_git.sh", is_executable=true),
     ],
     template_attrs: {
-      "required_executable": "ruby",
-      "user_editable_file": "app/main.rb"
+      "required_executable": "go",
+      "user_editable_file": "app/main.go"
     }
   )
 ]
