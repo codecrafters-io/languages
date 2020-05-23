@@ -9,6 +9,7 @@ python = Language.new(slug: "python", name: "Python", repo_suffix: "python")
 go = Language.new(slug: "go", name: "Go", repo_suffix: "go")
 c = Language.new(slug: "c", name: "C", repo_suffix: "c")
 ruby = Language.new(slug: "ruby", name: "Ruby", repo_suffix: "ruby")
+rust = Language.new(slug: "rust", name: "Rust", repo_suffix: "rust")
 
 DEFINITIONS = [
   # ------------------- REDIS ------------------------------
@@ -145,5 +146,22 @@ DEFINITIONS = [
       "required_executable": "go",
       "user_editable_file": "app/main.go"
     }
-  )
+  ),
+  Repo.new(
+    course: git,
+    language: rust,
+    file_mappings: [
+      FM.new("README.md", "git/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("src/main.rs", "git/rust/src/main.rs"),
+      FM.new("Cargo.toml", "git/rust/Cargo.toml"),
+      FM.new("Cargo.lock", "git/rust/Cargo.lock"),
+      FM.new("your_git.sh", "git/rust/your_git.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "rust (1.43)",
+      "user_editable_file": "src/main.rs"
+    }
+  ),
+
 ]
