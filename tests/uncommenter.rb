@@ -7,11 +7,15 @@ class UncommentMarkerNotFound < Exception
 end
 
 class Uncommenter
+  POUND_SIGN = /(^\s*)(#\s{0,1})/
+  DOUBLE_SLASHES = /(^\s*)(\/\/\s{0,1})/
+
   REGEX_PATTERNS = {
-    "python" => /(^\s*)(#\s{0,1})/,
-    "ruby" => /(^\s*)(#\s{0,1})/,
-    "go" => /(^\s*)(\/\/\s{0,1})/,
-    "c" => /(^\s*)(\/\/\s{0,1})/
+    "python" => POUND_SIGN,
+    "ruby" => POUND_SIGN,
+    "go" => DOUBLE_SLASHES,
+    "c" => DOUBLE_SLASHES,
+    "rust" => DOUBLE_SLASHES
   }
 
   attr_reader :language, :code, :uncomment_marker_pattern

@@ -12,6 +12,7 @@ class StarterCodeUncommenter
   end
 
   def uncomment
+    raise "No code files found" if code_files.empty?
     code_files.map do |file_path| 
       old_contents = File.read(file_path)
       new_contents = Uncommenter.new(
@@ -42,7 +43,7 @@ class StarterCodeUncommenter
   end
 
   def code_files
-    Dir["#{dir}/app/*.#{code_file_extension}"]
+    Dir["#{dir}/**/*.#{code_file_extension}"]
   end
 
   def code_file_extension
@@ -50,7 +51,8 @@ class StarterCodeUncommenter
       "go" => "go",
       "python" => "py",
       "ruby" => "rb",
-      "c" => "c"
+      "c" => "c",
+      "rust" => "rs"
     }.fetch(language)
   end
 end
