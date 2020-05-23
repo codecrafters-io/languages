@@ -4,8 +4,8 @@
 # unless you really need them.
 debug: false
 
-# Use this to change the Go version used to run your code
+# Use this to change the Rust version used to run your code
 # on Codecrafters.
 #
-# Available versions: go-1.13
-language_pack: go-1.13
+# Available versions: rust-1.43
+language_pack: rust-1.43
