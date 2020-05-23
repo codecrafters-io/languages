@@ -32,7 +32,7 @@ class Uncommenter
 
     code
       .lines
-      .map { |line| line[..-2] }
+      .map { |line| line[0..-2] }
       .each_with_index
       .map { |line, index|
         within_uncomment_bounds(index) ? uncomment_line(line) : line
