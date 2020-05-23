@@ -37,7 +37,7 @@ Time to move on to the next stage!
 {{#language_is_python}}
 # Troubleshooting
 
-## module `socket` has not attribute `create_server`
+## module `socket` has no attribute `create_server`
 
 When running your server locally, you might see an error like this:
 
