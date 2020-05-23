@@ -3,7 +3,7 @@ This is a starting point for C solutions to the
 
 In this challenge, you'll build a toy Redis clone that's capable of handling
 basic commands like `PING`, `SET` and `GET`. Along the way we'll learn about
-event loops, the Redis protocol and more. 
+event loops, the Redis protocol and more.
 
 **Note**: If you're viewing this repo on GitHub, head over to
 [codecrafters.io](https://codecrafters.io) to signup for early access.
@@ -15,12 +15,12 @@ event loops, the Redis protocol and more.
    `app/server.c`.
 1. Commit your changes and run `git push origin master` to submit your solution
    to CodeCrafters. Test output will be streamed to your terminal.
- 
+
 # Passing the first stage
 
 CodeCrafters runs tests when you do a `git push`. Make an empty commit and push
 your solution to see the first stage fail.
-   
+
 ``` sh
 git commit --allow-empty -m "Running tests"
 git push origin master

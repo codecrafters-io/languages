@@ -32,12 +32,12 @@ docker run --cap-add="SYS_ADMIN" my_docker run some_image /usr/local/bin/docker-
 ```
 
 (remember to re-run `docker build` each time you make changes to your code!)
- 
+
 # Passing the first stage
 
 CodeCrafters runs tests when you do a `git push`. Make an empty commit and push
 your solution to see the first stage fail.
-   
+
 ``` sh
 git commit --allow-empty -m "Running tests"
 git push origin master
