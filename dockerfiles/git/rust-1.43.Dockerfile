@@ -17,4 +17,4 @@ COPY . /app
 
 RUN ls /app
 RUN ls /app/src
-RUN ls /app/src/main.rs
+RUN cat /app/src/main.rs
