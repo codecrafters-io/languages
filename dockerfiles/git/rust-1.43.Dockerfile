@@ -12,6 +12,8 @@ RUN cargo build --release --target-dir=/tmp/codecrafters-git-target
 RUN rm /tmp/codecrafters-git-target/release/git-starter-rust
 RUN rm /tmp/codecrafters-git-target/release/git-starter-rust.d
 
+RUN rm -rf /tmp/codecrafters-git-target
+
 RUN rm -rf /app/src
 COPY . /app
 
