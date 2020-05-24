@@ -14,6 +14,15 @@ jobs:
     - run: make compile
     - run: git diff --exit-code
 
+  markdown_lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-ruby@v1
+    - run: gem install mdl
+    - run: mdl --style relaxed compiled_starters
+
   redis:
     runs-on: ubuntu-latest
 

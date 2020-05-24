@@ -81,7 +81,7 @@ Dir["compiled_starters/*"].each do |dir|
   pr_url = syncer.sync(repo_name, dir)
   if pr_url
     puts "PR: #{pr_url}"
-    `xdg-open #{pr_url}`
+    `open #{pr_url}`
   else
     puts "No changes"
   end
