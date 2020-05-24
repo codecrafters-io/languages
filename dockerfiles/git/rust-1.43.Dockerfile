@@ -9,9 +9,8 @@ RUN echo 'fn main() { println!("Hello World!"); }' > /app/src/main.rs
 WORKDIR /app
 RUN cargo build --release --target-dir=/tmp/codecrafters-git-target
 
-RUN sleep 5 # Maybe this will help with busting the cache??
-
 RUN rm /tmp/codecrafters-git-target/release/git-starter-rust
+RUN rm /tmp/codecrafters-git-target/release/git-starter-rust.d
 
 RUN rm -rf /app/src
 COPY . /app
