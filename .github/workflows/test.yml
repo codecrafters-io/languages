@@ -66,6 +66,8 @@ jobs:
     - run: go get golang.org/x/tools/cmd/goimports
     - run: gem install bundler
     - run: bundle install --without=development
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v2
     - run: make test_git
 
   git_rust_temp:
