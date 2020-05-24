@@ -14,3 +14,7 @@ RUN rm /tmp/codecrafters-git-target/release/git-starter-rust.d
 
 RUN rm -rf /app/src
 COPY . /app
+
+RUN ls /app
+RUN ls /app/src
+RUN ls /app/src/main.rs
