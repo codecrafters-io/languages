@@ -9,4 +9,5 @@ RUN echo 'fn main() { println!("Hello World!"); }' > /app/src/main.rs
 WORKDIR /app
 RUN cargo build --release --target-dir=/tmp/codecrafters-git-target
 
+RUN rm -rf /app/src
 COPY . /app
