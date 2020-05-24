@@ -15,6 +15,8 @@ RUN rm /tmp/codecrafters-git-target/release/git-starter-rust.d
 RUN find /tmp/codecrafters-git-target/release -type f -maxdepth 1 -delete
 RUN rm -f /tmp/codecrafters-git-target/release/deps/*git_starter_rust*
 RUN rm -f /tmp/codecrafters-git-target/release/deps/git_starter_rust*
+RUN rm -f /tmp/codecrafters-git-target/release/.fingerprint/*git_starter_rust*
+RUN rm -f /tmp/codecrafters-git-target/release/.fingerprint/git_starter_rust*
 
 RUN rm -rf /app/src
 COPY . /app
