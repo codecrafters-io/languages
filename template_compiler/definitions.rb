@@ -9,6 +9,7 @@ python = Language.new(slug: "python", name: "Python", repo_suffix: "python")
 go = Language.new(slug: "go", name: "Go", repo_suffix: "go")
 c = Language.new(slug: "c", name: "C", repo_suffix: "c")
 ruby = Language.new(slug: "ruby", name: "Ruby", repo_suffix: "ruby")
+rust = Language.new(slug: "rust", name: "Rust", repo_suffix: "rust")
 
 DEFINITIONS = [
   # ------------------- REDIS ------------------------------
@@ -68,6 +69,20 @@ DEFINITIONS = [
       "user_editable_file": "app/server.rb"
     }
   ),
+    Repo.new(
+    course: redis,
+    language: rust,
+    file_mappings: [
+      FM.new("README.md", "redis/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/server.rs", "redis/go/app/server.rs"),
+      FM.new("spawn_redis_server.sh", "redis/go/spawn_redis_server.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "rust (1.38.0)",
+      "user_editable_file": "app/server.rs"
+    }
+  )
 
   # ------------------- DOCKER ------------------------------
   
