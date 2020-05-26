@@ -16,7 +16,7 @@ language_pack: python-3.8
 language_pack: swift-5.1
 {{/ language_is_swift }}
 {{# language_is_go }}
-# Available versions: go-1.13 
+# Available versions: go-1.13
 language_pack: go-1.13
 {{/ language_is_go }}
 {{# language_is_php }}
@@ -31,3 +31,7 @@ language_pack: c-9.2
 # Available versions: ruby-2.7
 language_pack: ruby-2.7
 {{/ language_is_ruby }}
+{{# language_is_rust }}
+# Available versions: rust-1.43
+language_pack: rust-1.43
+{{/ language_is_rust }}
