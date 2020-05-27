@@ -76,8 +76,8 @@ DEFINITIONS = [
       FM.new("README.md", "redis/README.md"),
       FM.new("codecrafters.yml", "codecrafters.yml"),
       FM.new("app/main.rs", "redis/rust/app/main.rs"),
-      FM.new("Cargo.toml", "redis/rust/Cargo.toml")
-      FM.new("Cargo.toml", "redis/rust/Cargo.lock")
+      FM.new("Cargo.toml", "redis/rust/Cargo.toml"),
+      FM.new("Cargo.toml", "redis/rust/Cargo.lock"),
       FM.new("spawn_redis_server.sh", "redis/rust/spawn_redis_server.sh", is_executable=true),
     ],
     template_attrs: {
