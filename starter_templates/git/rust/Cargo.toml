@@ -1,0 +1,16 @@
+[package]
+name = "git-starter-rust"
+version = "0.1.0"
+authors = ["Codecrafters <hello@codecrafters.io>"]
+edition = "2018"
+
+# DON'T EDIT THIS!
+#
+# This is only for local usage, any changes here will not reflect when
+# CodeCrafters tests your code.
+#
+# DON'T EDIT THIS!
+[dependencies]
+reqwest = { version = "0.10", features = ["json", "blocking"] } # http requests
+tokio = { version = "0.2", features = ["full"] } # async http requests
+flate2 = "1.0" # gzip compression

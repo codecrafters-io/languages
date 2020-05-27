@@ -1,4 +1,4 @@
-This is a starting point for {{language_name}} solutions to the
+This is a starting point for Rust solutions to the
 ["Build Your Own Git" Challenge](https://codecrafters.io/challenges/git).
 
 In this challenge, you'll build a small Git implementation that's capable of
@@ -11,9 +11,9 @@ commits, trees etc.), Git's transfer protocols and more.
 
 # Usage
 
-1. Ensure you have `{{ required_executable }}` installed locally
+1. Ensure you have `rust (1.43)` installed locally
 1. Run `./your_git.sh` to run your Git implementation, which is implemented in
-   `{{ user_editable_file }}`.
+   `src/main.rs`.
 1. Commit your changes and run `git push origin master` to submit your solution
    to CodeCrafters. Test output will be streamed to your terminal.
 
@@ -55,7 +55,7 @@ git push origin master
 You should see a failure message that says the `.git` directory wasn't
 initialized.
 
-Go to `{{ user_editable_file }}` and uncomment the implementation for the `init`
+Go to `src/main.rs` and uncomment the implementation for the `init`
 command. Commit and push your changes to pass the first stage.
 
 Time to move on to the next stage!
