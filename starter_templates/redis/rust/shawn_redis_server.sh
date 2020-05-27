@@ -1,2 +1,2 @@
 #!/bin/sh
-exec cargo run 
+exec cargo run \
