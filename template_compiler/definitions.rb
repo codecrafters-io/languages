@@ -159,7 +159,7 @@ DEFINITIONS = [
       FM.new("your_git.sh", "git/rust/your_git.sh", is_executable=true),
     ],
     template_attrs: {
-      "required_executable": "rust (1.43)",
+      "required_executable": "cargo (1.43)",
       "user_editable_file": "src/main.rs"
     }
   ),
