@@ -13,7 +13,9 @@ commits, trees etc.), Git's transfer protocols and more.
 
 1. Ensure you have `cargo (1.43)` installed locally
 1. Run `./your_git.sh` to run your Git implementation, which is implemented in
-   `src/main.rs`.
+   `src/main.rs`. This command compiles your
+   Rust project, so it might be slow the first time you run it. Subsequent runs
+   will be fast.
 1. Commit your changes and run `git push origin master` to submit your solution
    to CodeCrafters. Test output will be streamed to your terminal.
 
