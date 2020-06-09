@@ -5,3 +5,4 @@ tmp/
 __pycache__
 .bundle
 .starter_testers
+node_modules

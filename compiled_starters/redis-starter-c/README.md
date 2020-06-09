@@ -11,8 +11,8 @@ event loops, the Redis protocol and more.
 # Usage
 
 1. Ensure you have `gcc` installed locally
-1. Run `./spawn_redis_server.sh` to run your Redis server, which is implemented in
-   `app/server.c`.
+1. Run `./spawn_redis_server.sh` to run your Redis server, which is implemented
+   in `app/server.c`.
 1. Commit your changes and run `git push origin master` to submit your solution
    to CodeCrafters. Test output will be streamed to your terminal.
 
@@ -21,7 +21,7 @@ event loops, the Redis protocol and more.
 CodeCrafters runs tests when you do a `git push`. Make an empty commit and push
 your solution to see the first stage fail.
 
-``` sh
+```sh
 git commit --allow-empty -m "Running tests"
 git push origin master
 ```
@@ -29,8 +29,7 @@ git push origin master
 You should see a failure message that says it wasn't able to connect to port
 `6379`.
 
-Go to `app/server.c` and uncomment the server implementation. Commit and
-push your changes, and you'll now see the first stage pass.
+Go to `app/server.c` and uncomment the server implementation. Commit and push
+your changes, and you'll now see the first stage pass.
 
 Time to move on to the next stage!
-
