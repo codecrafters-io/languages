@@ -9,7 +9,7 @@ end
 class Uncommenter
   POUND_SIGN = /(^\s*)(#\s{0,1})/
   DOUBLE_SLASHES = /(^\s*)(\/\/\s{0,1})/
-  DOUBLE_HYPHENS = /(^\s*)(--\s{0,1})/
+  DOUBLE_HYPHENS = /(^\s*)(\-\-\s{0,1})/
 
   REGEX_PATTERNS = {
     "python" => POUND_SIGN,
@@ -29,6 +29,7 @@ class Uncommenter
   end
 
   def uncommented
+
     raise UncommentMarkerNotFound.new(
       code,
       uncomment_marker_pattern
