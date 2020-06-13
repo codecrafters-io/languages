@@ -60,6 +60,25 @@ func main() {
 }
 """
 
+SAMPLE_HASKELL_COMMENTD = """
+main = do
+ -- Uncomment this to pass the first stage
+ -- a <- readLine
+ -- b <- readLine
+ -- -- Nested Comment
+ -- return (a + b)
+"""
+
+
+SAMPLE_HASKELL_UNCOMMENTD = """
+main = do
+ -- Uncomment this to pass the first stage
+ a <- readLine
+ b <- readLine
+ -- Nested Comment
+ return (a + b)
+"""
+
 UNCOMMENT_PATTERN = /Uncomment this/
 
 class TestUncommenter < Minitest::Test
@@ -90,6 +109,18 @@ class TestUncommenter < Minitest::Test
   def test_twice_go
     actual = Uncommenter.new("go", SAMPLE_GO_UNCOMMENTED, UNCOMMENT_PATTERN).uncommented
     expected = SAMPLE_GO_UNCOMMENTED
+    assert_equal expected, actual
+  end
+
+  def test_haskell
+    actual = Uncommenter.new("haskell", SAMPLE_HASKELL_COMMENTD, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_HASKELL_UNCOMMENTD
+    assert_equal expected, actual
+  end
+
+  def test_twice_haskell
+    actual = Uncommenter.new("haskell", SAMPLE_HASKELL_UNCOMMENTD, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_HASKELL_UNCOMMENTD
     assert_equal expected, actual
   end
 end
