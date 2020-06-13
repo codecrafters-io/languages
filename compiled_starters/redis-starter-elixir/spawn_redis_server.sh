@@ -1,2 +1,3 @@
 #!/bin/sh
-exec python -m app.main
+set -e
+(cd app && mix runserver)
