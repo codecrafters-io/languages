@@ -10,7 +10,6 @@ gem "colorize"
 gem "diffy"
 
 group :development do
-  gem "solargraph"
   gem "pry"
 end
 
