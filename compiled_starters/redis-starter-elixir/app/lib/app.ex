@@ -1,4 +1,5 @@
 defmodule YourRedisServer do
+
   @moduledoc """
   Module containing implementation for the redis server
   """
@@ -6,8 +7,8 @@ defmodule YourRedisServer do
   @doc """
   Function to start the server
   """
-  @spec start(integer()) :: no_return()
-  def start(port \\ 6379) do
+
+  def start() do
     IO.puts("Your code goes here!")
 
     # Uncomment this block to pass the first stage
