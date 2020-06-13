@@ -5,11 +5,11 @@ This repository powers multiple language support for
 
 - [Objective](#objective)
 - [Components](#components)
-  * [Dockerfile](#dockerfile)
-  * [Starter Repo](#starter-repo)
+  - [Dockerfile](#dockerfile)
+  - [Starter Repo](#starter-repo)
 - [Constraints](#constraints)
-  * [Fast build times](#fast-build-times)
-  * [Easy to start](#easy-to-start)
+  - [Fast build times](#fast-build-times)
+  - [Easy to start](#easy-to-start)
 - [[WIP] Contributing](#wip-contributing)
 
 <!-- tocstop -->
@@ -19,12 +19,12 @@ This repository powers multiple language support for
 The language one uses for a CodeCrafters challenge is an integral part of the
 challenge experience. A few questions to think about:
 
-- Is it easy to setup locally? 
+- Is it easy to setup locally?
 - Does the standard library have all required functions to complete the
   challenge?
-- Are there any tricky areas where people are likely to get stuck? 
+- Are there any tricky areas where people are likely to get stuck?
 
-We'll tackle these problems through a combination of: 
+We'll tackle these problems through a combination of:
 
 - Sample code to get started
 - Troubleshooting advice in the README
@@ -37,13 +37,13 @@ things in place:
 
 - A [Dockerfile](https://docs.docker.com/engine/reference/builder/), which'll be
   used to build the container where code is evaluated.
-- A starter repo, like [this
-  one](https://github.com/codecrafters-io/redis-starter-py).
+- A starter repo, like
+  [this one](https://github.com/codecrafters-io/redis-starter-py).
 
 ### Dockerfile
 
-You'll need one Dockerfile per language version supported. These'll be placed under the
-`dockerfiles/<course>` folder. 
+You'll need one Dockerfile per language version supported. These'll be placed
+under the `dockerfiles/<course>` folder.
 
 The Dockerfile needs to setup the language + all required dependencies, and make
 the `tester` executable available at `/bin/tester`.
@@ -52,16 +52,16 @@ Wherever possible, utilize Docker's build cache.
 
 ### Starter Repo
 
-The starter repo needs to contains the following files: 
+The starter repo needs to contains the following files:
 
 - `codecrafters.yml`
 - `README.md`
 - An executable script / entry point, based on the challenge. `your_docker.sh`
-  for Docker, `your_git.sh` for Git etc. 
+  for Docker, `your_git.sh` for Git etc.
 - An `app` folder, that contains boilerplate code that the user will build upon.
   This code must also include a section that can be commented out to pass the
-  first stage. 
-  
+  first stage.
+
 Any language-specific code must adhere to common conventions or style guides for
 that language.
 
@@ -77,8 +77,8 @@ Slow build times drastically affect the codecrafters challenge experience.
 Building an image for a language and executing the starter should be snappy -
 ideally under 1 second.
 
-To achieve this, we use [Docker's build
-caching](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#leverage-build-cache).
+To achieve this, we use
+[Docker's build caching](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#leverage-build-cache).
 
 ### Easy to start
 
@@ -92,5 +92,5 @@ all code needed to pass the first stage.
 ## [WIP] Contributing
 
 Thanks for considering contributing to this project! We've made a detailed guide
-for you at `CONTRIBUTING.md`. If you need help, feel free to ask in the [early
-access](https://codecrafters.io/early-access) Discord server.
+for you at `CONTRIBUTING.md`. If you need help, feel free to ask in the
+[early access](https://codecrafters.io/early-access) Discord server.
