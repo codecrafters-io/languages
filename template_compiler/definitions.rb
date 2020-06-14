@@ -82,6 +82,7 @@ DEFINITIONS = [
       FM.new("stack.yaml", "redis/haskell/stack.yaml"),
       FM.new("stack.yaml.lock", "redis/haskell/stack.yaml.lock"),
       FM.new("app/Main.hs", "redis/haskell/app/Main.hs"),
+      FM.new(".gitignore", "redis/haskell/.gitignore"),
       FM.new("spawn_redis_server.sh", "redis/haskell/spawn_redis_server.sh", is_executable=true),
     ],
       template_attrs: {
