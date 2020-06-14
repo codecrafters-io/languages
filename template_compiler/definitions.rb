@@ -10,6 +10,7 @@ go = Language.new(slug: "go", name: "Go", repo_suffix: "go")
 c = Language.new(slug: "c", name: "C", repo_suffix: "c")
 ruby = Language.new(slug: "ruby", name: "Ruby", repo_suffix: "ruby")
 rust = Language.new(slug: "rust", name: "Rust", repo_suffix: "rust")
+haskell = Language.new(slug: "haskell", name: "Haskell", repo_suffix: "haskell")
 
 DEFINITIONS = [
   # ------------------- REDIS ------------------------------
@@ -68,6 +69,25 @@ DEFINITIONS = [
       "required_executable": "ruby (2.7)",
       "user_editable_file": "app/server.rb"
     }
+  ),
+  Repo.new(
+    course: redis,
+    language: haskell,
+    file_mappings: [
+      FM.new("README.md", "redis/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("hs-redis-clone.cabal", "redis/haskell/hs-redis-clone.cabal"),
+      FM.new(".gitignore", "redis/haskell/.gitignore"),
+      FM.new("package.yaml", "redis/haskell/package.yaml"),
+      FM.new("stack.yaml", "redis/haskell/stack.yaml"),
+      FM.new("stack.yaml.lock", "redis/haskell/stack.yaml.lock"),
+      FM.new("app/Main.hs", "redis/haskell/app/Main.hs"),
+      FM.new("spawn_redis_server.sh", "redis/haskell/spawn_redis_server.sh", is_executable=true),
+    ],
+      template_attrs: {
+        "required_executable": "stack",
+        "user_editable_file": "Main.hs"
+      }
   ),
 
   # ------------------- DOCKER ------------------------------

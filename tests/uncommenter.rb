@@ -9,13 +9,15 @@ end
 class Uncommenter
   POUND_SIGN = /(^\s*)(#\s{0,1})/
   DOUBLE_SLASHES = /(^\s*)(\/\/\s{0,1})/
+  DOUBLE_HYPHENS = /(^\s*)(\-\-\s{0,1})/
 
   REGEX_PATTERNS = {
     "python" => POUND_SIGN,
     "ruby" => POUND_SIGN,
     "go" => DOUBLE_SLASHES,
     "c" => DOUBLE_SLASHES,
-    "rust" => DOUBLE_SLASHES
+    "rust" => DOUBLE_SLASHES,
+    "haskell" => DOUBLE_HYPHENS
   }
 
   attr_reader :language, :code, :uncomment_marker_pattern
@@ -27,6 +29,7 @@ class Uncommenter
   end
 
   def uncommented
+
     raise UncommentMarkerNotFound.new(
       code,
       uncomment_marker_pattern
