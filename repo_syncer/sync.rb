@@ -21,7 +21,7 @@ class RepoSyncer
     EOF
 
     gh_files = Dir
-                 .glob("#{directory}/**/*")
+                 .glob("#{directory}/**/{*,.*}")
                  .reject { |f| File.directory?(f) }
                  .map do |file|
                     {
