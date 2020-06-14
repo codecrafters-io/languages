@@ -1,2 +1,2 @@
 #!/bin/bash
-stack run --silent
+exec stack run --silent
