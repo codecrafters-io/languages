@@ -17,7 +17,8 @@ class Uncommenter
     "go" => DOUBLE_SLASHES,
     "c" => DOUBLE_SLASHES,
     "rust" => DOUBLE_SLASHES,
-    "haskell" => DOUBLE_HYPHENS
+    "haskell" => DOUBLE_HYPHENS,
+    "kotlin" => DOUBLE_SLASHES
   }
 
   attr_reader :language, :code, :uncomment_marker_pattern

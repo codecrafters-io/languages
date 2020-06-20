@@ -6,6 +6,8 @@ require_relative "starter_repo_tester"
 course_filter = ARGV[0]
 language_filter = ARGV[1]
 
+puts "Course Filter:#{course_filter}, Language Filter:#{language_filter}"
+
 dockerfile_testers = Dir["dockerfiles/**/*.Dockerfile"].map do |path| 
   DockerfileTester.from_dockerfile(path)
 end
