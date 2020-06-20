@@ -11,6 +11,7 @@ c = Language.new(slug: "c", name: "C", repo_suffix: "c")
 ruby = Language.new(slug: "ruby", name: "Ruby", repo_suffix: "ruby")
 rust = Language.new(slug: "rust", name: "Rust", repo_suffix: "rust")
 haskell = Language.new(slug: "haskell", name: "Haskell", repo_suffix: "haskell")
+kotlin = Language.new(slug: "kotlin", name: "Kotlin", repo_suffix: "kotlin")
 
 DEFINITIONS = [
   # ------------------- REDIS ------------------------------
@@ -183,5 +184,19 @@ DEFINITIONS = [
       "user_editable_file": "src/main.rs"
     }
   ),
+  Repo.new(
+    course: git,
+    language: kotlin,
+    file_mappings: [
+      FM.new("README.md", "git/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.kt", "git/kotlin/app/main.kt"),
+      FM.new("your_git.sh", "git/kotlin/your_git.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "kotlin",
+      "user_editable_file": "app/main.kt"
+    }
+  )
 
 ]
