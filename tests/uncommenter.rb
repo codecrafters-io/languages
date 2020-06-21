@@ -18,7 +18,8 @@ class Uncommenter
     "c" => DOUBLE_SLASHES,
     "rust" => DOUBLE_SLASHES,
     "haskell" => DOUBLE_HYPHENS,
-    "kotlin" => DOUBLE_SLASHES
+    "kotlin" => DOUBLE_SLASHES,
+    "java" => DOUBLE_SLASHES
   }
 
   attr_reader :language, :code, :uncomment_marker_pattern

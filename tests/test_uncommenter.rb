@@ -79,6 +79,32 @@ main = do
  return (a + b)
 """
 
+SAMPLE_JAVA_COMMENTED = """
+public static void main(String[] args) {
+  // Uncomment this to pass the first stage
+//
+  // // This is an assignment
+  // int a = 1;
+//
+  // System.out.println('Hey');
+
+  int b = 2;
+}
+"""
+
+SAMPLE_JAVA_UNCOMMENTED = """
+public static void main(String[] args) {
+  // Uncomment this to pass the first stage
+
+  // This is an assignment
+  int a = 1;
+
+  System.out.println('Hey');
+
+  int b = 2;
+}
+"""
+
 UNCOMMENT_PATTERN = /Uncomment this/
 
 class TestUncommenter < Minitest::Test
@@ -121,6 +147,18 @@ class TestUncommenter < Minitest::Test
   def test_twice_haskell
     actual = Uncommenter.new("haskell", SAMPLE_HASKELL_UNCOMMENTD, UNCOMMENT_PATTERN).uncommented
     expected = SAMPLE_HASKELL_UNCOMMENTD
+    assert_equal expected, actual
+  end
+
+  def test_java
+    actual = Uncommenter.new("java", SAMPLE_JAVA_COMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_JAVA_UNCOMMENTED
+    assert_equal expected, actual
+  end
+
+  def test_twice_java
+    actual = Uncommenter.new("java", SAMPLE_JAVA_UNCOMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_JAVA_UNCOMMENTED
     assert_equal expected, actual
   end
 end

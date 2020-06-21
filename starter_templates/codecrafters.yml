@@ -43,3 +43,7 @@ language_pack: haskell-8.8
 # Available versions: kotlin-1.3.72
 language_pack: kotlin-1.3.72
 {{/ language_is_kotlin }}
+{{# language_is_java }}
+# Available versions: java-1.8
+language_pack: java-1.8
+{{/ language_is_java }}
