@@ -12,7 +12,7 @@ fun main(args: Array<String>) {
 //            println("Initialized git directory")
 //        }
 //
-//        else -> throw IllegalArgumentException("Unknown command: ${args[1]}")
+//        else -> throw IllegalArgumentException("Unknown command: ${args[0]}")
 //    }
 }
 
