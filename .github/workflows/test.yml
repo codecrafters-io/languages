@@ -68,6 +68,7 @@ jobs:
     - run: bundle install --without=development
     - run: make test_git
 
+
   git_rust_temp:
     runs-on: ubuntu-latest
 
@@ -78,4 +79,5 @@ jobs:
     - run: gem install bundler
     - run: bundle install --without=development
     - run: make test_git_rust
+
 

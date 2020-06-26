@@ -1,11 +1,11 @@
 This is a starting point for C solutions to the
 ["Build Your Own Docker" Challenge](https://codecrafters.io/challenges/docker).
 
-In this challenge, you'll build a program that can pull an image from [Docker
-Hub](https://hub.docker.com/) and execute commands in it. Along the way, we'll
-learn about [chroot](https://en.wikipedia.org/wiki/Chroot), [kernel
-namespaces](https://en.wikipedia.org/wiki/Linux_namespaces), the [docker
-registry API](https://docs.docker.com/registry/spec/api/) and much more.
+In this challenge, you'll build a program that can pull an image from
+[Docker Hub](https://hub.docker.com/) and execute commands in it. Along the way,
+we'll learn about [chroot](https://en.wikipedia.org/wiki/Chroot),
+[kernel namespaces](https://en.wikipedia.org/wiki/Linux_namespaces), the
+[docker registry API](https://docs.docker.com/registry/spec/api/) and much more.
 
 **Note**: If you're viewing this repo on GitHub, head over to
 [codecrafters.io](https://codecrafters.io) to signup for early access.
@@ -26,7 +26,7 @@ registry API](https://docs.docker.com/registry/spec/api/) and much more.
 Since you'll need to use linux-specific syscalls in this challenge, we'll run
 your code _inside_ a docker container.
 
-``` sh
+```sh
 docker build -t my_docker .
 docker run --cap-add="SYS_ADMIN" my_docker run some_image /usr/local/bin/docker-explorer echo hey
 ```
@@ -38,7 +38,7 @@ docker run --cap-add="SYS_ADMIN" my_docker run some_image /usr/local/bin/docker-
 CodeCrafters runs tests when you do a `git push`. Make an empty commit and push
 your solution to see the first stage fail.
 
-``` sh
+```sh
 git commit --allow-empty -m "Running tests"
 git push origin master
 ```

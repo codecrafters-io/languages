@@ -11,9 +11,10 @@ commits, trees etc.), Git's transfer protocols and more.
 
 # Usage
 
-1. Ensure you have `rust (1.43)` installed locally
+1. Ensure you have `cargo (1.43)` installed locally
 1. Run `./your_git.sh` to run your Git implementation, which is implemented in
-   `src/main.rs`.
+   `src/main.rs`. This command compiles your Rust project, so it might be slow
+   the first time you run it. Subsequent runs will be fast.
 1. Commit your changes and run `git push origin master` to submit your solution
    to CodeCrafters. Test output will be streamed to your terminal.
 
@@ -27,15 +28,15 @@ folder.
 We suggest executing `your_git.sh` in a different folder when testing locally.
 For example:
 
-``` sh
+```sh
 mkdir -p /tmp/testing && cd /tmp/testing
 /path/to/your/repo/your_git.sh init
 ```
 
-To make this easier to type out, you could add a [shell
-alias](https://shapeshed.com/unix-alias/):
+To make this easier to type out, you could add a
+[shell alias](https://shapeshed.com/unix-alias/):
 
-``` sh
+```sh
 alias mygit=/path/to/your/repo/your_git.sh
 
 mkdir -p /tmp/testing && cd /tmp/testing
@@ -47,7 +48,7 @@ mygit init
 CodeCrafters runs tests when you do a `git push`. Make an empty commit and push
 your solution to see the first stage fail.
 
-``` sh
+```sh
 git commit --allow-empty -m "Running tests"
 git push origin master
 ```
@@ -55,7 +56,7 @@ git push origin master
 You should see a failure message that says the `.git` directory wasn't
 initialized.
 
-Go to `src/main.rs` and uncomment the implementation for the `init`
-command. Commit and push your changes to pass the first stage.
+Go to `src/main.rs` and uncomment the implementation for the `init` command.
+Commit and push your changes to pass the first stage.
 
 Time to move on to the next stage!

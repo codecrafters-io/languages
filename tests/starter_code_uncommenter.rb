@@ -52,7 +52,8 @@ class StarterCodeUncommenter
       "python" => "py",
       "ruby" => "rb",
       "c" => "c",
-      "rust" => "rs"
+      "rust" => "rs",
+      "haskell" => "hs"
     }.fetch(language)
   end
 end

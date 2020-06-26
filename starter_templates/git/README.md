@@ -13,7 +13,9 @@ commits, trees etc.), Git's transfer protocols and more.
 
 1. Ensure you have `{{ required_executable }}` installed locally
 1. Run `./your_git.sh` to run your Git implementation, which is implemented in
-   `{{ user_editable_file }}`.
+   `{{ user_editable_file }}`.{{# language_is_rust }} This command compiles your
+   Rust project, so it might be slow the first time you run it. Subsequent runs
+   will be fast.{{/ language_is_rust}}
 1. Commit your changes and run `git push origin master` to submit your solution
    to CodeCrafters. Test output will be streamed to your terminal.
 
