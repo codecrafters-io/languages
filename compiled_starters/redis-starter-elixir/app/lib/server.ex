@@ -1,4 +1,4 @@
-defmodule YourRedisServer do
+defmodule Server do
   require Logger
 
   @moduledoc """
@@ -16,8 +16,7 @@ defmodule YourRedisServer do
   end
 
   defp accept_connection(socket) do
-    {:ok, client} = :gen_tcp.accept(socket)
-    # serve(client)
+    {:ok, _client} = :gen_tcp.accept(socket)
     accept_connection(socket)
   end
 end

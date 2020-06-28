@@ -1,4 +1,4 @@
-defmodule YourRedisServerTest do
+defmodule ServerTest do
   use ExUnit.Case
 
   test "greets the world" do
