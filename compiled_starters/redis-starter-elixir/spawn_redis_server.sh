@@ -1,3 +1,3 @@
 #!/bin/sh
 set -e
-(cd app && mix runserver)
+(cd app && mix run --no-halt)
