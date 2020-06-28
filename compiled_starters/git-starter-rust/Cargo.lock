@@ -243,6 +243,7 @@ dependencies = [
 name = "git-starter-rust"
 version = "0.1.0"
 dependencies = [
+ "bytes",
  "flate2",
  "reqwest",
  "sha-1",
