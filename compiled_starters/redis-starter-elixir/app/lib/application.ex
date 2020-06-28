@@ -6,7 +6,7 @@ defmodule Server.Application do
       Server.accept()
     ]
 
-    opts = [strategy: :one_for_one, name: Server.Supervisor]
+    opts = [strategy: :simple_one_for_one, name: Server.Supervisor]
     Supervisor.start_link(children, opts)
   end
 end
