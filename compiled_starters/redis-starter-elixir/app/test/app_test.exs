@@ -1,6 +1,5 @@
-defmodule AppTest do
+defmodule YourRedisServerTest do
   use ExUnit.Case
-  doctest App
 
   test "greets the world" do
     assert App.hello() == :world

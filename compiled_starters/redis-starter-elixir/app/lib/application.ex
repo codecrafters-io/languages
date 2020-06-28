@@ -3,7 +3,7 @@ defmodule YourRedisServer.Application do
 
   def start(_type, _args) do
     children = [
-      {Task, fn -> YourRedisServer.accept() end}
+      YourRedisServer.accept()
     ]
 
     opts = [strategy: :one_for_one, name: YourRedisServer.Supervisor]
