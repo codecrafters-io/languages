@@ -1,0 +1,7 @@
+defmodule ServerTest do
+  use ExUnit.Case
+
+  test "greets the world" do
+    assert App.hello() == :world
+  end
+end
