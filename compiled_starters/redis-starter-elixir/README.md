@@ -1,4 +1,4 @@
-This is a starting point for Python solutions to the
+This is a starting point for Elixir solutions to the
 ["Build Your Own Redis" Challenge](https://codecrafters.io/challenges/redis).
 
 In this challenge, you'll build a toy Redis clone that's capable of handling
@@ -10,9 +10,9 @@ event loops, the Redis protocol and more.
 
 # Usage
 
-1. Ensure you have `python (3.8)` installed locally
+1. Ensure you have `elixir (1.10)` installed locally
 1. Run `./spawn_redis_server.sh` to run your Redis server, which is implemented
-   in `app/main.py`.
+   in `app/lib/server.ex`.
 1. Commit your changes and run `git push origin master` to submit your solution
    to CodeCrafters. Test output will be streamed to your terminal.
 
@@ -36,27 +36,5 @@ Time to move on to the next stage!
 
 # Troubleshooting
 
-## module `socket` has no attribute `create_server`
-
-When running your server locally, you might see an error like this:
-
-```
-Traceback (most recent call last):
-  File "/.../python3.7/runpy.py", line 193, in _run_module_as_main
-    "__main__", mod_spec)
-  File "/.../python3.7/runpy.py", line 85, in _run_code
-    exec(code, run_globals)
-  File "/app/app/main.py", line 11, in <module>
-    main()
-  File "/app/app/main.py", line 6, in main
-    s = socket.create_server(("localhost", 6379), reuse_port=True)
-AttributeError: module 'socket' has no attribute 'create_server'
-```
-
-This is because `socket.create_server` was introduced in Python 3.8, and you
-might be running an older version.
-
-You can fix this by installing Python 3.8 locally and using that.
-
-If you'd like to use a different version of Python, change the `language_pack`
+If you'd like to use a different version of Elixir, change the `language_pack`
 value in `codecrafters.yml`.
