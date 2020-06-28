@@ -1,3 +1,3 @@
 #!/bin/sh
 set -e
-(cd app && mix run --no-halt)
+exec (cd app && mix run --no-halt)
