@@ -1,4 +1,4 @@
-This is a starting point for Elixir solutions to the
+This is a starting point for Elixirsolutions to the
 ["Build Your Own Redis" Challenge](https://codecrafters.io/challenges/redis).
 
 In this challenge, you'll build a toy Redis clone that's capable of handling
