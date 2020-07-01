@@ -31,4 +31,3 @@ use Mix.Config
 
 config :redis,
   port: 6379
-
