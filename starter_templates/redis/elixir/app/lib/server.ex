@@ -10,18 +10,15 @@ defmodule Server do
   """
   def accept() do
     IO.puts("Your code goes here!")
-    dummy_loop() # Remove this line
     # Uncomment this block to pass the first stage
+    #
     # {:ok, socket} = :gen_tcp.listen(@port, [:binary, active: false, reuseaddr: true])
-    # accept_connection(socket)
+    dummy_loop() 
   end
 
-  # Uncomment this function as well to pass the first stage
-  # defp accept_connection(socket) do
-  #   accept_connection(socket)
-  # end
-
-  # Delete this function as well.
+  @doc """
+  Loop to ensure the server can execute. Delete this function.
+  """
   def dummy_loop() do
     dummy_loop()
   end
