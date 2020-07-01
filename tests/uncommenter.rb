@@ -1,7 +1,7 @@
 class UncommentMarkerNotFound < Exception
   def initialize(code, marker_pattern)
     super <<~EOF
-      Didn't find a line that matches #{marker_pattern.inspect} in file.
+      Didn't find a line that matches #{marker_pattern.inspect} in file. Code: #{code}
     EOF
   end
 end
