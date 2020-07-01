@@ -3,6 +3,8 @@ defmodule Server.Application do
 
   def start(_type, _args) do
     children = [
+      # Uncomment this to pass the first stage
+      #
       Server.accept()
     ]
 
