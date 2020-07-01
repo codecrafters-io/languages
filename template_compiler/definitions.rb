@@ -96,7 +96,10 @@ DEFINITIONS = [
     file_mappings: [
       FM.new("README.md", "redis/README.md"),
       FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/config/config.exs", "redis/elixir/app/config/config.exs"),
       FM.new("app/lib/server.ex", "redis/elixir/app/lib/server.ex"),
+      FM.new("app/lib/application.ex", "redis/elixir/app/lib/application.ex"),
+      FM.new("app/mix.exs", "redis/elixir/app/mix.exs"),
       FM.new("spawn_redis_server.sh", "redis/elixir/spawn_redis_server.sh", is_executable=true),
     ],
     template_attrs: {
