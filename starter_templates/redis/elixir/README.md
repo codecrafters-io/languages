@@ -1,4 +1,4 @@
-This is a starting point for Elixir solutions to the
+This is a starting point for Elixirsolutions to the
 ["Build Your Own Redis" Challenge](https://codecrafters.io/challenges/redis).
 
 In this challenge, you'll build a toy Redis clone that's capable of handling
@@ -29,8 +29,8 @@ git push origin master
 You should see a failure message that says it wasn't able to connect to port
 `6379`.
 
-Go to `app/main.py` and uncomment the server implementation. Commit and push
-your changes, and you'll now see the first stage pass.
+Go to `app/lib/server.ex` and uncomment the server implementation. Also delete the looping funciton. 
+Commit and push your changes, and you'll now see the first stage pass.
 
 Time to move on to the next stage!
 
