@@ -3,7 +3,16 @@ defmodule Server do
   Module containing implementation for the redis server
   """
 
-  @port Application.fetch_env!(:redis, :port)
+  use Application
+
+  def start(_type, _args) do
+    children = [
+      Server.accept()
+    ]
+
+    opts = [strategy: :simple_one_for_one, name: Server.Supervisor]
+    Supervisor.start_link(children, opts)
+  end
 
   @doc """
   Function to start the server
@@ -12,7 +21,7 @@ defmodule Server do
     IO.puts("Your code goes here!")
     # Uncomment this block to pass the first stage
     #
-    # {:ok, socket} = :gen_tcp.listen(@port, [:binary, active: false, reuseaddr: true])
+    # {:ok, socket} = :gen_tcp.listen(6379, [:binary, active: false, reuseaddr: true])
     dummy_loop()
   end
 
