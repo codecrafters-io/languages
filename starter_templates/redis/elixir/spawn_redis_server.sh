@@ -1,3 +1,4 @@
 #!/bin/sh
 set -e
-cd app && mix run --no-halt
+cd app/
+exec mix run --no-halt
