@@ -19,17 +19,22 @@ defmodule Server do
   """
   def accept() do
     IO.puts("Your code goes here!")
+    socket = "dummy_val_remove_this_line"
     # Uncomment this block to pass the first stage
     #
     # {:ok, socket} = :gen_tcp.listen(6379, [:binary, active: false, reuseaddr: true])
-    dummy_loop()
+    loop_acceptor(socket)
   end
 
   @doc """
-  Loop to ensure the server can execute. Delete this function once you have implemented the function to process
-  input from the socket.
+  Loop to ensure the server can execute. 
   """
-  def dummy_loop() do
-    dummy_loop()
+  def loop_acceptor(socket) do
+    # Uncomment this block to pass the first stage
+    #
+    # {:ok, _client} = :gen_tcp.accept(socket)
+    # :gen_tcp.recv(socket, 0)
+    # Process.exit(self(), :kill) # To kill the process. Remove this line once you can read messages from sockets.
+    loop_acceptor(socket)
   end
 end
