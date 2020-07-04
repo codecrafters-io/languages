@@ -53,7 +53,8 @@ class StarterCodeUncommenter
       "ruby" => "rb",
       "c" => "c",
       "rust" => "rs",
-      "haskell" => "hs"
+      "haskell" => "hs",
+      "kotlin" => "kt"
     }.fetch(language)
   end
 end
