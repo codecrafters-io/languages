@@ -18,7 +18,7 @@ class Uncommenter
     "c" => DOUBLE_SLASHES,
     "rust" => DOUBLE_SLASHES,
     "haskell" => DOUBLE_HYPHENS,
-    "elixir" => POUND_SIGN
+    "elixir" => POUND_SIGN,
     "kotlin" => DOUBLE_SLASHES
   }
 
