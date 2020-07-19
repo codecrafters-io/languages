@@ -11,7 +11,7 @@ c = Language.new(slug: "c", name: "C", repo_suffix: "c")
 ruby = Language.new(slug: "ruby", name: "Ruby", repo_suffix: "ruby")
 rust = Language.new(slug: "rust", name: "Rust", repo_suffix: "rust")
 haskell = Language.new(slug: "haskell", name: "Haskell", repo_suffix: "haskell")
-elixir = Language.new(slug: "ex", name: "Elixir", repo_suffix: "elixir")
+elixir = Language.new(slug: "elixir", name: "Elixir", repo_suffix: "elixir")
 kotlin = Language.new(slug: "kotlin", name: "Kotlin", repo_suffix: "kotlin")
 
 DEFINITIONS = [
@@ -108,7 +108,7 @@ DEFINITIONS = [
   ),
 
   # ------------------- DOCKER ------------------------------
-  
+
   Repo.new(
     course: docker,
     language: go,
