@@ -11,6 +11,7 @@ c = Language.new(slug: "c", name: "C", repo_suffix: "c")
 ruby = Language.new(slug: "ruby", name: "Ruby", repo_suffix: "ruby")
 rust = Language.new(slug: "rust", name: "Rust", repo_suffix: "rust")
 haskell = Language.new(slug: "haskell", name: "Haskell", repo_suffix: "haskell")
+elixir = Language.new(slug: "elixir", name: "Elixir", repo_suffix: "elixir")
 kotlin = Language.new(slug: "kotlin", name: "Kotlin", repo_suffix: "kotlin")
 
 DEFINITIONS = [
@@ -90,9 +91,24 @@ DEFINITIONS = [
         "user_editable_file": "Main.hs"
       }
   ),
+  Repo.new(
+    course: redis,
+    language: elixir,
+    file_mappings: [
+      FM.new("README.md", "redis/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("lib/server.ex", "redis/elixir/lib/server.ex"),
+      FM.new("mix.exs", "redis/elixir/mix.exs"),
+      FM.new("spawn_redis_server.sh", "redis/elixir/spawn_redis_server.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "mix",
+      "user_editable_file": "lib/server.ex"
+    }
+  ),
 
   # ------------------- DOCKER ------------------------------
-  
+
   Repo.new(
     course: docker,
     language: go,

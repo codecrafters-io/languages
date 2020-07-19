@@ -54,6 +54,7 @@ class StarterCodeUncommenter
       "c" => "c",
       "rust" => "rs",
       "haskell" => "hs",
+      "elixir" => "ex",
       "kotlin" => "kt"
     }.fetch(language)
   end
