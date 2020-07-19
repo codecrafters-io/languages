@@ -12,7 +12,7 @@ event loops, the Redis protocol and more.
 
 1. Ensure you have `elixir` installed locally
 1. Run `./spawn_redis_server.sh` to run your Redis server, which is implemented
-   in `app/lib/server.ex`.
+   in `lib/server.ex`.
 1. Commit your changes and run `git push origin master` to submit your solution
    to CodeCrafters. Test output will be streamed to your terminal.
 
@@ -29,7 +29,7 @@ git push origin master
 You should see a failure message that says it wasn't able to connect to port
 `6379`.
 
-Go to `app/lib/server.ex` and uncomment the server implementation. Commit and
-push your changes, and you'll now see the first stage pass.
+Go to `lib/server.ex` and uncomment the server implementation. Commit and push
+your changes, and you'll now see the first stage pass.
 
 Time to move on to the next stage!
