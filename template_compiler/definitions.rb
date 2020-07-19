@@ -102,7 +102,7 @@ DEFINITIONS = [
       FM.new("spawn_redis_server.sh", "redis/elixir/spawn_redis_server.sh", is_executable=true),
     ],
     template_attrs: {
-      "required_executable": "elixir",
+      "required_executable": "mix",
       "user_editable_file": "lib/server.ex"
     }
   ),

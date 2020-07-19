@@ -10,7 +10,7 @@ event loops, the Redis protocol and more.
 
 # Usage
 
-1. Ensure you have `elixir` installed locally
+1. Ensure you have `mix` installed locally
 1. Run `./spawn_redis_server.sh` to run your Redis server, which is implemented
    in `lib/server.ex`.
 1. Commit your changes and run `git push origin master` to submit your solution
