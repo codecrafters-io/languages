@@ -97,13 +97,13 @@ DEFINITIONS = [
     file_mappings: [
       FM.new("README.md", "redis/README.md"),
       FM.new("codecrafters.yml", "codecrafters.yml"),
-      FM.new("app/lib/server.ex", "redis/elixir/app/lib/server.ex"),
-      FM.new("app/mix.exs", "redis/elixir/app/mix.exs"),
+      FM.new("lib/server.ex", "redis/elixir/lib/server.ex"),
+      FM.new("mix.exs", "redis/elixir/mix.exs"),
       FM.new("spawn_redis_server.sh", "redis/elixir/spawn_redis_server.sh", is_executable=true),
     ],
     template_attrs: {
       "required_executable": "elixir",
-      "user_editable_file": "app/lib/server.ex"
+      "user_editable_file": "lib/server.ex"
     }
   ),
 
