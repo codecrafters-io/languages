@@ -97,6 +97,7 @@ DEFINITIONS = [
     file_mappings: [
       FM.new("README.md", "redis/README.md"),
       FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new(".gitignore", "redis/elixir/.gitignore"),
       FM.new("lib/server.ex", "redis/elixir/lib/server.ex"),
       FM.new("mix.exs", "redis/elixir/mix.exs"),
       FM.new("spawn_redis_server.sh", "redis/elixir/spawn_redis_server.sh", is_executable=true),
