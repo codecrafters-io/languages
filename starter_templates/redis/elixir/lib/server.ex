@@ -6,12 +6,7 @@ defmodule Server do
   use Application
 
   def start(_type, _args) do
-    children = [
-      Server.listen()
-    ]
-
-    opts = [strategy: :simple_one_for_one, name: Server.Supervisor]
-    Supervisor.start_link(children, opts)
+    Supervisor.start_link([{Task, fn -> Server.listen() end}], strategy: :one_for_one)
   end
 
   @doc """
