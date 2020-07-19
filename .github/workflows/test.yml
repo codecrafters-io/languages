@@ -12,7 +12,8 @@ jobs:
     - run: gem install bundler
     - run: bundle install --without=development
     - run: make compile
-    - run: git diff --exit-code
+    - run: git diff --exit-code # Changes to existing files
+    - run: test -z "$(git ls-files compiled_starters/ --exclude-standard --others)" # Untracked files
 
   markdown_lint:
     runs-on: ubuntu-latest
