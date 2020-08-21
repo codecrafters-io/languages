@@ -106,6 +106,22 @@ DEFINITIONS = [
       "user_editable_file": "lib/server.ex"
     }
   ),
+  Repo.new(
+    course: redis,
+    language: rust,
+    file_mappings: [
+      FM.new("README.md", "redis/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("src/main.rs", "redis/rust/src/main.rs"),
+      FM.new("Cargo.toml", "redis/rust/Cargo.toml"),
+      FM.new("Cargo.lock", "redis/rust/Cargo.lock"),
+      FM.new("spawn_redis_server.sh", "redis/rust/spawn_redis_server.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "cargo (1.43)",
+      "user_editable_file": "src/main.rs"
+    }
+  ),
 
   # ------------------- DOCKER ------------------------------
 
