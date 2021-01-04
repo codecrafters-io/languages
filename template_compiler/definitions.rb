@@ -13,7 +13,7 @@ rust = Language.new(slug: "rust", name: "Rust", repo_suffix: "rust")
 haskell = Language.new(slug: "haskell", name: "Haskell", repo_suffix: "haskell")
 elixir = Language.new(slug: "elixir", name: "Elixir", repo_suffix: "elixir")
 kotlin = Language.new(slug: "kotlin", name: "Kotlin", repo_suffix: "kotlin")
-nodejs = language.new(slug: "nodejs", name: "Node.js", repo_suffix: "nodejs")
+nodejs = Language.new(slug: "nodejs", name: "Node.js", repo_suffix: "nodejs")
 
 DEFINITIONS = [
   # ------------------- REDIS ------------------------------
