@@ -2,7 +2,8 @@ const net = require('net');
 
 console.log("Implement your program here!");
 
-/* Comment out the code below to pass the first stage */
+// Uncomment this block to pass the first stage
+
 // const server = net.createServer(function(socket) {
 //   socket.write('Echo server\r\n');
 //   socket.pipe(socket);
