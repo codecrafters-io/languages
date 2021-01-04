@@ -79,6 +79,20 @@ main = do
  return (a + b)
 """
 
+SAMPLE_TYPESCRIPT_COMMENTED = """
+// Uncomment this to pass the first stage
+// var a: number = 1;
+// var b: number = 2;
+// console.log(a + b);
+"""
+
+SAMPLE_TYPESCRIPT_UNCOMMENTED = """
+// Uncomment this to pass the first stage
+var a: number = 1;
+var b: number = 2;
+console.log(a + b);
+"""
+
 UNCOMMENT_PATTERN = /Uncomment this/
 
 class TestUncommenter < Minitest::Test
@@ -121,6 +135,18 @@ class TestUncommenter < Minitest::Test
   def test_twice_haskell
     actual = Uncommenter.new("haskell", SAMPLE_HASKELL_UNCOMMENTD, UNCOMMENT_PATTERN).uncommented
     expected = SAMPLE_HASKELL_UNCOMMENTD
+    assert_equal expected, actual
+  end
+
+  def test_typescript
+    actual = Uncommenter.new("typescript", SAMPLE_TYPESCRIPT_COMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_TYPESCRIPT_UNCOMMENTED
+    assert_equal expected, actual
+  end
+
+  def test_twice_typescript
+    actual = Uncommenter.new("typescript", SAMPLE_TYPESCRIPT_UNCOMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_TYPESCRIPT_UNCOMMENTED
     assert_equal expected, actual
   end
 end
