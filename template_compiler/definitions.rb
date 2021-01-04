@@ -129,7 +129,7 @@ DEFINITIONS = [
     file_mappings: [
       FM.new("README.md", "redis/README.md"),
       FM.new("codecrafters.yml", "codecrafters.yml"),
-      FM.new("app/main.js", "redis/nodejs/app/main.py"),
+      FM.new("app/main.js", "redis/nodejs/app/main.js"),
       FM.new("spawn_redis_server.sh", "redis/nodejs/spawn_redis_server.sh", is_executable=true),
     ],
     template_attrs: {
