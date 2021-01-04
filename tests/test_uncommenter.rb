@@ -145,7 +145,7 @@ class TestUncommenter < Minitest::Test
   end
 
   def test_twice_nodejs
-    actual = Uncommenter.new("nodejs", SAMPLE_NODEJS_COMMENTED, UNCOMMENT_PATTERN).uncommented
+    actual = Uncommenter.new("nodejs", SAMPLE_NODEJS_UNCOMMENTED, UNCOMMENT_PATTERN).uncommented
     expected = SAMPLE_NODEJS_UNCOMMENTED
     assert_equal expected, actual
   end
