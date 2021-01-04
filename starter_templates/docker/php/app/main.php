@@ -9,6 +9,7 @@ while (ob_get_level() !== 0) {
 echo "Implement your program here!";
 
 /* Comment out the code below to pass the first stage */
+
 // $command = $argv[3];
 // $child_pid = pcntl_fork();
 // if ($child_pid == -1) {
