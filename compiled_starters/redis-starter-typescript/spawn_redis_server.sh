@@ -6,5 +6,5 @@
 #
 # DON'T EDIT THIS!
 npm install
-./node_modules/.bin/tsc app/main.ts
+./node_modules/.bin/tsc --build tsconfig.json
 exec node app/main.js

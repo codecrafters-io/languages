@@ -132,6 +132,7 @@ DEFINITIONS = [
       FM.new("app/main.ts", "redis/typescript/app/main.ts"),
       FM.new("package.json", "redis/typescript/package.json"),
       FM.new("package-lock.json", "redis/typescript/package-lock.json"),
+      FM.new("tsconfig.json", "redis/typescript/tsconfig.json"),
       FM.new("spawn_redis_server.sh", "redis/typescript/spawn_redis_server.sh", is_executable=true),
     ],
     template_attrs: {
