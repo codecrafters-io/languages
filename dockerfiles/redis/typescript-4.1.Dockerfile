@@ -1,6 +1,8 @@
 FROM mhart/alpine-node:14
 
-RUN npm install
-
-COPY . /app
 WORKDIR /app
+
+ADD package.json package-lock.json /app/
+
+RUN npm install
+COPY . /app
