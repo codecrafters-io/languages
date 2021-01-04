@@ -1,4 +1,4 @@
-This is a starting point for Node.js solutions to the
+This is a starting point for TypeScript solutions to the
 ["Build Your Own Redis" Challenge](https://codecrafters.io/challenges/redis).
 
 In this challenge, you'll build a toy Redis clone that's capable of handling
@@ -10,7 +10,7 @@ event loops, the Redis protocol and more.
 
 # Usage
 
-1. Ensure you have `node (14)` installed locally
+1. Ensure you have `typescript (4.1)` installed locally
 1. Run `./spawn_redis_server.sh` to run your Redis server, which is implemented
    in `app/main.ts`.
 1. Commit your changes and run `git push origin master` to submit your solution
