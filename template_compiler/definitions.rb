@@ -13,6 +13,7 @@ rust = Language.new(slug: "rust", name: "Rust", repo_suffix: "rust")
 haskell = Language.new(slug: "haskell", name: "Haskell", repo_suffix: "haskell")
 elixir = Language.new(slug: "elixir", name: "Elixir", repo_suffix: "elixir")
 kotlin = Language.new(slug: "kotlin", name: "Kotlin", repo_suffix: "kotlin")
+php = Language.new(slug: "php", name: "PHP", repo_suffix: "php")
 
 DEFINITIONS = [
   # ------------------- REDIS ------------------------------
@@ -155,6 +156,21 @@ DEFINITIONS = [
       "user_editable_file": "app/main.c"
     }
   ),
+    Repo.new(
+      course: docker,
+      language: php,
+      file_mappings: [
+        FM.new("README.md", "docker/README.md"),
+        FM.new("codecrafters.yml", "codecrafters.yml"),
+        FM.new("app/main.php", "docker/php/app/main.php"),
+        FM.new("Dockerfile", "docker/php/Dockerfile"),
+        FM.new("your_docker.sh", "docker/php/your_docker.sh", is_executable=true),
+      ],
+      template_attrs: {
+        "required_executable": "php (7.4)",
+        "user_editable_file": "app/main.php"
+      }
+    ),
 
   # ------------------- GIT ------------------------------
 
