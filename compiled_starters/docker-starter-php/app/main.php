@@ -6,7 +6,7 @@ while (ob_get_level() !== 0) {
   ob_end_clean();
 }
 
-echo "Implement your program here!";
+echo "Your code goes here";
 
 // Uncomment this to pass the first stage.
 // $command = $argv[3];

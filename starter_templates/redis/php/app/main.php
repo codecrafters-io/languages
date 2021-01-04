@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL);
 
-echo "Implement your program here!";
+echo "Your code goes here";
 
 /* Comment out the code below to pass the first stage */
 
