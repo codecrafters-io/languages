@@ -20,5 +20,5 @@ echo "Your code goes here!\n";
 // }
 // else {
 //   // Replace current program with calling program.
-//   exec(implode(' ', array_slice($argv, 3)));
+//   echo exec(implode(' ', array_slice($argv, 3)));
 // }
