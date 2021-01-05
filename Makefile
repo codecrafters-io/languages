@@ -44,6 +44,9 @@ test_docker_c: compile download_starter_testers
 test_redis_python: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb redis python
 
+test_redis_typescript: compile download_starter_testers
+	bundle exec ruby tests/test_all.rb redis typescript
+
 test_redis_ruby: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb redis ruby
 
