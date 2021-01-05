@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
-    "types": [
-      "node"
-    ]
-  }
+    "types": [ "node" ],
+    "typeRoots": [ "/usr/lib/node_modules/@types" ]
+  },
+  "files": [
+    "app/main.ts",
+  ]
 }
