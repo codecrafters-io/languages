@@ -13,6 +13,7 @@ rust = Language.new(slug: "rust", name: "Rust", repo_suffix: "rust")
 haskell = Language.new(slug: "haskell", name: "Haskell", repo_suffix: "haskell")
 elixir = Language.new(slug: "elixir", name: "Elixir", repo_suffix: "elixir")
 kotlin = Language.new(slug: "kotlin", name: "Kotlin", repo_suffix: "kotlin")
+typescript = Language.new(slug: "typescript", name: "TypeScript", repo_suffix: "typescript")
 
 DEFINITIONS = [
   # ------------------- REDIS ------------------------------
@@ -214,6 +215,21 @@ DEFINITIONS = [
     template_attrs: {
       "required_executable": "cargo (1.43)",
       "user_editable_file": "src/main.rs"
+    }
+  ),
+  Repo.new(
+    course: git,
+    language: typescript,
+    file_mappings: [
+      FM.new("README.md", "git/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.ts", "git/typescript/app/main.ts"),
+      FM.new("tsconfig.json", "git/typescript/tsconfig.json"),
+      FM.new("your_git.sh", "git/typescript/your_git.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "typescript (4.1)",
+      "user_editable_file": "app/main.ts"
     }
   ),
   Repo.new(

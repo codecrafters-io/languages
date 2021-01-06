@@ -23,6 +23,10 @@ language_pack: go-1.13
 # Available versions: php-7.4
 language_pack: php-7.4
 {{/ language_is_php }}
+{{# language_is_typescript }}
+# Available versions: typescript-4.1
+language_pack: typescript-4.1
+{{/ language_is_typescript }}
 {{# language_is_c }}
 # Available versions: c-9.2
 language_pack: c-9.2

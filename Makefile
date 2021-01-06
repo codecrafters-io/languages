@@ -32,6 +32,9 @@ test_git_rust: compile download_starter_testers
 test_git_kotlin: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb git kotlin
 
+test_git_typescript: compile download_starter_testers
+	bundle exec ruby tests/test_all.rb git typescript
+
 test_docker_go: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb docker go
 
