@@ -19,7 +19,8 @@ class Uncommenter
     "rust" => DOUBLE_SLASHES,
     "haskell" => DOUBLE_HYPHENS,
     "elixir" => POUND_SIGN,
-    "kotlin" => DOUBLE_SLASHES
+    "kotlin" => DOUBLE_SLASHES,
+    "nodejs" => DOUBLE_SLASHES
   }
 
   attr_reader :language, :code, :uncomment_marker_pattern

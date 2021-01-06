@@ -23,6 +23,10 @@ language_pack: go-1.13
 # Available versions: php-7.4
 language_pack: php-7.4
 {{/ language_is_php }}
+{{# language_is_nodejs }}
+# Available versions: nodejs-14
+language_pack: nodejs-14
+{{/ language_is_nodejs }}
 {{# language_is_c }}
 # Available versions: c-9.2
 language_pack: c-9.2
