@@ -13,6 +13,7 @@ rust = Language.new(slug: "rust", name: "Rust", repo_suffix: "rust")
 haskell = Language.new(slug: "haskell", name: "Haskell", repo_suffix: "haskell")
 elixir = Language.new(slug: "elixir", name: "Elixir", repo_suffix: "elixir")
 kotlin = Language.new(slug: "kotlin", name: "Kotlin", repo_suffix: "kotlin")
+nodejs = Language.new(slug: "nodejs", name: "Node.js", repo_suffix: "nodejs")
 
 DEFINITIONS = [
   # ------------------- REDIS ------------------------------
@@ -214,6 +215,20 @@ DEFINITIONS = [
     template_attrs: {
       "required_executable": "cargo (1.43)",
       "user_editable_file": "src/main.rs"
+    }
+  ),
+  Repo.new(
+    course: git,
+    language: nodejs,
+    file_mappings: [
+      FM.new("README.md", "git/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.js", "git/nodejs/app/main.js"),
+      FM.new("your_git.sh", "git/nodejs/your_git.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "node (14)",
+      "user_editable_file": "app/main.js"
     }
   ),
   Repo.new(

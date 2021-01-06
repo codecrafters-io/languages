@@ -20,6 +20,9 @@ test_git: compile download_starter_testers
 test_git_python: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb git python
 
+test_git_nodejs: compile download_starter_testers
+	bundle exec ruby tests/test_all.rb git nodejs
+
 test_git_ruby: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb git ruby
 
