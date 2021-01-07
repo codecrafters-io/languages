@@ -155,6 +155,25 @@ DEFINITIONS = [
       "user_editable_file": "app/main.c"
     }
   ),
+  Repo.new(
+    course: docker,
+    language: haskell,
+    file_mappings: [
+      FM.new("README.md", "docker/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("hs-docker-clone.cabal", "docker/haskell/hs-docker-clone.cabal"),
+      FM.new(".gitignore", "docker/haskell/.gitignore"),
+      FM.new("package.yaml", "docker/haskell/package.yaml"),
+      FM.new("stack.yaml", "docker/haskell/stack.yaml"),
+      FM.new("stack.yaml.lock", "docker/haskell/stack.yaml.lock"),
+      FM.new("app/Main.hs", "docker/haskell/app/Main.hs"),
+      FM.new("your_docker.sh", "docker/haskell/your_docker.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "stack",
+      "user_editable_file": "app/Main.hs"
+    }
+  ),
 
   # ------------------- GIT ------------------------------
 
