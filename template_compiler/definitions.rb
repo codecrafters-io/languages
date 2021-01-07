@@ -155,6 +155,21 @@ DEFINITIONS = [
       "user_editable_file": "app/main.c"
     }
   ),
+  Repo.new(
+    course: docker,
+    language: python,
+    file_mappings: [
+      FM.new("README.md", "docker/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.py", "docker/python/app/main.py"),
+      FM.new("Dockerfile", "docker/python/Dockerfile"),
+      FM.new("your_docker.sh", "docker/python/your_docker.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "python",
+      "user_editable_file": "app/main.py"
+    }
+  ),
 
   # ------------------- GIT ------------------------------
 
