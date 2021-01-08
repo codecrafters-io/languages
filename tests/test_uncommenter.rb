@@ -79,6 +79,27 @@ main = do
  return (a + b)
 """
 
+
+SAMPLE_PHP_COMMENTED = """
+<?php
+// Uncomment this to pass the first stage.
+// $a = 1;
+// $b = 1;
+
+// echo $a + $b;
+?>
+"""
+
+SAMPLE_PHP_UNCOMMENTED = """
+<?php
+// Uncomment this to pass the first stage.
+$a = 1;
+$b = 1;
+
+echo $a + $b;
+?>
+"""
+
 UNCOMMENT_PATTERN = /Uncomment this/
 
 class TestUncommenter < Minitest::Test
@@ -121,6 +142,18 @@ class TestUncommenter < Minitest::Test
   def test_twice_haskell
     actual = Uncommenter.new("haskell", SAMPLE_HASKELL_UNCOMMENTD, UNCOMMENT_PATTERN).uncommented
     expected = SAMPLE_HASKELL_UNCOMMENTD
+    assert_equal expected, actual
+  end
+
+  def test_php
+    actual = Uncommenter.new("php", SAMPLE_PHP_COMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_PHP_UNCOMMENTED
+    assert_equal expected, actual
+  end
+
+  def test_twice_php
+    actual = Uncommenter.new("php", SAMPLE_PHP_UNCOMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_PHP_UNCOMMENTED
     assert_equal expected, actual
   end
 end
