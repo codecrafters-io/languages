@@ -218,6 +218,25 @@ DEFINITIONS = [
   ),
   Repo.new(
     course: git,
+    language: haskell,
+    file_mappings: [
+      FM.new("README.md", "git/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("hs-git-clone.cabal", "git/haskell/hs-git-clone.cabal"),
+      FM.new(".gitignore", "git/haskell/.gitignore"),
+      FM.new("package.yaml", "git/haskell/package.yaml"),
+      FM.new("stack.yaml", "git/haskell/stack.yaml"),
+      FM.new("stack.yaml.lock", "git/haskell/stack.yaml.lock"),
+      FM.new("app/Main.hs", "git/haskell/app/Main.hs"),
+      FM.new("your_git.sh", "git/haskell/your_git.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "stack",
+      "user_editable_file": "app/Main.hs"
+    }
+  ),
+  Repo.new(
+    course: git,
     language: kotlin,
     file_mappings: [
       FM.new("README.md", "git/README.md"),

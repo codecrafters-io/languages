@@ -1,0 +1,21 @@
+name:                hs-git-clone
+version:             0.1.0.0
+license:             BSD3
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+dependencies:
+- base >= 4.7 && < 5
+- bytestring
+- directory
+
+executables:
+  hs-git-clone-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
