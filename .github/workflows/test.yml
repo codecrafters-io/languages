@@ -18,6 +18,20 @@ jobs:
     - run: git diff --exit-code # Changes to existing files
     - run: test -z "$(git ls-files compiled_starters/ --exclude-standard --others)" # Untracked files
 
+  validate_test_setup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.7'
+      - uses: actions/checkout@v2
+      - run: gem install bundler
+      - run: bundle config set --local without 'development'
+      - run: bundle install
+      - run: bundle exec ruby tests/test_github_actions_config.rb
+      - run: bundle exec ruby tests/test_uncommenter.rb
+
   markdown_lint:
     runs-on: ubuntu-latest
 
