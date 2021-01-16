@@ -21,6 +21,7 @@ class DockerfileTester < TestHarness
   end
 
   def language
+    return "javascript" if language_pack.start_with?("nodejs")
     language_pack.split("-").first
   end
 
