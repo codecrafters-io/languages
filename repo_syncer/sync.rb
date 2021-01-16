@@ -68,6 +68,8 @@ class RepoSyncer
         auto_init: true # Need this to have a tree in place to create PR
       )
 
+      sleep 5 # Wait for branch to get created
+
       master_commit_sha = @github_client.ref(repo.full_name, "heads/main").object.sha
       @github_client.create_ref(repo.full_name, "heads/master", master_commit_sha)
       @github_client.edit_repository(repo.full_name, default_branch: "master")
