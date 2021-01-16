@@ -1,4 +1,4 @@
-This is a starting point for Node.js solutions to the
+This is a starting point for JavaScript solutions to the
 ["Build Your Own Redis" Challenge](https://codecrafters.io/challenges/redis).
 
 In this challenge, you'll build a toy Redis clone that's capable of handling

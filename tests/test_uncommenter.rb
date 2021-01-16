@@ -50,10 +50,10 @@ func main() {
 SAMPLE_GO_UNCOMMENTED = """
 func main() {
   // Uncomment this to pass the first stage
-  
+
   // This is an assignment
   a := 1
-  
+
   fmt.Println('hey')
 
   a := 2
@@ -79,14 +79,14 @@ main = do
  return (a + b)
 """
 
-SAMPLE_NODEJS_COMMENTED = """
+SAMPLE_JAVASCRIPT_COMMENTED = """
 // Uncomment this to pass the first stage
 // var a = 1;
 // var b = 2;
 // console.log(a + b);
 """
 
-SAMPLE_NODEJS_UNCOMMENTED = """
+SAMPLE_JAVASCRIPT_UNCOMMENTED = """
 // Uncomment this to pass the first stage
 var a = 1;
 var b = 2;
@@ -138,15 +138,15 @@ class TestUncommenter < Minitest::Test
     assert_equal expected, actual
   end
 
-  def test_nodejs
-    actual = Uncommenter.new("nodejs", SAMPLE_NODEJS_COMMENTED, UNCOMMENT_PATTERN).uncommented
-    expected = SAMPLE_NODEJS_UNCOMMENTED
+  def test_javascript
+    actual = Uncommenter.new("javascript", SAMPLE_JAVASCRIPT_COMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_JAVASCRIPT_UNCOMMENTED
     assert_equal expected, actual
   end
 
-  def test_twice_nodejs
-    actual = Uncommenter.new("nodejs", SAMPLE_NODEJS_UNCOMMENTED, UNCOMMENT_PATTERN).uncommented
-    expected = SAMPLE_NODEJS_UNCOMMENTED
+  def test_twice_javascript
+    actual = Uncommenter.new("javascript", SAMPLE_JAVASCRIPT_UNCOMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_JAVASCRIPT_UNCOMMENTED
     assert_equal expected, actual
   end
 end
