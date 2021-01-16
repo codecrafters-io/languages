@@ -62,11 +62,17 @@ class RepoSyncer
     begin
       @github_client.repository("codecrafters-io/#{repo_name}")
     rescue Octokit::NotFound
-      @github_client.create_repository(
+      repo = @github_client.create_repository(
         repo_name,
         organization: "codecrafters-io",
         auto_init: true # Need this to have a tree in place to create PR
       )
+
+      master_commit_sha = @github_client.ref(repo.full_name, "heads/main").object.sha
+      @github_client.create_ref(repo.full_name, "heads/master", master_commit_sha)
+      @github_client.edit_repository(repo.full_name, default_branch: "master")
+
+      repo
     end
   end
 end
