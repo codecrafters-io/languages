@@ -7,3 +7,5 @@ debug: false
 # Use this to change the JavaScript version used to run your code
 # on Codecrafters.
 #
+# Available versions: nodejs-14
+language_pack: nodejs-14
