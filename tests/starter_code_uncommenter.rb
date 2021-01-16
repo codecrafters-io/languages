@@ -8,12 +8,12 @@ class StarterCodeUncommenter
 
   def initialize(dir, language)
     @dir = dir
-    @language = language 
+    @language = language
   end
 
   def uncomment
     raise "No code files found" if code_files.empty?
-    code_files.map do |file_path| 
+    code_files.map do |file_path|
       old_contents = File.read(file_path)
       new_contents = Uncommenter.new(
         language,
@@ -56,7 +56,7 @@ class StarterCodeUncommenter
       "haskell" => "hs",
       "elixir" => "ex",
       "kotlin" => "kt",
-      "nodejs" => "js"
+      "javascript" => "js"
     }.fetch(language)
   end
 end
