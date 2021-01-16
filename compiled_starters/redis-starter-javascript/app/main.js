@@ -8,11 +8,3 @@ console.log("Your code goes here!");
 // });
 //
 // server.listen(6379, '127.0.0.1');
-//
-// server.on('request', request => {
-//   const connection = request.accept(null, request.origin);
-//
-//   connection.on('close',() => {
-//     console.log('Client has disconnected.');
-//   });
-// });
