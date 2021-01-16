@@ -14,6 +14,7 @@ haskell = Language.new(slug: "haskell", name: "Haskell", repo_suffix: "haskell")
 elixir = Language.new(slug: "elixir", name: "Elixir", repo_suffix: "elixir")
 kotlin = Language.new(slug: "kotlin", name: "Kotlin", repo_suffix: "kotlin")
 php = Language.new(slug: "php", name: "PHP", repo_suffix: "php")
+javascript = Language.new(slug: "javascript", name: "JavaScript", repo_suffix: "javascript")
 
 DEFINITIONS = [
   # ------------------- REDIS ------------------------------
@@ -121,6 +122,20 @@ DEFINITIONS = [
     template_attrs: {
       "required_executable": "cargo (1.43)",
       "user_editable_file": "src/main.rs"
+    }
+  ),
+  Repo.new(
+    course: redis,
+    language: javascript,
+    file_mappings: [
+      FM.new("README.md", "redis/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.js", "redis/javascript/app/main.js"),
+      FM.new("spawn_redis_server.sh", "redis/javascript/spawn_redis_server.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "node (14)",
+      "user_editable_file": "app/main.js"
     }
   ),
 
