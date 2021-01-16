@@ -50,8 +50,36 @@ jobs:
       matrix:
         include:
           - challenge: redis
+            language: c
+          - challenge: redis
+            language: elixir
+          - challenge: redis
+            language: go
+          - challenge: redis
+            language: haskell
+          - challenge: redis
+            language: nodejs
+          - challenge: redis
+            language: python
+          - challenge: redis
+            language: ruby
+          - challenge: redis
+            language: rust
+
+          - challenge: git
+            language: go
+          - challenge: git
+            language: kotlin
+          - challenge: git
             language: python
           - challenge: git
+            language: ruby
+          - challenge: git
+            language: rust
+
+          - challenge: docker
+            language: c
+          - challenge: docker
             language: go
 
     steps:

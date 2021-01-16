@@ -22,10 +22,12 @@ class TestGithubActionsConfig < Minitest::Test
       expected_languages = expected_combinations
         .select { |combination| combination["challenge"] == challenge }
         .map { |combination| combination["language"] }
+        .sort
 
       actual_languages = actual_combinations
         .select { |combination| combination["challenge"] == challenge }
         .map { |combination| combination["language"] }
+        .sort
 
       assert_equal expected_languages, actual_languages, "Expected all languages for #{challenge} to be tested"
     end
