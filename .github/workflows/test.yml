@@ -36,7 +36,8 @@ jobs:
     - run: "echo ::remove-matcher owner=go::" # Messes with our output
     - run: go get golang.org/x/tools/cmd/goimports
     - run: gem install bundler
-    - run: bundle install --without=development
+    - run: bundle config set --local without 'development'
+    - run: bundle install
     - run: make test_redis
 
   docker:
