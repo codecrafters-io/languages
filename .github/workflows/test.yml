@@ -29,8 +29,16 @@ jobs:
     - run: gem install mdl
     - run: mdl --style relaxed compiled_starters
 
-  redis:
+  test_starter_code:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        include:
+          - challenge: redis
+            language: python
+          - challenge: git
+            language: go
 
     steps:
     - uses: actions/setup-ruby@v1
@@ -45,40 +53,4 @@ jobs:
     - run: gem install bundler
     - run: bundle config set --local without 'development'
     - run: bundle install
-    - run: make test_redis
-
-  docker:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/setup-ruby@v1
-      with:
-        ruby-version: '2.7'
-    - uses: actions/checkout@v2
-    - uses: actions/setup-go@v2
-      with:
-        go-version: '^1.13.1'
-    - run: "echo ::remove-matcher owner=go::" # Messes with our output
-    - run: go get golang.org/x/tools/cmd/goimports
-    - run: gem install bundler
-    - run: bundle config set --local without 'development'
-    - run: bundle install
-    - run: make test_docker
-
-  git:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/setup-ruby@v1
-      with:
-        ruby-version: '2.7'
-    - uses: actions/checkout@v2
-    - uses: actions/setup-go@v2
-      with:
-        go-version: '^1.13.1'
-    - run: "echo ::remove-matcher owner=go::" # Messes with our output
-    - run: go get golang.org/x/tools/cmd/goimports
-    - run: gem install bundler
-    - run: bundle config set --local without 'development'
-    - run: bundle install
-    - run: make test_git
+    - run: bundle exec ruby tests/test_all.rb ${{matrix.challenge}} ${{matrix.language}}
