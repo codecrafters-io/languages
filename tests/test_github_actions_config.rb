@@ -29,7 +29,15 @@ class TestGithubActionsConfig < Minitest::Test
         .map { |combination| combination["language"] }
         .sort
 
-      assert_equal expected_languages, actual_languages, "Expected all languages for #{challenge} to be tested"
+      assert_equal expected_languages, actual_languages, <<~MSG
+        --------
+
+        Expected all languages for #{challenge} to be tested.
+
+        Edit the "strategy.matrix" block in `.github/workflows/test.yml` and add/remove the required languages.
+
+        ---------
+      MSG
     end
   end
 end
