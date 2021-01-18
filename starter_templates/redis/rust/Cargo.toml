@@ -1,3 +1,10 @@
+# DON'T EDIT THIS!
+#
+# Codecrafters relies on this file being intact to run tests successfully. Any changes
+# here will not reflect when CodeCrafters tests your code, and might even cause build
+# failures.
+#
+# DON'T EDIT THIS!
 [package]
 name = "redis-starter-rust"
 version = "0.1.0"
@@ -6,8 +13,9 @@ edition = "2018"
 
 # DON'T EDIT THIS!
 #
-# This is only for local usage, any changes here will not reflect when
-# CodeCrafters tests your code.
+# Codecrafters relies on this file being intact to run tests successfully. Any changes
+# here will not reflect when CodeCrafters tests your code, and might even cause build
+# failures.
 #
 # DON'T EDIT THIS!
 [dependencies]
