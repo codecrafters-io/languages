@@ -56,6 +56,7 @@ class StarterCodeUncommenter
       "haskell" => "hs",
       "elixir" => "ex",
       "kotlin" => "kt",
+      "php" => "php",
       "javascript" => "js"
     }.fetch(language)
   end

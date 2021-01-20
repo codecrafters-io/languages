@@ -20,6 +20,7 @@ class Uncommenter
     "haskell" => DOUBLE_HYPHENS,
     "elixir" => POUND_SIGN,
     "kotlin" => DOUBLE_SLASHES,
+    "php" => DOUBLE_SLASHES,
     "javascript" => DOUBLE_SLASHES
   }
 
