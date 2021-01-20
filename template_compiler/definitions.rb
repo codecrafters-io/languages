@@ -185,6 +185,21 @@ DEFINITIONS = [
       "user_editable_file": "app/main.c"
     }
   ),
+    Repo.new(
+      course: docker,
+      language: php,
+      file_mappings: [
+        FM.new("README.md", "docker/README.md"),
+        FM.new("codecrafters.yml", "codecrafters.yml"),
+        FM.new("app/main.php", "docker/php/app/main.php"),
+        FM.new("Dockerfile", "docker/php/Dockerfile"),
+        FM.new("your_docker.sh", "docker/php/your_docker.sh", is_executable=true),
+      ],
+      template_attrs: {
+        "required_executable": "php (7.4)",
+        "user_editable_file": "app/main.php"
+      }
+    ),
 
   # ------------------- GIT ------------------------------
 
@@ -260,5 +275,4 @@ DEFINITIONS = [
       "user_editable_file": "app/main.kt"
     }
   )
-
 ]
