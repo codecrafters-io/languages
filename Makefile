@@ -47,6 +47,9 @@ test_redis_php: compile download_starter_testers
 test_redis_python: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb redis python
 
+test_redis_javascript: compile download_starter_testers
+	bundle exec ruby tests/test_all.rb redis javascript
+
 test_redis_ruby: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb redis ruby
 

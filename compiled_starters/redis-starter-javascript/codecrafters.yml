@@ -4,8 +4,8 @@
 # unless you really need them.
 debug: false
 
-# Use this to change the Elixir version used to run your code
+# Use this to change the JavaScript version used to run your code
 # on Codecrafters.
 #
-# Available versions: elixir-1.10
-language_pack: elixir-1.10
+# Available versions: nodejs-14
+language_pack: nodejs-14
