@@ -1,4 +1,4 @@
-This is a starting point for Rust solutions to the
+This is a starting point for JavaScript solutions to the
 ["Build Your Own Redis" Challenge](https://codecrafters.io/challenges/redis).
 
 In this challenge, you'll build a toy Redis clone that's capable of handling
@@ -10,10 +10,9 @@ event loops, the Redis protocol and more.
 
 # Usage
 
-1. Ensure you have `cargo (1.43)` installed locally
+1. Ensure you have `node (14)` installed locally
 1. Run `./spawn_redis_server.sh` to run your Redis server, which is implemented
-   in `src/main.rs`. This command compiles your Rust project, so it might be
-   slow the first time you run it. Subsequent runs will be fast.
+   in `app/main.js`.
 1. Commit your changes and run `git push origin master` to submit your solution
    to CodeCrafters. Test output will be streamed to your terminal.
 
@@ -30,7 +29,7 @@ git push origin master
 You should see a failure message that says it wasn't able to connect to port
 `6379`.
 
-Go to `src/main.rs` and uncomment the server implementation. Commit and push
+Go to `app/main.js` and uncomment the server implementation. Commit and push
 your changes, and you'll now see the first stage pass.
 
 Time to move on to the next stage!

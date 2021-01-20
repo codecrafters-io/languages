@@ -8,9 +8,12 @@ jobs:
 
     steps:
     - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.7'
     - uses: actions/checkout@v2
     - run: gem install bundler
-    - run: bundle install --without=development
+    - run: bundle config set --local without 'development'
+    - run: bundle install
     - run: make compile
     - run: git diff --exit-code # Changes to existing files
     - run: test -z "$(git ls-files compiled_starters/ --exclude-standard --others)" # Untracked files
@@ -21,6 +24,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.7'
     - run: gem install mdl
     - run: mdl --style relaxed compiled_starters
 
@@ -29,6 +34,8 @@ jobs:
 
     steps:
     - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.7'
     - uses: actions/checkout@v2
     - uses: actions/setup-go@v2
       with:
@@ -36,7 +43,8 @@ jobs:
     - run: "echo ::remove-matcher owner=go::" # Messes with our output
     - run: go get golang.org/x/tools/cmd/goimports
     - run: gem install bundler
-    - run: bundle install --without=development
+    - run: bundle config set --local without 'development'
+    - run: bundle install
     - run: make test_redis
 
   docker:
@@ -44,6 +52,8 @@ jobs:
 
     steps:
     - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.7'
     - uses: actions/checkout@v2
     - uses: actions/setup-go@v2
       with:
@@ -51,7 +61,8 @@ jobs:
     - run: "echo ::remove-matcher owner=go::" # Messes with our output
     - run: go get golang.org/x/tools/cmd/goimports
     - run: gem install bundler
-    - run: bundle install --without=development
+    - run: bundle config set --local without 'development'
+    - run: bundle install
     - run: make test_docker
 
   git:
@@ -59,6 +70,8 @@ jobs:
 
     steps:
     - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.7'
     - uses: actions/checkout@v2
     - uses: actions/setup-go@v2
       with:
@@ -66,5 +79,6 @@ jobs:
     - run: "echo ::remove-matcher owner=go::" # Messes with our output
     - run: go get golang.org/x/tools/cmd/goimports
     - run: gem install bundler
-    - run: bundle install --without=development
+    - run: bundle config set --local without 'development'
+    - run: bundle install
     - run: make test_git

@@ -20,7 +20,8 @@ class Uncommenter
     "haskell" => DOUBLE_HYPHENS,
     "elixir" => POUND_SIGN,
     "kotlin" => DOUBLE_SLASHES,
-    "php" => DOUBLE_SLASHES
+    "php" => DOUBLE_SLASHES,
+    "javascript" => DOUBLE_SLASHES
   }
 
   attr_reader :language, :code, :uncomment_marker_pattern
@@ -62,7 +63,7 @@ class Uncommenter
   def uncomment_bounds
     start_index = uncomment_line_index + 1
     end_index = start_index - 1
-    code.lines.each_with_index do |line, index| 
+    code.lines.each_with_index do |line, index|
       next if index < start_index
 
       unless !!line_regex.match(line)
