@@ -1,5 +1,7 @@
 FROM rust:1.43-buster
 
+RUN apt-get -y remove git
+
 COPY Cargo.toml /app/Cargo.toml
 COPY Cargo.lock /app/Cargo.lock
 
