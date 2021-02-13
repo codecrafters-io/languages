@@ -1,0 +1,21 @@
+name: Sync Repos
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  sync_repos:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.7'
+      - uses: actions/checkout@v2
+      - run: gem install bundler
+      - run: bundle config set --local without 'development'
+      - run: bundle install
+      - run: make sync_with_github
+        env:
+          GITHUB_TOKEN: ${{ secrets.SYNC_GITHUB_TOKEN }}
