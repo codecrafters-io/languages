@@ -1,6 +1,8 @@
 FROM n0madic/alpine-gcc:9.2.0
 
 RUN apk add --update-cache --upgrade curl
+
+# For making HTTP requests using libcurl
 RUN apk add --update-cache --upgrade curl-dev
 
 # Download docker-explorer

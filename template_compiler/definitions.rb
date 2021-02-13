@@ -11,8 +11,11 @@ c = Language.new(slug: "c", name: "C", repo_suffix: "c")
 ruby = Language.new(slug: "ruby", name: "Ruby", repo_suffix: "ruby")
 rust = Language.new(slug: "rust", name: "Rust", repo_suffix: "rust")
 haskell = Language.new(slug: "haskell", name: "Haskell", repo_suffix: "haskell")
+elixir = Language.new(slug: "elixir", name: "Elixir", repo_suffix: "elixir")
 kotlin = Language.new(slug: "kotlin", name: "Kotlin", repo_suffix: "kotlin")
 java = Language.new(slug: "java", name:"Java", repo_suffix: "java")
+php = Language.new(slug: "php", name: "PHP", repo_suffix: "php")
+javascript = Language.new(slug: "javascript", name: "JavaScript", repo_suffix: "javascript")
 
 DEFINITIONS = [
   # ------------------- REDIS ------------------------------
@@ -100,10 +103,69 @@ DEFINITIONS = [
       FM.new("src/main/java/Main.java", "redis/java/src/main/java/Main.java"),
       FM.new("spawn_redis_server.sh", "redis/java/spawn_redis_server.sh", is_executable=true),
     ],
-      template_attrs: {
-        "required_executable": "java (1.8)",
-        "user_editable_file": "Main.java"
-      }
+    template_attrs: {
+      "required_executable": "java (1.8)",
+      "user_editable_file": "Main.java"
+    }
+  ),
+  Repo.new(
+    course: redis,
+    language: elixir,
+    file_mappings: [
+      FM.new("README.md", "redis/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("lib/server.ex", "redis/elixir/lib/server.ex"),
+      FM.new("mix.exs", "redis/elixir/mix.exs"),
+      FM.new("spawn_redis_server.sh", "redis/elixir/spawn_redis_server.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "mix",
+      "user_editable_file": "lib/server.ex"
+    }
+  ),
+  Repo.new(
+    course: redis,
+    language: rust,
+    file_mappings: [
+      FM.new("README.md", "redis/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("src/main.rs", "redis/rust/src/main.rs"),
+      FM.new("Cargo.toml", "redis/rust/Cargo.toml"),
+      FM.new("Cargo.lock", "redis/rust/Cargo.lock"),
+      FM.new("spawn_redis_server.sh", "redis/rust/spawn_redis_server.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "cargo (1.43)",
+      "user_editable_file": "src/main.rs"
+    }
+  ),
+  Repo.new(
+    course: redis,
+    language: php,
+    file_mappings: [
+      FM.new("README.md", "redis/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.php", "redis/php/app/main.php"),
+      FM.new("spawn_redis_server.sh", "redis/php/spawn_redis_server.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "php (7.4)",
+      "user_editable_file": "app/main.php"
+    }
+  ),
+  Repo.new(
+    course: redis,
+    language: javascript,
+    file_mappings: [
+      FM.new("README.md", "redis/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.js", "redis/javascript/app/main.js"),
+      FM.new("spawn_redis_server.sh", "redis/javascript/spawn_redis_server.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "node (14)",
+      "user_editable_file": "app/main.js"
+    }
   ),
 
   # ------------------- DOCKER ------------------------------
@@ -138,6 +200,21 @@ DEFINITIONS = [
       "user_editable_file": "app/main.c"
     }
   ),
+    Repo.new(
+      course: docker,
+      language: php,
+      file_mappings: [
+        FM.new("README.md", "docker/README.md"),
+        FM.new("codecrafters.yml", "codecrafters.yml"),
+        FM.new("app/main.php", "docker/php/app/main.php"),
+        FM.new("Dockerfile", "docker/php/Dockerfile"),
+        FM.new("your_docker.sh", "docker/php/your_docker.sh", is_executable=true),
+      ],
+      template_attrs: {
+        "required_executable": "php (7.4)",
+        "user_editable_file": "app/main.php"
+      }
+    ),
 
   # ------------------- GIT ------------------------------
 
@@ -213,5 +290,4 @@ DEFINITIONS = [
       "user_editable_file": "app/main.kt"
     }
   )
-
 ]

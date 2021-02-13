@@ -54,8 +54,11 @@ class StarterCodeUncommenter
       "c" => "c",
       "rust" => "rs",
       "haskell" => "hs",
+      "java" => "java",
+      "elixir" => "ex",
       "kotlin" => "kt",
-      "java" => "java"
+      "php" => "php",
+      "javascript" => "js"
     }.fetch(language)
   end
 end

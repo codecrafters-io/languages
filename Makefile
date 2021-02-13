@@ -41,8 +41,17 @@ test_docker_nim: compile download_starter_testers
 test_docker_c: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb docker c
 
+test_docker_php: compile download_starter_testers
+	bundle exec ruby tests/test_all.rb docker php
+
+test_redis_php: compile download_starter_testers
+	bundle exec ruby tests/test_all.rb redis php
+
 test_redis_python: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb redis python
+
+test_redis_javascript: compile download_starter_testers
+	bundle exec ruby tests/test_all.rb redis javascript
 
 test_redis_ruby: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb redis ruby
@@ -58,6 +67,12 @@ test_redis_haskell: compile download_starter_testers
 
 test_redis_java: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb redis java
+
+test_redis_elixir: compile download_starter_testers
+	bundle exec ruby tests/test_all.rb redis elixir
+
+test_redis_rust: compile download_starter_testers
+	bundle exec ruby tests/test_all.rb redis rust
 
 sync_with_github: compile
 	bundle exec ruby repo_syncer/sync.rb
