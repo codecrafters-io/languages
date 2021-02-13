@@ -18,6 +18,7 @@ class Uncommenter
     "c" => DOUBLE_SLASHES,
     "rust" => DOUBLE_SLASHES,
     "haskell" => DOUBLE_HYPHENS,
+    "java" => DOUBLE_SLASHES,
     "elixir" => POUND_SIGN,
     "kotlin" => DOUBLE_SLASHES,
     "php" => DOUBLE_SLASHES,

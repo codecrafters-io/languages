@@ -13,6 +13,7 @@ rust = Language.new(slug: "rust", name: "Rust", repo_suffix: "rust")
 haskell = Language.new(slug: "haskell", name: "Haskell", repo_suffix: "haskell")
 elixir = Language.new(slug: "elixir", name: "Elixir", repo_suffix: "elixir")
 kotlin = Language.new(slug: "kotlin", name: "Kotlin", repo_suffix: "kotlin")
+java = Language.new(slug: "java", name:"Java", repo_suffix: "java")
 php = Language.new(slug: "php", name: "PHP", repo_suffix: "php")
 javascript = Language.new(slug: "javascript", name: "JavaScript", repo_suffix: "javascript")
 
@@ -92,6 +93,20 @@ DEFINITIONS = [
         "required_executable": "stack",
         "user_editable_file": "Main.hs"
       }
+  ),
+  Repo.new(
+    course: redis,
+    language: java,
+    file_mappings: [
+      FM.new("README.md", "redis/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("src/main/java/Main.java", "redis/java/src/main/java/Main.java"),
+      FM.new("spawn_redis_server.sh", "redis/java/spawn_redis_server.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "java (1.8)",
+      "user_editable_file": "Main.java"
+    }
   ),
   Repo.new(
     course: redis,

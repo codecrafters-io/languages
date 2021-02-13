@@ -65,6 +65,9 @@ test_redis_c: compile download_starter_testers
 test_redis_haskell: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb redis haskell
 
+test_redis_java: compile download_starter_testers
+	bundle exec ruby tests/test_all.rb redis java
+
 test_redis_elixir: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb redis elixir
 

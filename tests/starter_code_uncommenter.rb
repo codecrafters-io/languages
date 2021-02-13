@@ -54,6 +54,7 @@ class StarterCodeUncommenter
       "c" => "c",
       "rust" => "rs",
       "haskell" => "hs",
+      "java" => "java",
       "elixir" => "ex",
       "kotlin" => "kt",
       "php" => "php",
