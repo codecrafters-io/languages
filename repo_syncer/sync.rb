@@ -1,5 +1,4 @@
 require "octokit"
-require "pry"
 
 class RepoSyncer
   def initialize(github_client)
