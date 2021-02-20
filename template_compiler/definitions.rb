@@ -224,6 +224,7 @@ DEFINITIONS = [
       FM.new("README.md", "docker/README.md"),
       FM.new("codecrafters.yml", "codecrafters.yml"),
       FM.new("app/main.nim", "docker/nim/app/main.nim"),
+      FM.new("Dockerfile", "docker/nim/Dockerfile"),
       FM.new("your_docker.sh", "docker/nim/your_docker.sh", is_executable=true),
     ],
     template_attrs: {
