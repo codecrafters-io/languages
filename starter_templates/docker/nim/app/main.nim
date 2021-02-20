@@ -6,10 +6,10 @@ from osproc import execProcess
 
 echo "Your code goes here"
 
-# Uncomment the code below to pass the first stage
+# Uncomment this block to pass the first stage
 #
 # let command = commandLineParams()[2]
 # let args = commandLineParams()[3..^1]
-
+#
 # let output = execProcess(command, "", args, options={})
 # echo output
