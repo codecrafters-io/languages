@@ -4,7 +4,7 @@ from os import commandLineParams
 from osproc import execProcess
 
 
-echo "Implement your program here"
+echo "Your code goes here"
 
 # Uncomment the code below to pass the first stage
 #

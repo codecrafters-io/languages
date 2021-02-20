@@ -15,4 +15,5 @@ end
 
 group :test do
   gem "minitest"
+  gem "minitest-color"
 end

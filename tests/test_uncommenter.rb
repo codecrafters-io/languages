@@ -1,4 +1,5 @@
 require "minitest/autorun"
+require "minitest/color"
 
 require_relative "uncommenter"
 
@@ -121,7 +122,7 @@ SAMPLE_PHP_UNCOMMENTED = """
 $a = 1;
 $b = 1;
 
-echo $a + $b;
+// echo $a + $b;
 ?>
 """
 
