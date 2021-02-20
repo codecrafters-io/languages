@@ -29,6 +29,17 @@ jobs:
     - run: gem install mdl
     - run: mdl --style relaxed compiled_starters
 
+  uncommenter:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.7'
+      - run: bundle install --verbose
+      - run: ruby tests/test_uncommenter.rb
+
   redis:
     runs-on: ubuntu-latest
 

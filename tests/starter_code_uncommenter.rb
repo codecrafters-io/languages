@@ -48,17 +48,18 @@ class StarterCodeUncommenter
 
   def code_file_extension
     {
-      "go" => "go",
-      "python" => "py",
-      "ruby" => "rb",
       "c" => "c",
-      "rust" => "rs",
+      "elixir" => "ex",
+      "go" => "go",
       "haskell" => "hs",
       "java" => "java",
-      "elixir" => "ex",
+      "javascript" => "js",
       "kotlin" => "kt",
+      "nim" => "nim",
       "php" => "php",
-      "javascript" => "js"
+      "python" => "py",
+      "ruby" => "rb",
+      "rust" => "rs",
     }.fetch(language)
   end
 end

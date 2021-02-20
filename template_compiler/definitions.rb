@@ -5,17 +5,18 @@ redis = Course.new(slug: "redis", name: "Redis")
 docker = Course.new(slug: "docker", name: "Docker")
 git = Course.new(slug: "git", name: "Git")
 
-python = Language.new(slug: "python", name: "Python", repo_suffix: "python")
-go = Language.new(slug: "go", name: "Go", repo_suffix: "go")
 c = Language.new(slug: "c", name: "C", repo_suffix: "c")
+elixir = Language.new(slug: "elixir", name: "Elixir", repo_suffix: "elixir")
+go = Language.new(slug: "go", name: "Go", repo_suffix: "go")
+haskell = Language.new(slug: "haskell", name: "Haskell", repo_suffix: "haskell")
+java = Language.new(slug: "java", name:"Java", repo_suffix: "java")
+javascript = Language.new(slug: "javascript", name: "JavaScript", repo_suffix: "javascript")
+kotlin = Language.new(slug: "kotlin", name: "Kotlin", repo_suffix: "kotlin")
+nim = Language.new(slug: "nim", name: "Nim", repo_suffix: "nim")
+php = Language.new(slug: "php", name: "PHP", repo_suffix: "php")
+python = Language.new(slug: "python", name: "Python", repo_suffix: "python")
 ruby = Language.new(slug: "ruby", name: "Ruby", repo_suffix: "ruby")
 rust = Language.new(slug: "rust", name: "Rust", repo_suffix: "rust")
-haskell = Language.new(slug: "haskell", name: "Haskell", repo_suffix: "haskell")
-elixir = Language.new(slug: "elixir", name: "Elixir", repo_suffix: "elixir")
-kotlin = Language.new(slug: "kotlin", name: "Kotlin", repo_suffix: "kotlin")
-java = Language.new(slug: "java", name:"Java", repo_suffix: "java")
-php = Language.new(slug: "php", name: "PHP", repo_suffix: "php")
-javascript = Language.new(slug: "javascript", name: "JavaScript", repo_suffix: "javascript")
 
 DEFINITIONS = [
   # ------------------- REDIS ------------------------------
@@ -201,21 +202,35 @@ DEFINITIONS = [
       "user_editable_file": "app/main.c"
     }
   ),
-    Repo.new(
-      course: docker,
-      language: php,
-      file_mappings: [
-        FM.new("README.md", "docker/README.md"),
-        FM.new("codecrafters.yml", "codecrafters.yml"),
-        FM.new("app/main.php", "docker/php/app/main.php"),
-        FM.new("Dockerfile", "docker/php/Dockerfile"),
-        FM.new("your_docker.sh", "docker/php/your_docker.sh", is_executable=true),
-      ],
-      template_attrs: {
-        "required_executable": "php (7.4)",
-        "user_editable_file": "app/main.php"
-      }
-    ),
+  Repo.new(
+    course: docker,
+    language: php,
+    file_mappings: [
+      FM.new("README.md", "docker/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.php", "docker/php/app/main.php"),
+      FM.new("Dockerfile", "docker/php/Dockerfile"),
+      FM.new("your_docker.sh", "docker/php/your_docker.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "php (7.4)",
+      "user_editable_file": "app/main.php"
+    }
+  ),
+  Repo.new(
+    course: docker,
+    language: nim,
+    file_mappings: [
+      FM.new("README.md", "docker/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.nim", "docker/nim/app/main.nim"),
+      FM.new("your_docker.sh", "docker/nim/your_docker.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "nim (1.0)",
+      "user_editable_file": "app/main.nim"
+    }
+  ),
 
   # ------------------- GIT ------------------------------
 

@@ -12,17 +12,18 @@ class Uncommenter
   DOUBLE_HYPHENS = /(^\s*)(\-\-\s{0,1})/
 
   REGEX_PATTERNS = {
-    "python" => POUND_SIGN,
-    "ruby" => POUND_SIGN,
-    "go" => DOUBLE_SLASHES,
     "c" => DOUBLE_SLASHES,
-    "rust" => DOUBLE_SLASHES,
+    "elixir" => POUND_SIGN,
+    "go" => DOUBLE_SLASHES,
     "haskell" => DOUBLE_HYPHENS,
     "java" => DOUBLE_SLASHES,
-    "elixir" => POUND_SIGN,
+    "javascript" => DOUBLE_SLASHES,
     "kotlin" => DOUBLE_SLASHES,
+    "nim" => POUND_SIGN,
     "php" => DOUBLE_SLASHES,
-    "javascript" => DOUBLE_SLASHES
+    "python" => POUND_SIGN,
+    "ruby" => POUND_SIGN,
+    "rust" => DOUBLE_SLASHES,
   }
 
   attr_reader :language, :code, :uncomment_marker_pattern
@@ -54,7 +55,8 @@ class Uncommenter
 
   def uncomment_line(line)
     matches = line.match(line_regex)
-    line.sub(matches[2], "")
+    uncommented = line.sub(matches[2], "")
+    uncommented.strip.eql?("") ? "" : uncommented
   end
 
   def within_uncomment_bounds(index)
