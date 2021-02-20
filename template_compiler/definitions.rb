@@ -227,8 +227,8 @@ DEFINITIONS = [
       FM.new("your_docker.sh", "docker/nim/your_docker.sh", is_executable=true),
     ],
     template_attrs: {
-      "required_executable": "php (7.4)",
-      "user_editable_file": "app/main.php"
+      "required_executable": "nim (1.0)",
+      "user_editable_file": "app/main.nim"
     }
   ),
 
