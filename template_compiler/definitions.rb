@@ -100,6 +100,7 @@ DEFINITIONS = [
     file_mappings: [
       FM.new("README.md", "redis/README.md"),
       FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new(".gitignore", "redis/java/.gitignore"),
       FM.new("src/main/java/Main.java", "redis/java/src/main/java/Main.java"),
       FM.new("spawn_redis_server.sh", "redis/java/spawn_redis_server.sh", is_executable=true),
     ],
