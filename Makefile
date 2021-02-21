@@ -1,3 +1,11 @@
+redis_tester_api_url = "https://api.github.com/repos/codecrafters-io/redis-starter-tester/releases/latest"
+docker_tester_api_url = "https://api.github.com/repos/codecrafters-io/docker-starter-tester/releases/latest"
+git_tester_api_url = "https://api.github.com/repos/codecrafters-io/git-starter-tester/releases/latest"
+
+latest_redis_tester_version = $(shell curl $(redis_tester_api_url) | jq -r ".tag_name")
+latest_docker_tester_version = $(shell curl $(docker_tester_api_url) | jq -r ".tag_name")
+latest_git_tester_version = $(shell curl $(git_tester_api_url) | jq -r ".tag_name")
+
 generate_toc:
 	markdown-toc -i README.md
 
@@ -84,13 +92,13 @@ download_starter_testers:
 	test -f .starter_testers/git || make download_git_starter_tester
 
 download_redis_starter_tester:
-	curl --fail -Lo .starter_testers/redis https://github.com/codecrafters-io/redis-starter-tester/releases/download/v54/v54_linux_amd64
+	curl --fail -Lo .starter_testers/redis https://github.com/codecrafters-io/redis-starter-tester/releases/download/$(latest_redis_tester_version)/$(latest_redis_tester_version)_linux_amd64
 	chmod +x ./.starter_testers/redis
 
 download_docker_starter_tester:
-	curl --fail -Lo .starter_testers/docker https://github.com/codecrafters-io/docker-starter-tester/releases/download/v24/v24_linux_amd64
+	curl --fail -Lo .starter_testers/docker https://github.com/codecrafters-io/docker-starter-tester/releases/download/$(latest_docker_tester_version)/$(latest_docker_tester_version)_linux_amd64
 	chmod +x ./.starter_testers/docker
 
 download_git_starter_tester:
-	curl --fail -Lo .starter_testers/git https://github.com/codecrafters-io/git-starter-tester/releases/download/v8/v8_linux_amd64
+	curl --fail -Lo .starter_testers/git https://github.com/codecrafters-io/git-starter-tester/releases/download/$(latest_git_tester_version)/$(latest_git_tester_version)_linux_amd64
 	chmod +x ./.starter_testers/git
