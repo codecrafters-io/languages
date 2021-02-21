@@ -1,11 +1,10 @@
-latest_redis_tester_version = $(shell hub api -X GET repos/codecrafters-io/redis-starter-tester/releases/latest \
-							| jq -r ".tag_name")
+redis_tester_api_url = "https://api.github.com/repos/codecrafters-io/redis-starter-tester/releases/latest"
+docker_tester_api_url = "https://api.github.com/repos/codecrafters-io/docker-starter-tester/releases/latest"
+git_tester_api_url = "https://api.github.com/repos/codecrafters-io/git-starter-tester/releases/latest"
 
-latest_docker_tester_version = $(shell hub api -X GET repos/codecrafters-io/docker-starter-tester/releases/latest \
-							| jq -r ".tag_name")
-
-latest_git_tester_version = $(shell hub api -X GET repos/codecrafters-io/git-starter-tester/releases/latest \
-							  | jq -r ".tag_name")
+latest_redis_tester_version = $(shell curl $(redis_tester_api_url) | jq -r ".tag_name")
+latest_docker_tester_version = $(shell curl $(docker_tester_api_url) | jq -r ".tag_name")
+latest_git_tester_version = $(shell curl $(git_tester_api_url) | jq -r ".tag_name")
 
 generate_toc:
 	markdown-toc -i README.md
