@@ -33,7 +33,7 @@ class StarterRepoTester < TestHarness
 
     log_info "Uncommenting starter code..."
     diffs = StarterCodeUncommenter.new(starter_dir, language).uncomment
-    diffs.each do |diff| 
+    diffs.each do |diff|
       if diff.to_s.empty?
         log_error("Expected uncommenting code to return a diff")
         log_error("Are you sure there's a contiguous block of comments after the 'Uncomment this' marker?")
@@ -73,17 +73,21 @@ class StarterRepoTester < TestHarness
   end
 
   def slug
-    "#{course}-#{language}-#{latest_version}"
+    "#{course}-#{language_pack}-#{latest_version}"
   end
 
   def dockerfiles
     Dir["dockerfiles/#{course}/*.Dockerfile"]
       .map { |dockerfile_path| File.basename(dockerfile_path) }
-      .select { |dockerfile_name| dockerfile_name.start_with?(language) }
+      .select { |dockerfile_name| dockerfile_name.start_with?(language_pack) }
+  end
+
+  def language_pack
+    language.eql?("javascript") ? "nodejs" : language
   end
 
   def dockerfile_path
-    "dockerfiles/#{course}/#{language}-#{latest_version}.Dockerfile"
+    "dockerfiles/#{course}/#{language_pack}-#{latest_version}.Dockerfile"
   end
 
   def starter_dir

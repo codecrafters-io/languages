@@ -5,14 +5,18 @@ redis = Course.new(slug: "redis", name: "Redis")
 docker = Course.new(slug: "docker", name: "Docker")
 git = Course.new(slug: "git", name: "Git")
 
-python = Language.new(slug: "python", name: "Python", repo_suffix: "python")
-go = Language.new(slug: "go", name: "Go", repo_suffix: "go")
 c = Language.new(slug: "c", name: "C", repo_suffix: "c")
+elixir = Language.new(slug: "elixir", name: "Elixir", repo_suffix: "elixir")
+go = Language.new(slug: "go", name: "Go", repo_suffix: "go")
+haskell = Language.new(slug: "haskell", name: "Haskell", repo_suffix: "haskell")
+java = Language.new(slug: "java", name:"Java", repo_suffix: "java")
+javascript = Language.new(slug: "javascript", name: "JavaScript", repo_suffix: "javascript")
+kotlin = Language.new(slug: "kotlin", name: "Kotlin", repo_suffix: "kotlin")
+nim = Language.new(slug: "nim", name: "Nim", repo_suffix: "nim")
+php = Language.new(slug: "php", name: "PHP", repo_suffix: "php")
+python = Language.new(slug: "python", name: "Python", repo_suffix: "python")
 ruby = Language.new(slug: "ruby", name: "Ruby", repo_suffix: "ruby")
 rust = Language.new(slug: "rust", name: "Rust", repo_suffix: "rust")
-haskell = Language.new(slug: "haskell", name: "Haskell", repo_suffix: "haskell")
-elixir = Language.new(slug: "elixir", name: "Elixir", repo_suffix: "elixir")
-kotlin = Language.new(slug: "kotlin", name: "Kotlin", repo_suffix: "kotlin")
 
 DEFINITIONS = [
   # ------------------- REDIS ------------------------------
@@ -93,6 +97,21 @@ DEFINITIONS = [
   ),
   Repo.new(
     course: redis,
+    language: java,
+    file_mappings: [
+      FM.new("README.md", "redis/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new(".gitignore", "redis/java/.gitignore"),
+      FM.new("src/main/java/Main.java", "redis/java/src/main/java/Main.java"),
+      FM.new("spawn_redis_server.sh", "redis/java/spawn_redis_server.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "java (1.8)",
+      "user_editable_file": "Main.java"
+    }
+  ),
+  Repo.new(
+    course: redis,
     language: elixir,
     file_mappings: [
       FM.new("README.md", "redis/README.md"),
@@ -120,6 +139,34 @@ DEFINITIONS = [
     template_attrs: {
       "required_executable": "cargo (1.43)",
       "user_editable_file": "src/main.rs"
+    }
+  ),
+  Repo.new(
+    course: redis,
+    language: php,
+    file_mappings: [
+      FM.new("README.md", "redis/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.php", "redis/php/app/main.php"),
+      FM.new("spawn_redis_server.sh", "redis/php/spawn_redis_server.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "php (7.4)",
+      "user_editable_file": "app/main.php"
+    }
+  ),
+  Repo.new(
+    course: redis,
+    language: javascript,
+    file_mappings: [
+      FM.new("README.md", "redis/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.js", "redis/javascript/app/main.js"),
+      FM.new("spawn_redis_server.sh", "redis/javascript/spawn_redis_server.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "node (14)",
+      "user_editable_file": "app/main.js"
     }
   ),
 
@@ -153,6 +200,36 @@ DEFINITIONS = [
     template_attrs: {
       "required_executable": "gcc",
       "user_editable_file": "app/main.c"
+    }
+  ),
+  Repo.new(
+    course: docker,
+    language: php,
+    file_mappings: [
+      FM.new("README.md", "docker/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.php", "docker/php/app/main.php"),
+      FM.new("Dockerfile", "docker/php/Dockerfile"),
+      FM.new("your_docker.sh", "docker/php/your_docker.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "php (7.4)",
+      "user_editable_file": "app/main.php"
+    }
+  ),
+  Repo.new(
+    course: docker,
+    language: nim,
+    file_mappings: [
+      FM.new("README.md", "docker/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.nim", "docker/nim/app/main.nim"),
+      FM.new("Dockerfile", "docker/nim/Dockerfile"),
+      FM.new("your_docker.sh", "docker/nim/your_docker.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "nim (1.0)",
+      "user_editable_file": "app/main.nim"
     }
   ),
 
@@ -249,5 +326,4 @@ DEFINITIONS = [
       "user_editable_file": "app/main.kt"
     }
   )
-
 ]

@@ -8,12 +8,12 @@ class StarterCodeUncommenter
 
   def initialize(dir, language)
     @dir = dir
-    @language = language 
+    @language = language
   end
 
   def uncomment
     raise "No code files found" if code_files.empty?
-    code_files.map do |file_path| 
+    code_files.map do |file_path|
       old_contents = File.read(file_path)
       new_contents = Uncommenter.new(
         language,
@@ -48,14 +48,18 @@ class StarterCodeUncommenter
 
   def code_file_extension
     {
+      "c" => "c",
+      "elixir" => "ex",
       "go" => "go",
+      "haskell" => "hs",
+      "java" => "java",
+      "javascript" => "js",
+      "kotlin" => "kt",
+      "nim" => "nim",
+      "php" => "php",
       "python" => "py",
       "ruby" => "rb",
-      "c" => "c",
       "rust" => "rs",
-      "haskell" => "hs",
-      "elixir" => "ex",
-      "kotlin" => "kt"
     }.fetch(language)
   end
 end

@@ -1,4 +1,5 @@
 require "minitest/autorun"
+require "minitest/color"
 
 require_relative "uncommenter"
 
@@ -50,10 +51,10 @@ func main() {
 SAMPLE_GO_UNCOMMENTED = """
 func main() {
   // Uncomment this to pass the first stage
-  
+
   // This is an assignment
   a := 1
-  
+
   fmt.Println('hey')
 
   a := 2
@@ -77,6 +78,66 @@ main = do
  b <- readLine
  -- Nested Comment
  return (a + b)
+"""
+
+SAMPLE_JAVA_COMMENTED = """
+public static void main(String[] args) {
+  // Uncomment this to pass the first stage
+  //
+  // // This is an assignment
+  // int a = 1;
+  //
+  // System.out.println('Hey');
+
+  int b = 2;
+}
+"""
+
+SAMPLE_JAVA_UNCOMMENTED = """
+public static void main(String[] args) {
+  // Uncomment this to pass the first stage
+
+  // This is an assignment
+  int a = 1;
+
+  System.out.println('Hey');
+
+  int b = 2;
+}
+"""
+
+SAMPLE_PHP_COMMENTED = """
+<?php
+// Uncomment this to pass the first stage.
+// $a = 1;
+// $b = 1;
+
+// echo $a + $b;
+?>
+"""
+
+SAMPLE_PHP_UNCOMMENTED = """
+<?php
+// Uncomment this to pass the first stage.
+$a = 1;
+$b = 1;
+
+// echo $a + $b;
+?>
+"""
+
+SAMPLE_JAVASCRIPT_COMMENTED = """
+// Uncomment this to pass the first stage
+// var a = 1;
+// var b = 2;
+// console.log(a + b);
+"""
+
+SAMPLE_JAVASCRIPT_UNCOMMENTED = """
+// Uncomment this to pass the first stage
+var a = 1;
+var b = 2;
+console.log(a + b);
 """
 
 UNCOMMENT_PATTERN = /Uncomment this/
@@ -121,6 +182,42 @@ class TestUncommenter < Minitest::Test
   def test_twice_haskell
     actual = Uncommenter.new("haskell", SAMPLE_HASKELL_UNCOMMENTD, UNCOMMENT_PATTERN).uncommented
     expected = SAMPLE_HASKELL_UNCOMMENTD
+    assert_equal expected, actual
+  end
+
+  def test_java
+    actual = Uncommenter.new("java", SAMPLE_JAVA_COMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_JAVA_UNCOMMENTED
+    assert_equal expected, actual
+  end
+
+  def test_twice_java
+    actual = Uncommenter.new("java", SAMPLE_JAVA_UNCOMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_JAVA_UNCOMMENTED
+    assert_equal expected, actual
+  end
+
+  def test_php
+    actual = Uncommenter.new("php", SAMPLE_PHP_COMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_PHP_UNCOMMENTED
+    assert_equal expected, actual
+  end
+
+  def test_twice_php
+    actual = Uncommenter.new("php", SAMPLE_PHP_UNCOMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_PHP_UNCOMMENTED
+    assert_equal expected, actual
+  end
+
+  def test_javascript
+    actual = Uncommenter.new("javascript", SAMPLE_JAVASCRIPT_COMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_JAVASCRIPT_UNCOMMENTED
+    assert_equal expected, actual
+  end
+
+  def test_twice_javascript
+    actual = Uncommenter.new("javascript", SAMPLE_JAVASCRIPT_UNCOMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_JAVASCRIPT_UNCOMMENTED
     assert_equal expected, actual
   end
 end
