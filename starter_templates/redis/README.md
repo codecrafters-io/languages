@@ -32,7 +32,13 @@ You should see a failure message that says it wasn't able to connect to port
 `6379`.
 
 Go to `{{ user_editable_file }}` and uncomment the server implementation. Commit and
-push your changes, and you'll now see the first stage pass.
+push your changes to pass the first stage:
+
+``` sh
+git add .
+git commit -m "pass the first stage"
+git push origin master
+```
 
 Time to move on to the next stage!
 
