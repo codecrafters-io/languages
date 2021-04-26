@@ -44,6 +44,12 @@ git push origin master
 ```
 
 Go to `app/main.php` and uncomment the implementation. Commit and push your
-changes, and you'll now see the first stage pass.
+changes to pass the first stage:
+
+```sh
+git add .
+git commit -m "pass the first stage"
+git push origin master
+```
 
 Time to move on to the next stage!
