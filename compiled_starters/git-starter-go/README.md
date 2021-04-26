@@ -56,6 +56,14 @@ You should see a failure message that says the `.git` directory wasn't
 initialized.
 
 Go to `app/main.go` and uncomment the implementation for the `init` command.
-Commit and push your changes to pass the first stage.
+Commit and push your changes to pass the first stage:
+
+```sh
+git add .
+git commit -m "pass the first stage"
+git push origin master
+```
+
+Time to move on to the next stage!
 
 Time to move on to the next stage!

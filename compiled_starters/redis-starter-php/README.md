@@ -30,6 +30,12 @@ You should see a failure message that says it wasn't able to connect to port
 `6379`.
 
 Go to `app/main.php` and uncomment the server implementation. Commit and push
-your changes, and you'll now see the first stage pass.
+your changes to pass the first stage:
+
+```sh
+git add .
+git commit -m "pass the first stage"
+git push origin master
+```
 
 Time to move on to the next stage!
