@@ -65,5 +65,3 @@ git push origin master
 ```
 
 Time to move on to the next stage!
-
-Time to move on to the next stage!
