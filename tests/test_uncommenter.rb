@@ -3,6 +3,34 @@ require "minitest/color"
 
 require_relative "uncommenter"
 
+SAMPLE_TWO_MARKERS_COMMENTED = """
+a = b
+
+# Uncomment this to pass the first stage
+#
+# # First uncommented block
+# b = c
+
+# Uncomment this to pass the first stage
+#
+# # Second uncommented block
+# c = d
+"""
+
+SAMPLE_TWO_MARKERS_UNCOMMENTED = """
+a = b
+
+# Uncomment this to pass the first stage
+
+# First uncommented block
+b = c
+
+# Uncomment this to pass the first stage
+
+# Second uncommented block
+c = d
+"""
+
 SAMPLE_PY_COMMENTED = """
 abcd = true
 
@@ -218,6 +246,12 @@ class TestUncommenter < Minitest::Test
   def test_twice_javascript
     actual = Uncommenter.new("javascript", SAMPLE_JAVASCRIPT_UNCOMMENTED, UNCOMMENT_PATTERN).uncommented
     expected = SAMPLE_JAVASCRIPT_UNCOMMENTED
+    assert_equal expected, actual
+  end
+
+  def test_two_markers
+    actual = Uncommenter.new("python", SAMPLE_TWO_MARKERS_COMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_TWO_MARKERS_UNCOMMENTED
     assert_equal expected, actual
   end
 end
