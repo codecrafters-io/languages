@@ -2,6 +2,9 @@ package main
 
 import (
 	"fmt"
+	// Uncomment this block to pass the first stage!
+	//  "io/ioutil"
+	//  "os"
 )
 
 // Usage: your_git.sh run <image> <command> <arg1> <arg2> ...
