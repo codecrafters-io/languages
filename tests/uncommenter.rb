@@ -35,15 +35,14 @@ class Uncommenter
   end
 
   def uncommented
-
     raise UncommentMarkerNotFound.new(
-      code,
-      uncomment_marker_pattern
-    ) unless !!uncomment_line_index
+      self.code,
+      self.uncomment_marker_pattern
+    ) unless self.uncomment_line_indices.any?
 
     pattern = REGEX_PATTERNS.fetch(@language)
 
-    code
+    self.code
       .lines
       .map { |line| line[0..-2] }
       .each_with_index
@@ -60,29 +59,36 @@ class Uncommenter
   end
 
   def within_uncomment_bounds(index)
-    (index >= uncomment_bounds[0]) && (index <= uncomment_bounds[1])
+    self.uncomment_bounds_pairs.any? do |uncomment_bounds|
+      (index >= uncomment_bounds[0]) && (index <= uncomment_bounds[1])
+    end
   end
 
-  def uncomment_bounds
-    start_index = uncomment_line_index + 1
-    end_index = start_index - 1
-    code.lines.each_with_index do |line, index|
-      next if index < start_index
+  def uncomment_bounds_pairs
+    self.uncomment_line_indices.map do |uncomment_line_index|
+      start_index = uncomment_line_index + 1
+      end_index = start_index - 1
 
-      unless !!line_regex.match(line)
-        break
+      code.lines.each_with_index do |line, index|
+        next if index < start_index
+
+        unless !!line_regex.match(line)
+          break
+        end
+
+        end_index = index
       end
 
-      end_index = index
+      [start_index, end_index]
     end
-
-    [start_index, end_index]
   end
 
-  def uncomment_line_index
+  def uncomment_line_indices
     code
       .lines
-      .index { |line| line_regex.match?(line) && uncomment_marker_pattern.match?(line) }
+      .each_with_index
+      .select { |line, index| line_regex.match?(line) && uncomment_marker_pattern.match?(line) }
+      .map { |line, index| index }
   end
 
   def line_regex
