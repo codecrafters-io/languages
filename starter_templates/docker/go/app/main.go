@@ -2,6 +2,9 @@ package main
 
 import (
 	"fmt"
+	// Uncomment this block to pass the first stage!
+	//  "os"
+	//  "os/exec"
 )
 
 // Usage: your_docker.sh run <image> <command> <arg1> <arg2> ...

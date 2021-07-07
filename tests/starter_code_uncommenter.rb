@@ -31,14 +31,16 @@ class StarterCodeUncommenter
 
   def post_processors
     {
-      "go" => [
-        Proc.new { |file_path|
-          `goimports -w #{file_path}`
-          if $? != 0
-            raise RuntimeError.new("Running goimports failed")
-          end
-        },
-      ]
+      # Imports are commented using the regular mechanism now.
+      #
+      # "go" => [
+      #   Proc.new { |file_path|
+      #     `goimports -w #{file_path}`
+      #     if $? != 0
+      #       raise RuntimeError.new("Running goimports failed")
+      #     end
+      #   },
+      # ]
     }.fetch(language, [])
   end
 
