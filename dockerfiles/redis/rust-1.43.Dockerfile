@@ -19,8 +19,3 @@ RUN rm -f /tmp/codecrafters-redis-target/release/.fingerprint/*redis_starter_rus
 RUN rm -f /tmp/codecrafters-redis-target/release/.fingerprint/redis_starter_rust*
 
 RUN rm -rf /app/src
-COPY . /app
-
-RUN ls /app
-RUN ls /app/src
-RUN cat /app/src/main.rs
