@@ -110,6 +110,8 @@ class StarterRepoTester < TestHarness
       "docker run",
       "-v #{File.expand_path(starter_dir)}:/app",
       "-v #{File.expand_path(starter_tester_path)}:/bin/tester",
+      "-e CODECRAFTERS_SUBMISSION_DIR=/app",
+      "-w /app",
       "#{slug} tester"
     ].join(" ")
 
