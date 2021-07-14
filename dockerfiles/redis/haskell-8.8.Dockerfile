@@ -10,5 +10,6 @@ COPY stack.yaml package.yaml stack.yaml.lock /app/
 RUN stack build --system-ghc --dependencies-only
 
 # Add and Install Application Code
+# TODO: Find a way to only copy repo-independent files
 COPY . /app
 RUN stack build
