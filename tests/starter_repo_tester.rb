@@ -111,6 +111,7 @@ class StarterRepoTester < TestHarness
       "-v #{File.expand_path(starter_dir)}:/app",
       "-v #{File.expand_path(starter_tester_path)}:/bin/tester",
       "-e CODECRAFTERS_SUBMISSION_DIR=/app",
+      "-e CODECRAFTERS_COURSE_PAGE_URL=http://test-app.codecrafters.io/url",
       "-w /app",
       "#{slug} tester"
     ].join(" ")
