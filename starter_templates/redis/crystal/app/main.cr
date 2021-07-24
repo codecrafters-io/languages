@@ -1,5 +1,8 @@
 require "socket"
 
+# Ensure that the program terminates on SIGTERM, https://github.com/crystal-lang/crystal/issues/8687
+Signal::TERM.trap { exit }
+
 class YourRedisServer
   def start
     puts("Your code goes here!")
