@@ -32,7 +32,8 @@ users out.
 - Most of the files (like `.codecrafters.yml`, `README.md` etc.) shouldn't require any additional 
   changes. You'll only need to add files that are specific to your language. In most cases, you'll
   need to add: 
-  - (1) A source code file, where the user will add code. Example: `app/server.py`
+  - (1) A source code file, where the user will add code. Example: `app/server.py`. Just add a basic hello world for
+    now, in the further steps we'll work on adding an implementation for the first stage of the challenge.
   - (2) An entry point bash script, this is what the tester program executes. Example: `your_git.sh`.
   - (3) Any dependency definition files, like `Pipfile`, or `package.json`.
 - Once you've added these files, run `make compile` to see the compiled repository under `compiled_starters`.
