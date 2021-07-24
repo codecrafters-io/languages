@@ -6,6 +6,7 @@ docker = Course.new(slug: "docker", name: "Docker")
 git = Course.new(slug: "git", name: "Git")
 
 c = Language.new(slug: "c", name: "C", repo_suffix: "c")
+crystal = Language.new(slug: "crystal", name: "Crystal", repo_suffix: "crystal")
 elixir = Language.new(slug: "elixir", name: "Elixir", repo_suffix: "elixir")
 go = Language.new(slug: "go", name: "Go", repo_suffix: "go")
 haskell = Language.new(slug: "haskell", name: "Haskell", repo_suffix: "haskell")
@@ -20,6 +21,20 @@ rust = Language.new(slug: "rust", name: "Rust", repo_suffix: "rust")
 
 DEFINITIONS = [
   # ------------------- REDIS ------------------------------
+  Repo.new(
+    course: redis,
+    language: crystal,
+    file_mappings: [
+      FM.new("README.md", "redis/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.cr", "redis/crystal/app/main.cr"),
+      FM.new("spawn_redis_server.sh", "redis/crystal/spawn_redis_server.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "crystal (1.1.0)",
+      "user_editable_file": "app/main.cr"
+    }
+  ),
   Repo.new(
     course: redis,
     language: python,

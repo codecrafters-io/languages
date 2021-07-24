@@ -59,3 +59,7 @@ language_pack: java-1.8
 # Available versions: nim-1.0
 language_pack: nim-1.0
 {{/ language_is_nim }}
+{{# language_is_crystal }}
+# Available versions: crystal-1.1
+language_pack: crystal-1.1
+{{/ language_is_crystal }}

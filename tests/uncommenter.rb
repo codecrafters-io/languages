@@ -24,6 +24,7 @@ class Uncommenter
     "python" => POUND_SIGN,
     "ruby" => POUND_SIGN,
     "rust" => DOUBLE_SLASHES,
+    "crystal" => POUND_SIGN
   }
 
   attr_reader :language, :code, :uncomment_marker_pattern
