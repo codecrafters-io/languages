@@ -43,3 +43,21 @@ users out.
 
 Now that you have a starter repository defined, let's work on a Dockerfile that'll tell CodeCrafters
 how to build a container to run your starter code in.
+
+- Add a dockerfile in the `dockerfiles/` directory. Check other examples to know what these should look like. 
+- Add a testing command to the Makefile, like `test_redis_go`. Again, check other examples to know what this should look 
+  like.
+- Run the testing command you added locally: `make test_redis_go` (substitute your language and challenge). This will
+  test your starter template + dockerfile against the first stage of a challenge, and show you any errors encountered.
+  
+### Edit starter code
+
+Edit your starter code to pass the testing command added above (`make test_<challenge>_<language>`).
+
+The testing command checks whether your code fails the first stage, and then uncomments the implementation and checks if
+it passes the first stage. Error messages should guide you through this process.
+
+### Push to GitHub
+
+Once you have the testing command working, push your code to GitHub. We'll run a series of automated tests, and someone
+will help review and merge your PR!
