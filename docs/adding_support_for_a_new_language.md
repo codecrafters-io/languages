@@ -57,6 +57,9 @@ Edit your starter code to pass the testing command added above (`make test_<chal
 The testing command checks whether your code fails the first stage, and then uncomments the implementation and checks if
 it passes the first stage. Error messages should guide you through this process.
 
+You might need to change the logic to uncomment code to handle your language. Again, the error messages should provide 
+enough context here.
+
 ### Push to GitHub
 
 Once you have the testing command working, push your code to GitHub. We'll run a series of automated tests, and someone

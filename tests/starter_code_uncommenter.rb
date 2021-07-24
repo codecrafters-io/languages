@@ -62,6 +62,7 @@ class StarterCodeUncommenter
       "python" => "py",
       "ruby" => "rb",
       "rust" => "rs",
+      "crystal" => "cr"
     }.fetch(language)
   end
 end
