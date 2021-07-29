@@ -15,7 +15,7 @@ dependencies:
 - network
 - bytestring
 - attoparsec # can help when implementing the RESP parser
-- time
+- time # useful in the expiry stage
 
 executables:
   hs-redis-clone-exe:
