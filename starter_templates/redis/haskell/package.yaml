@@ -1,18 +1,21 @@
+# DON'T EDIT THIS!
+#
+# Codecrafters relies on this file being intact to run tests successfully. Any changes
+# here will not reflect when CodeCrafters tests your code, and might even cause build
+# failures.
+#
+# DON'T EDIT THIS!
+
 name:                hs-redis-clone
 version:             0.1.0.0
 license:             BSD3
-
-# Metadata used when publishing your package
-# synopsis:            Short description of your package
-# category:            Web
 
 dependencies:
 - base >= 4.7 && < 5
 - network
 - bytestring
-# We recommend using attoparsec for your parsing needs while implementing the RESP
-# parser, but the final call is upto you!
-- attoparsec
+- attoparsec # can help when implementing the RESP parser
+- time # useful in the expiry stage
 
 executables:
   hs-redis-clone-exe:
