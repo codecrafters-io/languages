@@ -177,10 +177,8 @@ class TestUncommenter < Minitest::Test
     assert_equal expected, actual
   end
 
-  def test_complains_if_uncomment_marker_not_found
-    assert_raises(UncommentMarkerNotFound) do
-      Uncommenter.new("python", SAMPLE_PY_COMMENTED, /not found/).uncommented
-    end
+  def test_noop_if_no_uncomment_marker
+    assert_equal SAMPLE_PY_COMMENTED, Uncommenter.new("python", SAMPLE_PY_COMMENTED, /not found/).uncommented
   end
 
   def test_twice_python
