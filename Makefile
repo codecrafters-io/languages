@@ -27,6 +27,9 @@ test_docker: compile download_starter_testers
 test_git: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb git
 
+test_sqlite: compile download_starter_testers
+	bundle exec ruby tests/test_all.rb sqlite
+
 test_git_python: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb git python
 
