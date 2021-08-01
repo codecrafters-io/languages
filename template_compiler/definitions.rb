@@ -4,6 +4,7 @@ Repo = StarterRepoDefinition
 redis = Course.new(slug: "redis", name: "Redis")
 docker = Course.new(slug: "docker", name: "Docker")
 git = Course.new(slug: "git", name: "Git")
+sqlite = Course.new(slug: "sqlite", name: "SQLite")
 
 c = Language.new(slug: "c", name: "C", repo_suffix: "c")
 crystal = Language.new(slug: "crystal", name: "Crystal", repo_suffix: "crystal")
@@ -322,6 +323,23 @@ DEFINITIONS = [
     template_attrs: {
       "required_executable": "kotlin",
       "user_editable_file": "app/main.kt"
+    }
+  ),
+
+  # ------------------- SQLITE ------------------------------
+
+  Repo.new(
+    course: sqlite,
+    language: python,
+    file_mappings: [
+      FM.new("README.md", "sqlite/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.py", "sqlite/python/app/main.py"),
+      FM.new("your_sqlite3.sh", "sqlite/python/your_sqlite3.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "python (3.8)",
+      "user_editable_file": "app/main.py"
     }
   )
 ]
