@@ -1,11 +1,3 @@
-class UncommentMarkerNotFound < Exception
-  def initialize(code, marker_pattern)
-    super <<~EOF
-      Didn't find a line that matches #{marker_pattern.inspect} in file.
-    EOF
-  end
-end
-
 class Uncommenter
   POUND_SIGN = /(^\s*)(#\s{0,1})/
   DOUBLE_SLASHES = /(^\s*)(\/\/\s{0,1})/
@@ -36,13 +28,6 @@ class Uncommenter
   end
 
   def uncommented
-    raise UncommentMarkerNotFound.new(
-      self.code,
-      self.uncomment_marker_pattern
-    ) unless self.uncomment_line_indices.any?
-
-    pattern = REGEX_PATTERNS.fetch(@language)
-
     self.code
       .lines
       .map { |line| line[0..-2] }

@@ -1,6 +1,15 @@
 require_relative "uncommenter"
 require "diffy"
 
+class UncommentMarkerNotFound < Exception
+  def initialize(marker_pattern, files)
+    super <<~EOF
+      Didn't find a line that matches #{marker_pattern.inspect} in any of these files: #{files}.
+    EOF
+  end
+end
+
+
 class StarterCodeUncommenter
   attr_reader :dir, :language
 
@@ -13,7 +22,8 @@ class StarterCodeUncommenter
 
   def uncomment
     raise "No code files found" if code_files.empty?
-    code_files.map do |file_path|
+
+    diffs = code_files.map do |file_path|
       old_contents = File.read(file_path)
       new_contents = Uncommenter.new(
         language,
@@ -21,12 +31,18 @@ class StarterCodeUncommenter
         UNCOMMENT_MARKER_PATTERN
       ).uncommented
 
+      next nil if old_contents == new_contents
+
       File.write(file_path, new_contents)
       post_processors.each { |post| post.call(file_path) }
 
       new_contents = File.read(file_path)
       Diffy::Diff.new(old_contents, new_contents)
-    end
+    end.compact
+
+    raise UncommentMarkerNotFound.new(UNCOMMENT_MARKER_PATTERN, code_files) if diffs.empty?
+
+    diffs
   end
 
   def post_processors
