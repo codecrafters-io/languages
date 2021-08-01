@@ -335,6 +335,8 @@ DEFINITIONS = [
       FM.new("README.md", "sqlite/README.md"),
       FM.new("codecrafters.yml", "codecrafters.yml"),
       FM.new("app/main.py", "sqlite/python/app/main.py"),
+      FM.new("app/record_parser.py", "sqlite/python/app/record_parser.py"),
+      FM.new("app/varint_parser.py", "sqlite/python/app/varint_parser.py"),
       FM.new("your_sqlite3.sh", "sqlite/python/your_sqlite3.sh", is_executable=true),
     ],
     template_attrs: {

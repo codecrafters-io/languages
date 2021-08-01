@@ -1,10 +1,12 @@
 redis_tester_api_url = "https://api.github.com/repos/codecrafters-io/redis-starter-tester/releases/latest"
 docker_tester_api_url = "https://api.github.com/repos/codecrafters-io/docker-starter-tester/releases/latest"
 git_tester_api_url = "https://api.github.com/repos/codecrafters-io/git-starter-tester/releases/latest"
+sqlite_tester_api_url = "https://api.github.com/repos/codecrafters-io/sqlite-starter-tester/releases/latest"
 
 latest_redis_tester_version = $(shell curl $(redis_tester_api_url) | jq -r ".tag_name")
 latest_docker_tester_version = $(shell curl $(docker_tester_api_url) | jq -r ".tag_name")
 latest_git_tester_version = $(shell curl $(git_tester_api_url) | jq -r ".tag_name")
+latest_sqlite_tester_version = $(shell curl $(sqlite_tester_api_url) | jq -r ".tag_name")
 
 generate_toc:
 	markdown-toc -i README.md
@@ -85,6 +87,9 @@ test_redis_elixir: compile download_starter_testers
 test_redis_rust: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb redis rust
 
+test_sqlite_python: compile download_starter_testers
+	bundle exec ruby tests/test_all.rb sqlite python
+
 sync_with_github: compile
 	bundle exec ruby repo_syncer/sync.rb
 
@@ -93,6 +98,7 @@ download_starter_testers:
 	test -f .starter_testers/redis || make download_redis_starter_tester
 	test -f .starter_testers/docker || make download_docker_starter_tester
 	test -f .starter_testers/git || make download_git_starter_tester
+	test -f .starter_testers/sqlite || make download_sqlite_starter_tester
 
 download_redis_starter_tester:
 	curl --fail -Lo .starter_testers/redis https://github.com/codecrafters-io/redis-starter-tester/releases/download/$(latest_redis_tester_version)/$(latest_redis_tester_version)_linux_amd64
@@ -105,3 +111,7 @@ download_docker_starter_tester:
 download_git_starter_tester:
 	curl --fail -Lo .starter_testers/git https://github.com/codecrafters-io/git-starter-tester/releases/download/$(latest_git_tester_version)/$(latest_git_tester_version)_linux_amd64
 	chmod +x ./.starter_testers/git
+
+download_sqlite_starter_tester:
+	curl --fail -Lo .starter_testers/sqlite https://github.com/codecrafters-io/sqlite-starter-tester/releases/download/$(latest_sqlite_tester_version)/$(latest_sqlite_tester_version)_linux_amd64
+	chmod +x ./.starter_testers/sqlite
