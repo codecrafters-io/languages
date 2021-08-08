@@ -33,7 +33,7 @@ git push origin master
 
 Time to move on to the next stage!
 
-# Running Locally
+# Running Your Program Locally
 
 1. Ensure you have `{{ required_executable }}` installed locally
 1. Run `./your_sqlite3.sh` to run your program, which is implemented in
