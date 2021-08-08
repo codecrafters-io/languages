@@ -14,7 +14,10 @@ class TemplateCompiler
 
   def compile_all
     Pathname.new(@output_directory).children.each { |p| p.rmtree }
-    DEFINITIONS.each { |d| compile_definition(d) }
+    DEFINITIONS.each do |definition|
+      puts "compiling #{definition.course.slug}-#{definition.language.slug}"
+      compile_definition(definition)
+    end
   end
 
   private

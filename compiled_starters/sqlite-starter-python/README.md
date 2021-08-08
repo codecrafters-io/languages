@@ -59,5 +59,9 @@ of this repository:
 You can explore these databases by running queries against them like this:
 
 ```sh
-$ sqlite3 sample.db "select count(*) from apples"
+$ sqlite3 sample.db "select id, name from apples"
+1|Granny Smith
+2|Fuji
+3|Honeycrisp
+4|Golden Delicious
 ```
