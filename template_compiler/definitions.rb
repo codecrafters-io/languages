@@ -337,6 +337,7 @@ DEFINITIONS = [
       FM.new("app/main.py", "sqlite/python/app/main.py"),
       FM.new("app/record_parser.py", "sqlite/python/app/record_parser.py"),
       FM.new("app/varint_parser.py", "sqlite/python/app/varint_parser.py"),
+      FM.new("sample.db", "sqlite/sample.db"),
       FM.new("your_sqlite3.sh", "sqlite/python/your_sqlite3.sh", is_executable=true),
     ],
     template_attrs: {
