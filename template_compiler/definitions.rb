@@ -340,7 +340,9 @@ DEFINITIONS = [
       FM.new("sample.db", "sqlite/sample.db"),
       FM.new("Pipfile", "sqlite/python/Pipfile"),
       FM.new("Pipfile.lock", "sqlite/python/Pipfile.lock"),
+      FM.new(".gitignore", "sqlite/.gitignore"),
       FM.new("your_sqlite3.sh", "sqlite/python/your_sqlite3.sh", is_executable=true),
+      FM.new("download_sample_databases.sh", "sqlite/download_sample_databases.sh", is_executable=true),
     ],
     template_attrs: {
       "required_executable": "python (3.8)",

@@ -43,20 +43,13 @@ Time to move on to the next stage!
 
 # Sample Databases
 
-To make testing queries locally, we've added three sample databases in the root
-of this repository:
+To make testing queries locally, we've added a sample database in the root of
+this repository: `sample.db`.
 
-1. `sample.db`
-   - This contains two tables: `apples` & `oranges`.
-   - Use this to test the first 5 stages.
-1. `superheroes.db`:
-   - This is a small version of the test database for stage 6
-   - It contains one table: `superheroes`.
-1. `companies.db`:
-   - This is a small version of the test database for stage 7
-   - It contains one table: `companies`, and one index: `idx_companies_country`
+This contains two tables: `apples` & `oranges`. You can use this to test your
+implementation for the first 6 stages.
 
-You can explore these databases by running queries against them like this:
+You can explore this database by running queries against it like this:
 
 ```sh
 $ sqlite3 sample.db "select id, name from apples"
@@ -65,3 +58,25 @@ $ sqlite3 sample.db "select id, name from apples"
 3|Honeycrisp
 4|Golden Delicious
 ```
+
+There are two other databases that you can use:
+
+1. `superheroes.db`:
+   - This is a small version of the test database for stage 6.
+   - It contains one table: `superheroes`.
+   - It is ~1MB in size.
+1. `companies.db`:
+   - This is a small version of the test database for stage 7.
+   - It contains one table: `companies`, and one index: `idx_companies_country`
+   - It is ~7MB in size.
+
+These aren't included in the repository because they're large in size. You can
+download them by running this script:
+
+```sh
+./download_sample_databases.sh
+```
+
+If the script doesn't work for some reason, you can download the databases
+directly from
+[codecrafters-io/sample-sqlite-databases](https://github.com/codecrafters-io/sample-sqlite-databases).
