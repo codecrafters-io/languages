@@ -1,5 +1,7 @@
 import sys
 
+# import sqlparse - available if you need it!
+
 from .record_parser import parse_record
 from .varint_parser import parse_varint
 

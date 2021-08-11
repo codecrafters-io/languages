@@ -7,9 +7,9 @@ COPY Pipfile.lock /app/Pipfile.lock
 
 WORKDIR /app
 
-RUN pipenv install
-
 ENV WORKON_HOME=/venvs
 
+RUN pipenv install
+
 # Force environment creation
-RUN pipenv run python3 -c "print('hey')"
+RUN pipenv run python3 -c "import sqlparse" # Ensure the deps are available
