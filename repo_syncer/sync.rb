@@ -19,17 +19,25 @@ class RepoSyncer
       Created by https://github.com/codecrafters-io/languages
     EOF
 
-    gh_files = Dir
-                 .glob("#{directory}/**/{*,.*}")
-                 .reject { |f| File.directory?(f) }
-                 .map do |file|
-                    {
-                      path: Pathname.new(file).relative_path_from(Pathname.new(directory)),
-                      mode: File.executable?(file) ? "100755" : "100644",
-                      type: "blob",
-                      content: File.read(file)
-                    }
-                 end
+    file_paths = Dir.glob("#{directory}/**/{*,.*}").reject { |f| File.directory?(f) }
+
+    gh_files = file_paths.map do |file_path|
+      file_contents = File.read(file_path)
+
+      content_params = if file_contents.valid_encoding? # If it isn't utf-8, encode with base64
+        { sha: @github_client.create_blob(repo.full_name, Base64.encode64(file_contents), "base64") }
+      else
+        { content: file_contents }
+      end
+
+      {
+        path: Pathname.new(file_path).relative_path_from(Pathname.new(directory)),
+        mode: File.executable?(file_path) ? "100755" : "100644",
+        type: "blob",
+        **content_params
+      }
+    end
+
     tree = @github_client.create_tree(repo.full_name, gh_files)
     return if tree.sha == master_tree_sha
 
