@@ -62,11 +62,11 @@ $ sqlite3 sample.db "select id, name from apples"
 There are two other databases that you can use:
 
 1. `superheroes.db`:
-   - This is a small version of the test database for stage 6.
+   - This is a small version of the test database used in the table-scan stage.
    - It contains one table: `superheroes`.
    - It is ~1MB in size.
 1. `companies.db`:
-   - This is a small version of the test database for stage 7.
+   - This is a small version of the test database used in the index-scan stage.
    - It contains one table: `companies`, and one index: `idx_companies_country`
    - It is ~7MB in size.
 
