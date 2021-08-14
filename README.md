@@ -89,8 +89,9 @@ to how CodeCrafters works.
 We make this easier by adding a concise step-by-step README, and also including
 all code needed to pass the first stage.
 
-## [WIP] Contributing
+## Contributing
 
-Thanks for considering contributing to this project! We've made a detailed guide
-for you at `CONTRIBUTING.md`. If you need help, feel free to ask in the [early
-access](https://codecrafters.io/early-access) Discord server.
+Thank you for considering contributing to this project!
+
+Here's a detailed guide on [Adding support for a new language](docs/adding_support_for_a_new_language.md). If you need 
+help, feel free to ask in the [early access](https://codecrafters.io/early-access) Discord server.
