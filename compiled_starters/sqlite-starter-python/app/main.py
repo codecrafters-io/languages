@@ -1,24 +1,48 @@
 import sys
 
+from dataclasses import dataclass
+
 # import sqlparse - available if you need it!
 
 from .record_parser import parse_record
 from .varint_parser import parse_varint
 
+
 database_file_path = sys.argv[1]
 command = sys.argv[2]
+
+
+@dataclass(init=False)
+class PageHeader:
+    page_type: int
+    first_free_block_start: int
+    number_of_cells: int
+    start_of_content_area: int
+    fragmented_free_bytes: int
+
+    @classmethod
+    def parse_from(cls, database_file):
+        """
+        Parses a page header as mentioned here: https://www.sqlite.org/fileformat2.html#b_tree_pages
+        """
+        instance = cls()
+
+        instance.page_type = int.from_bytes(database_file.read(1), "big")
+        instance.first_free_block_start = int.from_bytes(database_file.read(2), "big")
+        instance.number_of_cells = int.from_bytes(database_file.read(2), "big")
+        instance.start_of_content_area = int.from_bytes(database_file.read(2), "big")
+        instance.fragmented_free_bytes = int.from_bytes(database_file.read(1), "big")
+
+        return instance
+
 
 if command == ".dbinfo":
     with open(database_file_path, "rb") as database_file:
         database_file.seek(100)  # Skip the header section
-
-        _page_type = int.from_bytes(database_file.read(1), "big")
-        _first_freeblock_start = int.from_bytes(database_file.read(2), "big")
-        number_of_cells = int.from_bytes(database_file.read(2), "big")
-
+        page_header = PageHeader.parse_from(database_file)
         database_file.seek(100+8)  # Skip the database header & b-tree page header, get to the cell pointer array
 
-        cell_pointers = [int.from_bytes(database_file.read(2), "big") for _ in range(number_of_cells)]
+        cell_pointers = [int.from_bytes(database_file.read(2), "big") for _ in range(page_header.number_of_cells)]
 
         sqlite_schema_rows = []
 

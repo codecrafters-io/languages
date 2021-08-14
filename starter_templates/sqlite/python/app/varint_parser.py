@@ -3,6 +3,9 @@ LAST_SEVEN_BITS_MASK = 0b01111111
 
 
 def parse_varint(stream):
+    """
+    Parses SQLite's "varint" (short for variable-length integer) as mentioned here: https://www.sqlite.org/fileformat2.html#varint
+    """
     usable_bytes = read_usable_bytes(stream)
 
     value = 0
