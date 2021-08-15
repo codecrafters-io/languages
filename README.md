@@ -10,7 +10,7 @@ This repository powers multiple language support for
 - [Constraints](#constraints)
   * [Fast build times](#fast-build-times)
   * [Easy to start](#easy-to-start)
-- [[WIP] Contributing](#wip-contributing)
+- [Contributing](#contributing)
 
 <!-- tocstop -->
 
