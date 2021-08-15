@@ -5,18 +5,17 @@ import (
 	"io"
 	"log"
 	"os"
-
 	// Available if you need it!
 	// "github.com/pingcap/parser"
 	// "github.com/pingcap/parser/ast"
 )
 
 type SQLiteSchemaRow struct {
-	_type string // _type since type is a reserved keyword
-	name string
-	tblName string
+	_type    string // _type since type is a reserved keyword
+	name     string
+	tblName  string
 	rootPage int
-	sql string
+	sql      string
 }
 
 // Usage: your_sqlite3.sh sample.db .dbinfo
@@ -50,20 +49,20 @@ func main() {
 			record := parseRecord(databaseFile, 5)
 
 			sqliteSchemaRows = append(sqliteSchemaRows, SQLiteSchemaRow{
-				_type: string(record.values[0].([]byte)),
-				name: string(record.values[1].([]byte)),
-				tblName: string(record.values[2].([]byte)),
+				_type:    string(record.values[0].([]byte)),
+				name:     string(record.values[1].([]byte)),
+				tblName:  string(record.values[2].([]byte)),
 				rootPage: int(record.values[3].(uint8)),
-				sql: string(record.values[4].([]byte)),
+				sql:      string(record.values[4].([]byte)),
 			})
 		}
 
 		fmt.Println("Your code goes here!")
 
 		// Uncomment this to pass the first stage
-	    // fmt.Printf("number of tables: %v", len(sqliteSchemaRows))
+		// fmt.Printf("number of tables: %v", len(sqliteSchemaRows))
 	default:
-	    fmt.Println("Unknown command", command)
-	    os.Exit(1)
+		fmt.Println("Unknown command", command)
+		os.Exit(1)
 	}
 }

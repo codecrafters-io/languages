@@ -29,7 +29,7 @@ func parseRecord(stream io.Reader, valuesCount int) Record {
 }
 
 func parseRecordValue(stream io.Reader, serialType int) interface{} {
-	if serialType >= 13 && serialType % 2 == 1 {
+	if serialType >= 13 && serialType%2 == 1 {
 		// Text encoding
 		bytesCount := (serialType - 13) / 2
 		value := make([]byte, bytesCount)
