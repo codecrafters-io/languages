@@ -3,10 +3,10 @@ package main
 import "os"
 
 type PageHeader struct {
-	PageType uint8
+	PageType            uint8
 	FirstFreeBlockStart uint16
-	NumberOfCells uint16
-	StartOfContentArea uint16
+	NumberOfCells       uint16
+	StartOfContentArea  uint16
 	FragmentedFreeBytes uint8
 }
 
@@ -18,10 +18,10 @@ func parsePageHeader(databaseFile *os.File) PageHeader {
 	fragmentedFreeBytes := parseUInt8(databaseFile)
 
 	return PageHeader{
-		PageType: pageType,
+		PageType:            pageType,
 		FirstFreeBlockStart: firstFreeBlockStart,
-		NumberOfCells: numberOfCells,
-		StartOfContentArea: startOfContentArea,
+		NumberOfCells:       numberOfCells,
+		StartOfContentArea:  startOfContentArea,
 		FragmentedFreeBytes: fragmentedFreeBytes,
 	}
 }

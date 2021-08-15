@@ -41,7 +41,7 @@ func readUsableBytesAsInts(stream io.Reader) []int {
 		byteAsInt := parseUInt8(stream)
 		usableBytesAsInts = append(usableBytesAsInts, int(byteAsInt))
 
-		if byteAsInt & IS_FIRST_BIT_ZERO_MASK == 0 {
+		if byteAsInt&IS_FIRST_BIT_ZERO_MASK == 0 {
 			break
 		}
 	}

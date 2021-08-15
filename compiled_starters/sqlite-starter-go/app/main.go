@@ -61,7 +61,7 @@ func main() {
 		fmt.Println("Your code goes here!")
 
 		// Uncomment this to pass the first stage
-	    fmt.Printf("number of tables: %v", len(sqliteSchemaRows))
+	    // fmt.Printf("number of tables: %v", len(sqliteSchemaRows))
 	default:
 	    fmt.Println("Unknown command", command)
 	    os.Exit(1)
