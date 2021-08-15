@@ -13,8 +13,15 @@ class TemplateCompiler
   end
 
   def compile_all
-    Pathname.new(@output_directory).children.each { |p| p.rmtree }
     DEFINITIONS.each do |definition|
+      puts "compiling #{definition.course.slug}-#{definition.language.slug}"
+      compile_definition(definition)
+    end
+  end
+
+  def compile_one(course_slug, language_slug)
+    DEFINITIONS.each do |definition|
+      next unless definition.course.slug.eql?(course_slug) && definition.language.slug.eql?(language_slug)
       puts "compiling #{definition.course.slug}-#{definition.language.slug}"
       compile_definition(definition)
     end
@@ -24,6 +31,8 @@ class TemplateCompiler
 
   def compile_definition(definition)
     directory = File.join(@output_directory, definition.repo_name)
+    FileUtils.rmtree(directory)
+
     definition.files(@templates_path).each do |file|
       path = File.join(directory, file[:path])
       FileUtils.mkdir_p(File.dirname(path))
