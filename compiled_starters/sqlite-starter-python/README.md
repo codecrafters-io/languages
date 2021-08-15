@@ -2,9 +2,11 @@ This is a starting point for Python solutions to the
 ["Build Your Own SQLite" Challenge](https://codecrafters.io/challenges/sqlite).
 
 In this challenge, you'll build a barebones SQLite implementation that supports
-basic SQL statements like `SELECT`/`INSERT`. Along the way we'll learn about
+basic SQL queries like `SELECT`. Along the way we'll learn about
 [SQLite's file format](https://www.sqlite.org/fileformat.html), how indexed data
-is stored in B-trees and more.
+is
+[stored in B-trees](https://jvns.ca/blog/2014/10/02/how-does-sqlite-work-part-2-btrees/)
+and more.
 
 **Note**: If you're viewing this repo on GitHub, head over to
 [codecrafters.io](https://codecrafters.io) to signup for early access.

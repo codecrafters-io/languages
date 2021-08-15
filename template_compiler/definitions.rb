@@ -370,7 +370,7 @@ DEFINITIONS = [
     ],
     template_attrs: {
       "required_executable": "go (1.16)",
-      "user_editable_file": "app/main.py"
+      "user_editable_file": "app/main.go"
     }
   )
 ]
