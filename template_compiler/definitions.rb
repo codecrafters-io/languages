@@ -348,5 +348,29 @@ DEFINITIONS = [
       "required_executable": "python (3.8)",
       "user_editable_file": "app/main.py"
     }
+  ),
+
+  Repo.new(
+    course: sqlite,
+    language: go,
+    file_mappings: [
+      FM.new("README.md", "sqlite/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.go", "sqlite/go/app/main.go"),
+      FM.new("app/record_parser.go", "sqlite/go/app/record_parser.go"),
+      FM.new("app/varint_parser.go", "sqlite/go/app/varint_parser.go"),
+      FM.new("app/int_parser.go", "sqlite/go/app/int_parser.go"),
+      FM.new("app/page_header.go", "sqlite/go/app/page_header.go"),
+      FM.new("sample.db", "sqlite/sample.db"),
+      FM.new("go.mod", "sqlite/go/go.mod"),
+      FM.new("go.sum", "sqlite/go/go.sum"),
+      FM.new(".gitignore", "sqlite/.gitignore"),
+      FM.new("your_sqlite3.sh", "sqlite/go/your_sqlite3.sh", is_executable=true),
+      FM.new("download_sample_databases.sh", "sqlite/download_sample_databases.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "go (1.16)",
+      "user_editable_file": "app/main.py"
+    }
   )
 ]

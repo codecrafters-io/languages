@@ -90,8 +90,13 @@ test_redis_elixir: compile download_starter_testers
 test_redis_rust: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb redis rust
 
-test_sqlite_python: compile download_starter_testers
+test_sqlite_python: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb sqlite python
 	bundle exec ruby tests/test_all.rb sqlite python
+
+test_sqlite_go: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb sqlite go
+	bundle exec ruby tests/test_all.rb sqlite go
 
 sync_with_github: compile
 	bundle exec ruby repo_syncer/sync.rb
