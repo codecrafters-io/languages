@@ -7,5 +7,5 @@ debug: false
 # Use this to change the Go version used to run your code
 # on Codecrafters.
 #
-# Available versions: go-1.13
-language_pack: go-1.13
+# Available versions: go-1.16
+language_pack: go-1.16
