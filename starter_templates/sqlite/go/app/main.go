@@ -5,6 +5,10 @@ import (
 	"io"
 	"log"
 	"os"
+
+	// Available if you need it!
+	// "github.com/pingcap/parser"
+	// "github.com/pingcap/parser/ast"
 )
 
 type SQLiteSchemaRow struct {

@@ -359,6 +359,8 @@ DEFINITIONS = [
       FM.new("app/main.go", "sqlite/go/app/main.go"),
       FM.new("app/record_parser.go", "sqlite/go/app/record_parser.go"),
       FM.new("app/varint_parser.go", "sqlite/go/app/varint_parser.go"),
+      FM.new("app/int_parser.go", "sqlite/go/app/int_parser.go"),
+      FM.new("app/page_header.go", "sqlite/go/app/page_header.go"),
       FM.new("sample.db", "sqlite/sample.db"),
       FM.new("go.mod", "sqlite/go/go.mod"),
       FM.new("go.sum", "sqlite/go/go.sum"),
