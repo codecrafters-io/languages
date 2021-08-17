@@ -372,5 +372,29 @@ DEFINITIONS = [
       "required_executable": "go (1.16)",
       "user_editable_file": "app/main.go"
     }
+  ),
+
+  Repo.new(
+    course: sqlite,
+    language: javascript,
+    file_mappings: [
+      FM.new("README.md", "sqlite/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/main.js", "sqlite/javascript/app/main.js"),
+      FM.new("app/database-file.js", "sqlite/javascript/app/database-file.js"),
+      FM.new("app/read-int.js", "sqlite/javascript/app/read-int.js"),
+      FM.new("app/read-page-header.js", "sqlite/javascript/app/read-page-header.js"),
+      FM.new("app/read-record.js", "sqlite/javascript/app/read-record.js"),
+      FM.new("app/read-varint.js", "sqlite/javascript/app/read-varint.js"),
+      FM.new("package.json", "sqlite/javascript/package.json"),
+      FM.new("sample.db", "sqlite/sample.db"),
+      FM.new(".gitignore", "sqlite/.gitignore"),
+      FM.new("your_sqlite3.sh", "sqlite/javascript/your_sqlite3.sh", is_executable=true),
+      FM.new("download_sample_databases.sh", "sqlite/download_sample_databases.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "node (14)",
+      "user_editable_file": "app/main.js"
+    }
   )
 ]

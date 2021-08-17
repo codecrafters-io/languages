@@ -1,0 +1,9 @@
+{
+  "name": "sqlite-starter-javascript",
+  "version": "1.0.0",
+  "description": "This is a starting point for JavaScript solutions to the Build Your Own SQLite challenge",
+  "main": "app/main.js",
+  "author": "CodeCrafters",
+  "type": "module",
+  "license": "MIT"
+}
