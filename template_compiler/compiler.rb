@@ -4,7 +4,8 @@ require "fileutils"
 
 class TemplateCompiler
   POSTPROCESSORS = {
-    "md" => Proc.new { |filepath| `npx prettier --prose-wrap="always" --write #{filepath}` }
+    "md" => Proc.new { |filepath| `npx prettier --prose-wrap="always" --write #{filepath}` },
+    "js" => Proc.new { |filepath| `npx prettier --write #{filepath}` }
   }
 
   def initialize(templates_path, output_directory)
@@ -43,9 +44,7 @@ class TemplateCompiler
   end
 
   def postprocess!(filepath)
-    # TODO: Add others
-    if filepath.end_with?(".md")
-      POSTPROCESSORS["md"].call(filepath)
-    end
+    POSTPROCESSORS["md"].call(filepath) if filepath.end_with?(".md")
+    POSTPROCESSORS["js"].call(filepath) if filepath.end_with?(".js")
   end
 end
