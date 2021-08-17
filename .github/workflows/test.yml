@@ -32,6 +32,13 @@ jobs:
     - run: gem install mdl
     - run: mdl --style relaxed compiled_starters
 
+  js_lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: npx prettier --check **/*.js
+
   uncommenter:
     runs-on: ubuntu-latest
 
