@@ -45,7 +45,7 @@ Time to move on to the next stage!
    
 # Sample Databases
 
-To make testing queries locally, we've added a sample database in the root
+To make it easy to test queries locally, we've added a sample database in the root
 of this repository: `sample.db`.
 
 This contains two tables: `apples` & `oranges`. You can use this
