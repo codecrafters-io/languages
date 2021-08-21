@@ -396,5 +396,24 @@ DEFINITIONS = [
       "required_executable": "node (14)",
       "user_editable_file": "app/main.js"
     }
-  )
+  ),
+  Repo.new(
+    course: sqlite,
+    language: rust,
+    file_mappings: [
+      FM.new("README.md", "sqlite/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("src/main.rs", "sqlite/rust/src/main.rs"),
+      FM.new(".gitignore", "sqlite/rust/.gitignore"),
+      FM.new("Cargo.toml", "sqlite/rust/Cargo.toml"),
+      FM.new("Cargo.lock", "sqlite/rust/Cargo.lock"),
+      FM.new("your_sqlite3.sh", "sqlite/rust/your_sqlite3.sh", is_executable=true),
+      FM.new("sample.db", "sqlite/sample.db"),
+      FM.new("download_sample_databases.sh", "sqlite/download_sample_databases.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "cargo (1.43)",
+      "user_editable_file": "src/main.rs"
+    }
+  ),
 ]
