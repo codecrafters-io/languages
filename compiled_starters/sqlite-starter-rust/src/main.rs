@@ -45,7 +45,11 @@ fn main() -> Result<()> {
                         .map(|record| Schema::parse(record).expect("Invalid record"))
                 })
                 .collect::<Result<Vec<_>>>()?;
-            println!("{}", schemas.len());
+
+            println!("Your code goes here!");
+
+            // Uncomment this block to pass the first stage
+            // println!("{}", schemas.len());
         }
         _ => bail!("Missing or invalid command passed: {}", command),
     }

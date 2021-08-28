@@ -19,5 +19,4 @@ edition = "2018"
 #
 # DON'T EDIT THIS!
 [dependencies]
-bytes = "0.5" # helps manage buffers
-tokio = { version = "0.2", features = ["full"] } # async networking
+anyhow = "1.0.43"
