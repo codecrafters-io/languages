@@ -19,4 +19,4 @@ edition = "2018"
 #
 # DON'T EDIT THIS!
 [dependencies]
-anyhow = "1.0.43"
+anyhow = "1.0.43" # for easy error handling
