@@ -35,6 +35,7 @@ fn main() -> Result<()> {
                 .collect::<Vec<_>>();
 
             // Obtain all records from column 5
+            #[allow(unused_variables)]
             let schemas = cell_pointers
                 .into_iter()
                 .map(|cell_pointer| {
@@ -49,7 +50,7 @@ fn main() -> Result<()> {
             println!("Your code goes here!");
 
             // Uncomment this block to pass the first stage
-            // println!("{}", schemas.len());
+            // println!("number of tables: {}", schemas.len());
         }
         _ => bail!("Missing or invalid command passed: {}", command),
     }
