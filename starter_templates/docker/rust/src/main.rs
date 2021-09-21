@@ -1,8 +1,8 @@
-use anyhow::Result;
 use std::process::exit;
+use std::error::Error;
 
 // Usage: your_docker.sh run <image> <command> <arg1> <arg2> ...
-fn main() -> Result<()> {
+fn main() -> Result<(), Box<dyn Error>> {
     println!("Your code goes here!");
 
     let args: Vec<_> = std::env::args().collect();
