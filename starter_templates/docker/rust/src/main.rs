@@ -1,6 +1,4 @@
 use anyhow::Result;
-use std::fs::File;
-use std::io::prelude::*;
 use std::process::exit;
 
 // Usage: your_docker.sh run <image> <command> <arg1> <arg2> ...
