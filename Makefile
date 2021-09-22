@@ -57,6 +57,9 @@ test_docker_c: compile download_starter_testers
 test_docker_php: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb docker php
 
+test_docker_rust: compile download_starter_testers
+	bundle exec ruby tests/test_all.rb docker rust
+
 test_redis_crystal: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb redis crystal
 
