@@ -1,4 +1,4 @@
-FROM rust:1.55-alpine
+FROM rust:1.43-alpine
 
 COPY Cargo.toml /app/Cargo.toml
 COPY Cargo.lock /app/Cargo.lock
