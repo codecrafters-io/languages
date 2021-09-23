@@ -70,37 +70,48 @@ test_docker_rust: download_starter_testers
 	bundle exec ruby template_compiler/compile.rb docker rust
 	bundle exec ruby tests/test_all.rb docker rust
 
-test_redis_crystal: compile download_starter_testers
+test_redis_crystal: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb redis crystal
 	bundle exec ruby tests/test_all.rb redis crystal
 
-test_redis_php: compile download_starter_testers
+test_redis_php: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb redis php
 	bundle exec ruby tests/test_all.rb redis php
 
-test_redis_python: compile download_starter_testers
+test_redis_python: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb redis python
 	bundle exec ruby tests/test_all.rb redis python
 
-test_redis_javascript: compile download_starter_testers
+test_redis_javascript: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb redis javascript
 	bundle exec ruby tests/test_all.rb redis javascript
 
-test_redis_ruby: compile download_starter_testers
+test_redis_ruby: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb redis ruby
 	bundle exec ruby tests/test_all.rb redis ruby
 
-test_redis_go: compile download_starter_testers
+test_redis_go: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb redis go
 	bundle exec ruby tests/test_all.rb redis go
 
-test_redis_c: compile download_starter_testers
+test_redis_c: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb redis c
 	bundle exec ruby tests/test_all.rb redis c
 
-test_redis_haskell: compile download_starter_testers
+test_redis_haskell: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb redis haskell
 	bundle exec ruby tests/test_all.rb redis haskell
 
-test_redis_java: compile download_starter_testers
+test_redis_java: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb redis java
 	bundle exec ruby tests/test_all.rb redis java
 
-test_redis_elixir: compile download_starter_testers
+test_redis_elixir: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb redis elixir
 	bundle exec ruby tests/test_all.rb redis elixir
 
-test_redis_rust: compile download_starter_testers
+test_redis_rust: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb redis rust
 	bundle exec ruby tests/test_all.rb redis rust
 
 test_sqlite_python: download_starter_testers
