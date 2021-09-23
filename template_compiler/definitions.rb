@@ -249,6 +249,23 @@ DEFINITIONS = [
       "user_editable_file": "app/main.nim"
     }
   ),
+  Repo.new(
+    course: docker,
+    language: rust,
+    file_mappings: [
+      FM.new("README.md", "docker/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("src/main.rs", "docker/rust/src/main.rs"),
+      FM.new(".gitignore", "docker/rust/.gitignore"),
+      FM.new("Cargo.toml", "docker/rust/Cargo.toml"),
+      FM.new("Cargo.lock", "docker/rust/Cargo.lock"),
+      FM.new("your_docker.sh", "docker/rust/your_docker.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "cargo (1.43)",
+      "user_editable_file": "src/main.rs"
+    }
+  ),
 
   # ------------------- GIT ------------------------------
 
