@@ -30,34 +30,44 @@ test_git: compile download_starter_testers
 test_sqlite: compile download_starter_testers
 	bundle exec ruby tests/test_all.rb sqlite
 
-test_git_python: compile download_starter_testers
+test_git_python: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb git python
 	bundle exec ruby tests/test_all.rb git python
 
-test_git_ruby: compile download_starter_testers
+test_git_ruby: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb git ruby
 	bundle exec ruby tests/test_all.rb git ruby
 
-test_git_go: compile download_starter_testers
+test_git_go: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb git go
 	bundle exec ruby tests/test_all.rb git go
 
-test_git_rust: compile download_starter_testers
+test_git_rust: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb git rust
 	bundle exec ruby tests/test_all.rb git rust
 
-test_git_kotlin: compile download_starter_testers
+test_git_kotlin: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb git kotlin
 	bundle exec ruby tests/test_all.rb git kotlin
 
-test_docker_go: compile download_starter_testers
-	bundle exec ruby tests/test_all.rb docker go
-
-test_docker_nim: compile download_starter_testers
-	bundle exec ruby tests/test_all.rb docker nim
-
-test_docker_c: compile download_starter_testers
+test_docker_c: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb docker c
 	bundle exec ruby tests/test_all.rb docker c
 
-test_docker_php: compile download_starter_testers
+test_docker_go: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb docker go
+	bundle exec ruby tests/test_all.rb docker go
+
+test_docker_nim: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb docker nim
+	bundle exec ruby tests/test_all.rb docker nim
+
+test_docker_php: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb docker php
 	bundle exec ruby tests/test_all.rb docker php
 
-test_docker_rust: compile download_starter_testers
+test_docker_rust: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb docker rust
 	bundle exec ruby tests/test_all.rb docker rust
 
 test_redis_crystal: compile download_starter_testers

@@ -1,6 +1,4 @@
-FROM rust:1.43-alpine
-
-RUN apk add curl
+FROM rust:1.43-buster
 
 # Download docker-explorer
 ARG docker_explorer_version=v18

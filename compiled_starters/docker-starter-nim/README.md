@@ -12,10 +12,7 @@ we'll learn about [chroot](https://en.wikipedia.org/wiki/Chroot),
 
 # Usage
 
-1. Ensure you have `nim (1.0)` installed locally
-1. Download
-   [`docker-explorer`](https://github.com/codecrafters-io/docker-explorer), as
-   [mentioned here](https://github.com/codecrafters-io/docker-explorer).
+1. Ensure you have [Docker](https://www.docker.com/) installed locally.
 1. Follow the details below ("Running your program locally") to run your Docker
    implementation, which is implemented in `app/main.nim`.
 1. Commit your changes and run `git push origin master` to submit your solution
@@ -27,11 +24,24 @@ Since you'll need to use linux-specific syscalls in this challenge, we'll run
 your code _inside_ a docker container.
 
 ```sh
-docker build -t my_docker .
-docker run --cap-add="SYS_ADMIN" my_docker run some_image /usr/local/bin/docker-explorer echo hey
+docker build -t my_docker . && docker run --cap-add="SYS_ADMIN" my_docker run some_image /usr/local/bin/docker-explorer echo hey
 ```
 
-(remember to re-run `docker build` each time you make changes to your code!)
+(The `--cap-add="SYS_ADMIN"` flag is required to create
+[PID Namespaces](https://man7.org/linux/man-pages/man7/pid_namespaces.7.html))
+
+To make this easier to type out, you could add a
+[shell alias](https://shapeshed.com/unix-alias/):
+
+```sh
+alias mydocker='docker build -t mydocker . && docker run --cap-add="SYS_ADMIN" mydocker'
+```
+
+You can then execute your program like this:
+
+```sh
+mydocker run ubuntu:latest /usr/local/bin/docker-explorer echo hey
+```
 
 # Passing the first stage
 
