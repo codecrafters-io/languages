@@ -37,7 +37,7 @@ Time to move on to the next stage!
 
 # Running Your Program Locally
 
-1. Ensure you have `cargo (1.43)` installed locally
+1. Ensure you have `cargo (1.54)` installed locally
 1. Run `./your_sqlite3.sh` to run your program, which is implemented in
    `src/main.rs`. This command compiles your Rust project, so it might be slow
    the first time you run it. Subsequent runs will be fast.
