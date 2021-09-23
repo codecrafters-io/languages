@@ -43,6 +43,9 @@ You can then execute your program like this:
 mydocker run ubuntu:latest /usr/local/bin/docker-explorer echo hey
 ```
 
+This command compiles your Rust project, so it might be slow the first time you
+run it. Subsequent runs will be fast.
+
 # Passing the first stage
 
 CodeCrafters runs tests when you do a `git push`. Make an empty commit and push

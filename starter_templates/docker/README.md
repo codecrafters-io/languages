@@ -42,6 +42,10 @@ You can then execute your program like this:
 mydocker run ubuntu:latest /usr/local/bin/docker-explorer echo hey
 ```
 
+{{# language_is_rust }}This command compiles your
+Rust project, so it might be slow the first time you run it. Subsequent runs
+will be fast.{{/ language_is_rust}}
+
 # Passing the first stage
 
 CodeCrafters runs tests when you do a `git push`. Make an empty commit and push
