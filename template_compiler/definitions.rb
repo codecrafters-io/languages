@@ -259,6 +259,7 @@ DEFINITIONS = [
       FM.new(".gitignore", "docker/rust/.gitignore"),
       FM.new("Cargo.toml", "docker/rust/Cargo.toml"),
       FM.new("Cargo.lock", "docker/rust/Cargo.lock"),
+      FM.new("Dockerfile", "docker/rust/Dockerfile"),
       FM.new("your_docker.sh", "docker/rust/your_docker.sh", is_executable=true),
     ],
     template_attrs: {
