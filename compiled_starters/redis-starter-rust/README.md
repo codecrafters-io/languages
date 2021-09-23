@@ -10,7 +10,7 @@ event loops, the Redis protocol and more.
 
 # Usage
 
-1. Ensure you have `cargo (1.43)` installed locally
+1. Ensure you have `cargo (1.54)` installed locally
 1. Run `./spawn_redis_server.sh` to run your Redis server, which is implemented
    in `src/main.rs`. This command compiles your Rust project, so it might be
    slow the first time you run it. Subsequent runs will be fast.

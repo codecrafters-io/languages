@@ -154,7 +154,7 @@ DEFINITIONS = [
       FM.new("spawn_redis_server.sh", "redis/rust/spawn_redis_server.sh", is_executable=true),
     ],
     template_attrs: {
-      "required_executable": "cargo (1.43)",
+      "required_executable": "cargo (1.54)",
       "user_editable_file": "src/main.rs"
     }
   ),
@@ -263,7 +263,7 @@ DEFINITIONS = [
       FM.new("your_docker.sh", "docker/rust/your_docker.sh", is_executable=true),
     ],
     template_attrs: {
-      "required_executable": "cargo (1.43)",
+      "required_executable": "cargo (1.54)",
       "user_editable_file": "src/main.rs"
     }
   ),
@@ -325,7 +325,7 @@ DEFINITIONS = [
       FM.new("your_git.sh", "git/rust/your_git.sh", is_executable=true),
     ],
     template_attrs: {
-      "required_executable": "cargo (1.43)",
+      "required_executable": "cargo (1.54)",
       "user_editable_file": "src/main.rs"
     }
   ),
@@ -435,7 +435,7 @@ DEFINITIONS = [
       FM.new("download_sample_databases.sh", "sqlite/download_sample_databases.sh", is_executable=true),
     ],
     template_attrs: {
-      "required_executable": "cargo (1.43)",
+      "required_executable": "cargo (1.54)",
       "user_editable_file": "src/main.rs"
     }
   ),
