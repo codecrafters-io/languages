@@ -3,14 +3,19 @@
 require_relative "dockerfile_tester"
 require_relative "starter_repo_tester"
 
+DOCKERFILE_PATHS_TO_SKIP = [
+  "dockerfiles/sqlite/rust-1.43.Dockerfile", # Newer dependencies aren't compatible
+]
+
 course_filter = ARGV[0]
 language_filter = ARGV[1]
 
-dockerfile_testers = Dir["dockerfiles/**/*.Dockerfile"].map do |path| 
+dockerfile_testers = Dir["dockerfiles/**/*.Dockerfile"].map do |path|
+  next if DOCKERFILE_PATHS_TO_SKIP.include?(path)
   DockerfileTester.from_dockerfile(path)
-end
+end.compact
 
-starter_repo_testers = Dir["compiled_starters/*"].map do |compiled_starter_path| 
+starter_repo_testers = Dir["compiled_starters/*"].map do |compiled_starter_path|
   repo_name = File.basename(compiled_starter_path)
   StarterRepoTester.from_repo_name(repo_name)
 end
