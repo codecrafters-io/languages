@@ -29,6 +29,7 @@ DEFINITIONS = [
     file_mappings: [
       FM.new("README.md", "redis/README.md"),
       FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new(".gitignore", "redis/clojure/.gitignore"),
       FM.new("project.clj", "redis/clojure/project.clj"),
       FM.new("src/redis/core.clj", "redis/clojure/src/redis/core.clj"),
       FM.new("spawn_redis_server.sh", "redis/clojure/spawn_redis_server.sh", is_executable=true),
