@@ -1,1 +1,1 @@
-FROM openjdk-18-lein-alpine
+FROM clojure:openjdk-18-lein-alpine
