@@ -25,6 +25,13 @@ this), but we had to verify that all the required sys-calls are supported before
 support for this. Wherever possible, we add language-specific hints to stages to help 
 users out.
 
+### Add a test command
+
+We'll start out by creating a quick make command you can run to test the starter implementation.
+
+- Add a testing command to the Makefile, like `test_redis_go`. Check other examples to know what this should look
+  like.
+
 ### Add a starter repository
 
 - Go to `template_compiler/definitions.rb`, and add an entry for the new language + course. All 
@@ -45,8 +52,6 @@ Now that you have a starter repository defined, let's work on a Dockerfile that'
 how to build a container to run your starter code in.
 
 - Add a dockerfile in the `dockerfiles/` directory. Check other examples to know what these should look like. 
-- Add a testing command to the Makefile, like `test_redis_go`. Again, check other examples to know what this should look 
-  like.
 - Run the testing command you added locally: `make test_redis_go` (substitute your language and challenge). This will
   test your starter template + dockerfile against the first stage of a challenge, and show you any errors encountered.
   
