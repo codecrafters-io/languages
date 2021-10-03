@@ -67,6 +67,8 @@ class StarterCodeUncommenter
   def code_file_extension
     {
       "c" => "c",
+      "clojure" => "clj",
+      "crystal" => "cr",
       "elixir" => "ex",
       "go" => "go",
       "haskell" => "hs",
@@ -78,7 +80,6 @@ class StarterCodeUncommenter
       "python" => "py",
       "ruby" => "rb",
       "rust" => "rs",
-      "crystal" => "cr"
     }.fetch(language)
   end
 end

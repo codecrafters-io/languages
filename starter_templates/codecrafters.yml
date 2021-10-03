@@ -63,3 +63,7 @@ language_pack: nim-1.0
 # Available versions: crystal-1.1
 language_pack: crystal-1.1
 {{/ language_is_crystal }}
+{{#language_is_clojure}}
+# Available versions: clojure-1.10.3
+language_pack: clojure-1.10.3
+{{/language_is_clojure}}

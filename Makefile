@@ -70,6 +70,10 @@ test_docker_rust: download_starter_testers
 	bundle exec ruby template_compiler/compile.rb docker rust
 	bundle exec ruby tests/test_all.rb docker rust
 
+test_redis_clojure: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb redis clojure
+	bundle exec ruby tests/test_all.rb redis clojure
+
 test_redis_crystal: download_starter_testers
 	bundle exec ruby template_compiler/compile.rb redis crystal
 	bundle exec ruby tests/test_all.rb redis crystal

@@ -7,6 +7,7 @@ git = Course.new(slug: "git", name: "Git")
 sqlite = Course.new(slug: "sqlite", name: "SQLite")
 
 c = Language.new(slug: "c", name: "C", repo_suffix: "c")
+clojure = Language.new(slug: "clojure", name: "Clojure", repo_suffix: "clojure")
 crystal = Language.new(slug: "crystal", name: "Crystal", repo_suffix: "crystal")
 elixir = Language.new(slug: "elixir", name: "Elixir", repo_suffix: "elixir")
 go = Language.new(slug: "go", name: "Go", repo_suffix: "go")
@@ -22,6 +23,22 @@ rust = Language.new(slug: "rust", name: "Rust", repo_suffix: "rust")
 
 DEFINITIONS = [
   # ------------------- REDIS ------------------------------
+  Repo.new(
+    course: redis,
+    language: clojure,
+    file_mappings: [
+      FM.new("README.md", "redis/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new(".gitignore", "redis/clojure/.gitignore"),
+      FM.new("project.clj", "redis/clojure/project.clj"),
+      FM.new("src/redis/core.clj", "redis/clojure/src/redis/core.clj"),
+      FM.new("spawn_redis_server.sh", "redis/clojure/spawn_redis_server.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "lein",
+      "user_editable_file": "src/redis/core.clj"
+    }
+  ),
   Repo.new(
     course: redis,
     language: crystal,
