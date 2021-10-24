@@ -18,7 +18,7 @@ pub fn parse_record(stream: &[u8], column_count: usize) -> Result<Vec<Vec<u8>>> 
     // Parse each serial type as column into record and modify the offset
     let mut record = vec![];
     for serial_type in serial_types {
-        let column = parse_column_value(&stream[offset..], serial_type as u8)?;
+        let column = parse_column_value(&stream[offset..], serial_type as usize)?;
         offset += column.len();
         record.push(column);
     }
@@ -26,7 +26,7 @@ pub fn parse_record(stream: &[u8], column_count: usize) -> Result<Vec<Vec<u8>>> 
     Ok(record)
 }
 
-fn parse_column_value(stream: &[u8], serial_type: u8) -> Result<Vec<u8>> {
+fn parse_column_value(stream: &[u8], serial_type: usize) -> Result<Vec<u8>> {
     let column_value = match serial_type {
         // 8 bit twos-complement integer
         1 => vec![stream[0]],
