@@ -19,7 +19,8 @@ edition = "2018"
 #
 # DON'T EDIT THIS!
 [dependencies]
-anyhow = "1.0.43" # for easy error handling
-nom = "7.0.0" # for parsing
-peg = "0.7.0" # for parsing
-regex = "1.5.4" # for parsing
+anyhow = "1.0.43"    # for easy error handling
+itertools = "0.10.3" # useful iterator extensions
+nom = "7.0.0"        # for parsing
+peg = "0.7.0"        # for parsing
+regex = "1.5.4"      # for parsing
