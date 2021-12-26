@@ -9,6 +9,7 @@ sqlite = Course.new(slug: "sqlite", name: "SQLite")
 c = Language.new(slug: "c", name: "C", repo_suffix: "c")
 clojure = Language.new(slug: "clojure", name: "Clojure", repo_suffix: "clojure")
 crystal = Language.new(slug: "crystal", name: "Crystal", repo_suffix: "crystal")
+csharp = Language.new(slug: "csharp", name: "C#", repo_suffix: "csharp")
 elixir = Language.new(slug: "elixir", name: "Elixir", repo_suffix: "elixir")
 go = Language.new(slug: "go", name: "Go", repo_suffix: "go")
 haskell = Language.new(slug: "haskell", name: "Haskell", repo_suffix: "haskell")
@@ -454,6 +455,30 @@ DEFINITIONS = [
     template_attrs: {
       "required_executable": "cargo (1.54)",
       "user_editable_file": "src/main.rs"
+    }
+  ),
+  Repo.new(
+    course: sqlite,
+    language: csharp,
+    file_mappings: [
+      FM.new("README.md", "sqlite/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("src/App/Program.cs", "sqlite/csharp/src/App/Program.cs"),
+      FM.new("src/App/PageHeader.cs", "sqlite/csharp/src/App/PageHeader.cs"),
+      FM.new("src/App/Record.cs", "sqlite/csharp/src/App/Record.cs"),
+      FM.new("src/App/Schema.cs", "sqlite/csharp/src/App/Schema.cs"),
+      FM.new("src/App/Varint.cs", "sqlite/csharp/src/App/Varint.cs"),
+      FM.new("src/App/MemoryExtensions.cs", "sqlite/csharp/src/App/MemoryExtensions.cs"),
+      FM.new("src/App/App.csproj", "sqlite/csharp/src/App/App.csproj"),
+      FM.new("sqlite-starter-csharp.sln", "sqlite/csharp/sqlite-starter-csharp.sln"),
+      FM.new(".gitignore", "sqlite/csharp/.gitignore"),
+      FM.new("your_sqlite3.sh", "sqlite/csharp/your_sqlite3.sh", is_executable=true),
+      FM.new("sample.db", "sqlite/sample.db"),
+      FM.new("download_sample_databases.sh", "sqlite/download_sample_databases.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "dotnet (6.0.101)",
+      "user_editable_file": "src/App/Program.cs"
     }
   ),
 ]
