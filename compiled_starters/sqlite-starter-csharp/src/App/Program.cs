@@ -41,7 +41,7 @@ if (command == ".dbinfo")
     Console.WriteLine("Your code goes here!");
 
     // Uncomment this line to pass the first stage
-    Console.WriteLine($"number of tables: {schemas.Length}");
+    // Console.WriteLine($"number of tables: {schemas.Length}");
 }
 else
 {
