@@ -168,6 +168,20 @@ var b = 2;
 console.log(a + b);
 """
 
+SAMPLE_CSHARP_COMMENTED = """
+// Uncomment this to pass the first stage
+// var a = 1;
+// var b = 2;
+// Console.WriteLine(a + b);
+"""
+
+SAMPLE_CSHARP_UNCOMMENTED = """
+// Uncomment this to pass the first stage
+var a = 1;
+var b = 2;
+Console.WriteLine(a + b);
+"""
+
 UNCOMMENT_PATTERN = /Uncomment this/
 
 class TestUncommenter < Minitest::Test
@@ -244,6 +258,18 @@ class TestUncommenter < Minitest::Test
   def test_twice_javascript
     actual = Uncommenter.new("javascript", SAMPLE_JAVASCRIPT_UNCOMMENTED, UNCOMMENT_PATTERN).uncommented
     expected = SAMPLE_JAVASCRIPT_UNCOMMENTED
+    assert_equal expected, actual
+  end
+
+  def test_csharp
+    actual = Uncommenter.new("csharp", SAMPLE_CSHARP_COMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_CSHARP_UNCOMMENTED
+    assert_equal expected, actual
+  end
+
+  def test_twice_csharp
+    actual = Uncommenter.new("csharp", SAMPLE_CSHARP_UNCOMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_CSHARP_UNCOMMENTED
     assert_equal expected, actual
   end
 
