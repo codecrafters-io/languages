@@ -37,7 +37,7 @@ Time to move on to the next stage!
 
 # Running Your Program Locally
 
-1. Ensure you have `dotnet (6.0.101)` installed locally
+1. Ensure you have `dotnet (6.0)` installed locally
 1. Run `./your_sqlite3.sh` to run your program, which is implemented in
    `src/App/Program.cs`.
 1. Commit your changes and run `git push origin master` to submit your solution

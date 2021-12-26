@@ -477,7 +477,7 @@ DEFINITIONS = [
       FM.new("download_sample_databases.sh", "sqlite/download_sample_databases.sh", is_executable=true),
     ],
     template_attrs: {
-      "required_executable": "dotnet (6.0.101)",
+      "required_executable": "dotnet (6.0)",
       "user_editable_file": "src/App/Program.cs"
     }
   ),
