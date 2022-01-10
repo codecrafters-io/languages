@@ -139,23 +139,31 @@ sync_with_github: compile
 
 download_starter_testers:
 	mkdir -p .starter_testers
-	test -f .starter_testers/redis || make download_redis_starter_tester
-	test -f .starter_testers/docker || make download_docker_starter_tester
-	test -f .starter_testers/git || make download_git_starter_tester
-	test -f .starter_testers/sqlite || make download_sqlite_starter_tester
+	test -d .starter_testers/redis || make download_redis_starter_tester
+	test -d .starter_testers/docker || make download_docker_starter_tester
+	test -d .starter_testers/git || make download_git_starter_tester
+	test -d .starter_testers/sqlite || make download_sqlite_starter_tester
 
 download_redis_starter_tester:
-	curl --fail -Lo .starter_testers/redis https://github.com/codecrafters-io/redis-starter-tester/releases/download/$(latest_redis_tester_version)/$(latest_redis_tester_version)_linux_amd64
-	chmod +x ./.starter_testers/redis
+	curl --fail -Lo .starter_testers/redis.tar.gz https://github.com/codecrafters-io/redis-starter-tester/releases/download/$(latest_redis_tester_version)/$(latest_redis_tester_version)_linux_amd64.tar.gz
+	mkdir .starter_testers/redis
+	tar xf .starter_testers/redis.tar.gz -C .starter_testers/redis
+	rm .starter_testers/redis.tar.gz
 
 download_docker_starter_tester:
-	curl --fail -Lo .starter_testers/docker https://github.com/codecrafters-io/docker-starter-tester/releases/download/$(latest_docker_tester_version)/$(latest_docker_tester_version)_linux_amd64
-	chmod +x ./.starter_testers/docker
+	curl --fail -Lo .starter_testers/docker.tar.gz https://github.com/codecrafters-io/docker-starter-tester/releases/download/$(latest_docker_tester_version)/$(latest_docker_tester_version)_linux_amd64.tar.gz
+	mkdir .starter_testers/docker
+	tar xf .starter_testers/docker.tar.gz -C .starter_testers/docker
+	rm .starter_testers/docker.tar.gz
 
 download_git_starter_tester:
-	curl --fail -Lo .starter_testers/git https://github.com/codecrafters-io/git-starter-tester/releases/download/$(latest_git_tester_version)/$(latest_git_tester_version)_linux_amd64
-	chmod +x ./.starter_testers/git
+	curl --fail -Lo .starter_testers/git.tar.gz https://github.com/codecrafters-io/git-starter-tester/releases/download/$(latest_git_tester_version)/$(latest_git_tester_version)_linux_amd64.tar.gz
+	mkdir .starter_testers/git
+	tar xf .starter_testers/git.tar.gz -C .starter_testers/git
+	rm .starter_testers/git.tar.gz
 
 download_sqlite_starter_tester:
-	curl --fail -Lo .starter_testers/sqlite https://github.com/codecrafters-io/sqlite-starter-tester/releases/download/$(latest_sqlite_tester_version)/$(latest_sqlite_tester_version)_linux_amd64
-	chmod +x ./.starter_testers/sqlite
+	curl --fail -Lo .starter_testers/sqlite.tar.gz https://github.com/codecrafters-io/sqlite-starter-tester/releases/download/$(latest_sqlite_tester_version)/$(latest_sqlite_tester_version)_linux_amd64.tar.gz
+	mkdir .starter_testers/sqlite
+	tar xf .starter_testers/sqlite.tar.gz -C .starter_testers/sqlite
+	rm .starter_testers/sqlite.tar.gz
