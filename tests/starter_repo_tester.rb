@@ -111,11 +111,12 @@ class StarterRepoTester < TestHarness
     command = [
       "docker run",
       "-v #{File.expand_path(starter_dir)}:/app",
-      "-v #{File.expand_path(starter_tester_path)}:/bin/tester",
+      "-v #{File.expand_path(starter_tester_path)}:/tester",
       "-e CODECRAFTERS_SUBMISSION_DIR=/app",
       "-e CODECRAFTERS_COURSE_PAGE_URL=http://test-app.codecrafters.io/url",
+      "-e TESTER_DIR=/tester",
       "-w /app",
-      "#{slug} tester"
+      "#{slug} /tester/test.sh"
     ].join(" ")
 
     assert_stdout_contains(
