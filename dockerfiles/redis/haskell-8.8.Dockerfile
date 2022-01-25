@@ -7,9 +7,10 @@ RUN mkdir -p /etc/stack
 RUN echo "allow-different-user: true" > /etc/stack/config.yaml
 
 COPY stack.yaml package.yaml stack.yaml.lock /app/
-RUN stack build --system-ghc --dependencies-only
 
-# Add and Install Application Code
-# TODO: Find a way to only copy repo-independent files
-COPY . /app
-RUN stack build
+# Dummy static content to circumvent the /app doesn't exist warning
+RUN mkdir /app/app
+RUN echo 'main :: IO ()' >> /app/app/Main.hs
+RUN echo 'main = putStrLn "Hello, World!"' >> /app/app/Main.hs
+
+RUN stack build --dependencies-only
