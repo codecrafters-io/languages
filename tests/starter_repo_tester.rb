@@ -106,10 +106,15 @@ class StarterRepoTester < TestHarness
   end
 
   def assert_script_output(expected_output, expected_exit_code=0)
+    tmp_dir = Dir.mktmpdir
+
+    `rm -rf #{tmp_dir}`
+    `cp -R #{File.expand_path(starter_dir)} #{tmp_dir}`
+
     command = [
       "docker run",
-      "-v #{File.expand_path(starter_dir)}:/app",
-      "-v #{File.expand_path(starter_tester_path)}:/tester",
+      "-v #{tmp_dir}:/app",
+      "-v #{File.expand_path(starter_tester_path)}:/tester:ro",
       "-e CODECRAFTERS_SUBMISSION_DIR=/app",
       "-e CODECRAFTERS_COURSE_PAGE_URL=http://test-app.codecrafters.io/url",
       "-e TESTER_DIR=/tester",
