@@ -115,7 +115,6 @@ DEFINITIONS = [
     file_mappings: [
       FM.new("README.md", "redis/README.md"),
       FM.new("codecrafters.yml", "codecrafters.yml"),
-      FM.new("hs-redis-clone.cabal", "redis/haskell/hs-redis-clone.cabal"),
       FM.new(".gitignore", "redis/haskell/.gitignore"),
       FM.new("package.yaml", "redis/haskell/package.yaml"),
       FM.new("stack.yaml", "redis/haskell/stack.yaml"),
