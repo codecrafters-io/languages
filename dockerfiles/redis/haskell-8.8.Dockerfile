@@ -2,7 +2,7 @@ FROM haskell:8.8.3-buster
 
 WORKDIR /app
 
-mkdir -p /etc/stack
+RUN mkdir -p /etc/stack
 
 # Absence of this causes `stack run` to raise a permissions error
 RUN echo "allow-different-user: true" >> /etc/stack/config.yaml
