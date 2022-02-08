@@ -10,7 +10,20 @@ registry API](https://docs.docker.com/registry/spec/api/) and much more.
 **Note**: If you're viewing this repo on GitHub, head over to
 [codecrafters.io](https://codecrafters.io) to signup for early access.
 
-# Usage
+# Passing the first stage
+
+The entry point for your Docker implementation is in `{{ user_editable_file }}`. Study and uncomment the relevant code, and
+push your changes to pass the first stage:
+
+``` sh
+git add .
+git commit -m "pass the first stage"
+git push origin master
+```
+
+That's all!
+
+# Setup for stages 2 & beyond
 
 1. Ensure you have [Docker](https://www.docker.com/) installed locally.
 1. Follow the details below ("Running your program locally") to run your Docker
@@ -46,23 +59,3 @@ mydocker run ubuntu:latest /usr/local/bin/docker-explorer echo hey
 Rust project, so it might be slow the first time you run it. Subsequent runs
 will be fast.{{/ language_is_rust}}
 
-# Passing the first stage
-
-CodeCrafters runs tests when you do a `git push`. Make an empty commit and push
-your solution to see the first stage fail.
-
-```sh
-git commit --allow-empty -m "Running tests"
-git push origin master
-```
-
-Go to `{{ user_editable_file }}` and uncomment the implementation. Commit and push
-your changes to pass the first stage:
-
-```sh
-git add .
-git commit -m "pass the first stage"
-git push origin master
-```
-
-Time to move on to the next stage!
