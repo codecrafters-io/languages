@@ -97,6 +97,7 @@ Dir["compiled_starters/*"].each do |dir|
   if pr_url
     puts "PR: #{pr_url}"
     `open #{pr_url}` unless ENV["CI"]
+    sleep 5 if ENV["CI"] # Work around PR abuse detected warnings
   else
     puts "No changes"
   end
