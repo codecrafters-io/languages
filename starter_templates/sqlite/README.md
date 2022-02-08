@@ -11,7 +11,7 @@ is [stored in B-trees](https://jvns.ca/blog/2014/10/02/how-does-sqlite-work-part
 
 # Passing the first stage
 
-Go to `{{ user_editable_file }}` and uncomment the `.dbinfo` command implementation. Commit and
+The entry point for your SQLite implementation is in `{{ user_editable_file }}`. Study and uncomment the relevant code, and
 push your changes to pass the first stage:
 
 ``` sh
