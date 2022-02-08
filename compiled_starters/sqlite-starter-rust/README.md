@@ -13,8 +13,8 @@ and more.
 
 # Passing the first stage
 
-Go to `src/main.rs` and uncomment the `.dbinfo` command implementation. Commit
-and push your changes to pass the first stage:
+The entry point for your SQLite implementation is in `src/main.rs`. Study and
+uncomment the relevant code, and push your changes to pass the first stage:
 
 ```sh
 git add .
