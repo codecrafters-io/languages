@@ -23,13 +23,15 @@ git push origin master
 
 That's all!
 
-### Running your program locally
+# Stage 2 and beyond
 
 You'll use linux-specific syscalls in this challenge. so we'll run
-your code _inside_ a Docker container. Please ensure you have 
+your code _inside_ a Docker container. 
+
+Please ensure you have 
 [Docker installed](https://docs.docker.com/get-docker/) locally.
 
-Next, start by adding a [shell alias](https://shapeshed.com/unix-alias/):
+Next, add a [shell alias](https://shapeshed.com/unix-alias/):
 
 ``` sh
 alias mydocker='docker build -t mydocker . && docker run --cap-add="SYS_ADMIN" mydocker'
