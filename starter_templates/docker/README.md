@@ -37,6 +37,8 @@ Next, add a [shell alias](https://shapeshed.com/unix-alias/):
 alias mydocker='docker build -t mydocker . && docker run --cap-add="SYS_ADMIN" mydocker'
 ```
 
+(The `--cap-add="SYS_ADMIN"` flag is required to create [PID Namespaces](https://man7.org/linux/man-pages/man7/pid_namespaces.7.html))
+
 You can now execute your program like this:
 
 ```sh
