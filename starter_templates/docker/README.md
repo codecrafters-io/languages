@@ -23,21 +23,13 @@ git push origin master
 
 That's all!
 
-# Setup for stages 2 & beyond
-
-1. Ensure you have [Docker](https://www.docker.com/) installed locally.
-1. Follow the details below ("Running your program locally") to run your Docker
-   implementation, which is implemented in `{{ user_editable_file }}`.
-1. Commit your changes and run `git push origin master` to submit your solution
-   to CodeCrafters. Test output will be streamed to your terminal.
-
 ### Running your program locally
 
-Since you'll need to use linux-specific syscalls in this challenge, we'll run
-your code _inside_ a Docker container.
+You'll use linux-specific syscalls in this challenge. so we'll run
+your code _inside_ a Docker container. Please ensure you have 
+[Docker installed](https://docs.docker.com/get-docker/) locally.
 
-Start by adding a [shell
-alias](https://shapeshed.com/unix-alias/):
+Next, start by adding a [shell alias](https://shapeshed.com/unix-alias/):
 
 ``` sh
 alias mydocker='docker build -t mydocker . && docker run --cap-add="SYS_ADMIN" mydocker'
