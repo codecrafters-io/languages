@@ -31,7 +31,7 @@
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (println "Your code goes here!")
+  (println "Logs from your program will appear here!")
   ;; Uncomment this block to pass the first stage
   ;; (serve 6379 handler)
   )
