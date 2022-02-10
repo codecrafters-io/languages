@@ -69,7 +69,7 @@ jobs:
     - run: gem install bundler
     - run: bundle config set --local without 'development'
     - run: bundle install
-    - run: bundle exec ruby tests/test_all.rb redis ${{matrix.language}}
+    - run: bundle exec ruby tests/test_course.rb redis ${{matrix.language}}
 
   docker:
     runs-on: ubuntu-latest
@@ -90,7 +90,7 @@ jobs:
     - run: gem install bundler
     - run: bundle config set --local without 'development'
     - run: bundle install
-    - run: bundle exec ruby tests/test_all.rb docker ${{matrix.language}}
+    - run: bundle exec ruby tests/test_course.rb docker ${{matrix.language}}
 
   git:
     runs-on: ubuntu-latest
@@ -111,7 +111,7 @@ jobs:
     - run: gem install bundler
     - run: bundle config set --local without 'development'
     - run: bundle install
-    - run: bundle exec ruby tests/test_all.rb git ${{matrix.language}}
+    - run: bundle exec ruby tests/test_course.rb git ${{matrix.language}}
 
   sqlite:
     runs-on: ubuntu-latest
@@ -133,4 +133,4 @@ jobs:
       - run: bundle config set --local without 'development'
       - run: bundle install
       - run: make test_sqlite
-      - run: bundle exec ruby tests/test_all.rb sqlite ${{matrix.language}}
+      - run: bundle exec ruby tests/test_course.rb sqlite ${{matrix.language}}
