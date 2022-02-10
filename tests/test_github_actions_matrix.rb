@@ -16,11 +16,9 @@ class TestGitHubActionsMatrix < Minitest::Test
         *(Dir["compiled_starters/#{course}-*"].map { |starter_dir| File.basename(starter_dir).split("-").last }),
       ].uniq
 
-      puts expected_languages
-
       if expected_languages.include?("nodejs")
         expected_languages = expected_languages - ["nodejs"]
-        expected_languages << "javascript"
+        expected_languages << "javascript" unless expected_languages.include?("javascript")
       end
 
       assert_equal(expected_languages.sort, actual_languages.sort, "add missing languages for #{course} to jobs.#{course}.matrix.language in .github/workflows/test.yml")
