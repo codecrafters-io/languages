@@ -69,6 +69,7 @@ jobs:
     - run: gem install bundler
     - run: bundle config set --local without 'development'
     - run: bundle install
+    - run: make download_starter_testers
     - run: bundle exec ruby tests/test_course.rb redis ${{matrix.language}}
 
   docker:
@@ -90,6 +91,7 @@ jobs:
     - run: gem install bundler
     - run: bundle config set --local without 'development'
     - run: bundle install
+    - run: make download_starter_testers
     - run: bundle exec ruby tests/test_course.rb docker ${{matrix.language}}
 
   git:
@@ -111,6 +113,7 @@ jobs:
     - run: gem install bundler
     - run: bundle config set --local without 'development'
     - run: bundle install
+    - run: make download_starter_testers
     - run: bundle exec ruby tests/test_course.rb git ${{matrix.language}}
 
   sqlite:
@@ -133,4 +136,5 @@ jobs:
       - run: bundle config set --local without 'development'
       - run: bundle install
       - run: make test_sqlite
+      - run: make download_starter_testers
       - run: bundle exec ruby tests/test_course.rb sqlite ${{matrix.language}}
