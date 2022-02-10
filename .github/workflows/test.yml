@@ -52,6 +52,9 @@ jobs:
 
   redis:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        language: [ruby]
 
     steps:
     - uses: actions/setup-ruby@v1
@@ -66,10 +69,13 @@ jobs:
     - run: gem install bundler
     - run: bundle config set --local without 'development'
     - run: bundle install
-    - run: make test_redis
+    - run: bundle exec ruby tests/test_all.rb redis ${{matrix.language}}
 
   docker:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        language: [ruby]
 
     steps:
     - uses: actions/setup-ruby@v1
@@ -84,10 +90,13 @@ jobs:
     - run: gem install bundler
     - run: bundle config set --local without 'development'
     - run: bundle install
-    - run: make test_docker
+    - run: bundle exec ruby tests/test_all.rb docker ${{matrix.language}}
 
   git:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        language: [ruby]
 
     steps:
     - uses: actions/setup-ruby@v1
@@ -102,10 +111,13 @@ jobs:
     - run: gem install bundler
     - run: bundle config set --local without 'development'
     - run: bundle install
-    - run: make test_git
+    - run: bundle exec ruby tests/test_all.rb git ${{matrix.language}}
 
   sqlite:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        language: [ruby]
 
     steps:
       - uses: actions/setup-ruby@v1
@@ -121,3 +133,4 @@ jobs:
       - run: bundle config set --local without 'development'
       - run: bundle install
       - run: make test_sqlite
+      - run: bundle exec ruby tests/test_all.rb sqlite ${{matrix.language}}
