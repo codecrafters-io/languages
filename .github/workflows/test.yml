@@ -135,6 +135,5 @@ jobs:
       - run: gem install bundler
       - run: bundle config set --local without 'development'
       - run: bundle install
-      - run: make test_sqlite
       - run: make download_starter_testers
       - run: bundle exec ruby tests/test_course.rb sqlite ${{matrix.language}}
