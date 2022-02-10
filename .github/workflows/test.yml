@@ -48,7 +48,8 @@ jobs:
         with:
           ruby-version: '2.7'
       - run: bundle install --verbose
-      - run: ruby tests/test_uncommenter.rb tests/test_github_actions_matrix.yml
+      - run: ruby tests/test_uncommenter.rb
+      - run: ruby tests/test_github_actions_matrix.yml
 
   redis:
     runs-on: ubuntu-latest
