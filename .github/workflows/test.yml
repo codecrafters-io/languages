@@ -39,7 +39,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: npx prettier --check **/*.js
 
-  uncommenter:
+  other_tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -48,7 +48,7 @@ jobs:
         with:
           ruby-version: '2.7'
       - run: bundle install --verbose
-      - run: ruby tests/test_uncommenter.rb
+      - run: ruby tests/test_uncommenter.rb tests/test_github_actions_matrix.yml
 
   redis:
     runs-on: ubuntu-latest
