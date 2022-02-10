@@ -1,5 +1,6 @@
 def main():
-    print("Your code goes here!")
+    # You can use print statements like this for debugging, they'll be visible when running tests.
+    print("Logs from your program will appear here!")
 
     # Uncomment this to pass the first stage
     #

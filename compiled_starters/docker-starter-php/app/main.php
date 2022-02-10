@@ -6,7 +6,8 @@ while (ob_get_level() !== 0) {
   ob_end_clean();
 }
 
-echo "Your code goes here!\n";
+// You can use print statements like this for debugging, they'll be visible when running tests.
+echo "Logs from your program will appear here!\n";
 
 // Uncomment this to pass the first stage.
 // $child_pid = pcntl_fork();

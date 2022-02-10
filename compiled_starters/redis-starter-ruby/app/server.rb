@@ -6,7 +6,7 @@ class YourRedisServer
   end
 
   def start
-    puts("Your code goes here!")
+    puts("Logs from your program will appear here!")
 
     # Uncomment this block to pass the first stage
     # server = TCPServer.new(@port)

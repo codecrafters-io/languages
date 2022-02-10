@@ -1,6 +1,7 @@
 // Usage: your_docker.sh run <image> <command> <arg1> <arg2> ...
 fn main() {
-    println!("Your code goes here!");
+    // You can use print statements like this for debugging, they'll be visible when running tests.
+    println!("Logs from your program will appear here!");
 
     // Uncomment this block to pass the first stage!
     // let args: Vec<_> = std::env::args().collect();
