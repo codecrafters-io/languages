@@ -26,7 +26,7 @@ class StarterRepoTester < TestHarness
 
     log_info "Executing starter repo script"
     assert_time_under(15) {
-      assert_script_output("Your code goes here", expected_exit_code=1)
+      assert_script_output("Logs from your program will appear here", expected_exit_code=1)
     }
 
     log_success "Script output verified"

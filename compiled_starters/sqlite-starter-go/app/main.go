@@ -57,7 +57,8 @@ func main() {
 			})
 		}
 
-		fmt.Println("Your code goes here!")
+		// You can use print statements as follows for debugging, they'll be visible when running tests.
+		fmt.Println("Logs from your program will appear here!")
 
 		// Uncomment this to pass the first stage
 		// fmt.Printf("number of tables: %v", len(sqliteSchemaRows))

@@ -42,7 +42,8 @@ if (command === ".dbinfo") {
     });
   }
 
-  console.log("Your code goes here!");
+  // You can use print statements as follows for debugging, they'll be visible when running tests.
+  console.log("Logs from your program will appear here!");
 
   // Uncomment this to pass the first stage
   // console.log(`number of tables: ${sqliteSchemaRows.length}`);

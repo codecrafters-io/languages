@@ -8,6 +8,7 @@ gem "octokit"
 gem "mustache"
 gem "colorize"
 gem "diffy"
+gem "pmap"
 
 group :development do
   gem "pry"
