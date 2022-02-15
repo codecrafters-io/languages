@@ -17,13 +17,15 @@ Study and uncomment the relevant code, and push your changes to pass the first s
 
 ``` sh
 git add . 
-git commit -m "pass the first stage"
+git commit -m "pass 1st stage" # any msg
 git push origin master
 ```
 
 That's all!
 
-# Stage 2 and beyond
+# Stage 2 & beyond
+
+Note: This section is for stages 2 and beyond.
 
 You'll use linux-specific syscalls in this challenge. so we'll run
 your code _inside_ a Docker container. 

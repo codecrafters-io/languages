@@ -16,13 +16,15 @@ push your changes to pass the first stage:
 
 ``` sh
 git add .
-git commit -m "pass the first stage"
+git commit -m "pass 1st stage" # any msg
 git push origin master
 ```
 
 Time to move on to the next stage!
 
-# Setup for stages 2 & beyond
+# Stage 2 & beyond
+
+Note: This section is for stages 2 and beyond.
 
 1. Ensure you have `{{ required_executable }}` installed locally
 1. Run `./your_sqlite3.sh` to run your program, which is implemented in
