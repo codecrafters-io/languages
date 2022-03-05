@@ -199,7 +199,7 @@ DEFINITIONS = [
       FM.new("spawn_redis_server.sh", "redis/javascript/spawn_redis_server.sh", is_executable=true),
     ],
     template_attrs: {
-      "required_executable": "node (14)",
+      "required_executable": "node (16)",
       "user_editable_file": "app/main.js"
     }
   ),
@@ -428,7 +428,7 @@ DEFINITIONS = [
       FM.new("download_sample_databases.sh", "sqlite/download_sample_databases.sh", is_executable=true),
     ],
     template_attrs: {
-      "required_executable": "node (14)",
+      "required_executable": "node (16)",
       "user_editable_file": "app/main.js"
     }
   ),
