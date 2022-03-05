@@ -15,13 +15,15 @@ uncomment the relevant code, and push your changes to pass the first stage:
 
 ```sh
 git add .
-git commit -m "pass the first stage"
+git commit -m "pass 1st stage" # any msg
 git push origin master
 ```
 
 That's all!
 
-# Setup for stages 2 & beyond
+# Stage 2 & beyond
+
+Note: This section is for stages 2 and beyond.
 
 1. Ensure you have `go (1.13)` installed locally
 1. Run `./spawn_redis_server.sh` to run your Redis server, which is implemented

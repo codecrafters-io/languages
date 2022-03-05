@@ -16,13 +16,15 @@ uncomment the relevant code, and push your changes to pass the first stage:
 
 ```sh
 git add .
-git commit -m "pass the first stage"
+git commit -m "pass 1st stage" # any msg
 git push origin master
 ```
 
 That's all!
 
-# Setup for stages 2 & beyond
+# Stage 2 & beyond
+
+Note: This section is for stages 2 and beyond.
 
 1. Ensure you have `go` installed locally
 1. Run `./your_git.sh` to run your Git implementation, which is implemented in
