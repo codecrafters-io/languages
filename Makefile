@@ -1,11 +1,13 @@
 redis_tester_api_url = "https://api.github.com/repos/codecrafters-io/redis-starter-tester/releases/latest"
 docker_tester_api_url = "https://api.github.com/repos/codecrafters-io/docker-starter-tester/releases/latest"
 git_tester_api_url = "https://api.github.com/repos/codecrafters-io/git-starter-tester/releases/latest"
+react_tester_api_url = "https://api.github.com/repos/codecrafters-io/react-starter-tester/releases/latest"
 sqlite_tester_api_url = "https://api.github.com/repos/codecrafters-io/sqlite-starter-tester/releases/latest"
 
 latest_redis_tester_version = $(shell curl $(redis_tester_api_url) | jq -r ".tag_name")
 latest_docker_tester_version = $(shell curl $(docker_tester_api_url) | jq -r ".tag_name")
 latest_git_tester_version = $(shell curl $(git_tester_api_url) | jq -r ".tag_name")
+latest_react_tester_version = $(shell curl $(react_tester_api_url) | jq -r ".tag_name")
 latest_sqlite_tester_version = $(shell curl $(sqlite_tester_api_url) | jq -r ".tag_name")
 
 generate_toc:
