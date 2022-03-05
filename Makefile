@@ -1,11 +1,13 @@
 redis_tester_api_url = "https://api.github.com/repos/codecrafters-io/redis-starter-tester/releases/latest"
 docker_tester_api_url = "https://api.github.com/repos/codecrafters-io/docker-starter-tester/releases/latest"
 git_tester_api_url = "https://api.github.com/repos/codecrafters-io/git-starter-tester/releases/latest"
+react_tester_api_url = "https://api.github.com/repos/codecrafters-io/react-starter-tester/releases/latest"
 sqlite_tester_api_url = "https://api.github.com/repos/codecrafters-io/sqlite-starter-tester/releases/latest"
 
 latest_redis_tester_version = $(shell curl $(redis_tester_api_url) | jq -r ".tag_name")
 latest_docker_tester_version = $(shell curl $(docker_tester_api_url) | jq -r ".tag_name")
 latest_git_tester_version = $(shell curl $(git_tester_api_url) | jq -r ".tag_name")
+latest_react_tester_version = $(shell curl $(react_tester_api_url) | jq -r ".tag_name")
 latest_sqlite_tester_version = $(shell curl $(sqlite_tester_api_url) | jq -r ".tag_name")
 
 generate_toc:
@@ -65,6 +67,10 @@ test_docker_nim: download_starter_testers
 test_docker_php: download_starter_testers
 	bundle exec ruby template_compiler/compile.rb docker php
 	bundle exec ruby tests/test_course.rb docker php
+
+test_react: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb react
+	bundle exec ruby tests/test_course.rb react
 
 test_docker_rust: download_starter_testers
 	bundle exec ruby template_compiler/compile.rb docker rust
@@ -139,9 +145,10 @@ sync_with_github: compile
 
 download_starter_testers:
 	mkdir -p .starter_testers
-	test -d .starter_testers/redis || make download_redis_starter_tester
 	test -d .starter_testers/docker || make download_docker_starter_tester
 	test -d .starter_testers/git || make download_git_starter_tester
+	test -d .starter_testers/react || make download_react_starter_tester
+	test -d .starter_testers/redis || make download_redis_starter_tester
 	test -d .starter_testers/sqlite || make download_sqlite_starter_tester
 
 download_redis_starter_tester:
@@ -161,6 +168,12 @@ download_git_starter_tester:
 	mkdir .starter_testers/git
 	tar xf .starter_testers/git.tar.gz -C .starter_testers/git
 	rm .starter_testers/git.tar.gz
+
+download_react_starter_tester:
+	curl --fail -Lo .starter_testers/react.tar.gz https://github.com/codecrafters-io/react-starter-tester/releases/download/$(latest_react_tester_version)/$(latest_react_tester_version)_linux_amd64.tar.gz
+	mkdir .starter_testers/react
+	tar xf .starter_testers/react.tar.gz -C .starter_testers/react
+	rm .starter_testers/react.tar.gz
 
 download_sqlite_starter_tester:
 	curl --fail -Lo .starter_testers/sqlite.tar.gz https://github.com/codecrafters-io/sqlite-starter-tester/releases/download/$(latest_sqlite_tester_version)/$(latest_sqlite_tester_version)_linux_amd64.tar.gz
