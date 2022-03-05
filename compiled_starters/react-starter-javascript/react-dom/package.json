@@ -1,0 +1,8 @@
+{
+  "name": "react-dom",
+  "description": "ReactDOM implementation",
+  "version": "0.0.1",
+  "dependencies": {},
+  "main": "index.js",
+  "type": "module"
+}
