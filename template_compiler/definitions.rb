@@ -5,6 +5,7 @@ redis = Course.new(slug: "redis", name: "Redis")
 docker = Course.new(slug: "docker", name: "Docker")
 git = Course.new(slug: "git", name: "Git")
 sqlite = Course.new(slug: "sqlite", name: "SQLite")
+react = Course.new(slug: "react", name: "React")
 
 c = Language.new(slug: "c", name: "C", repo_suffix: "c")
 clojure = Language.new(slug: "clojure", name: "Clojure", repo_suffix: "clojure")
@@ -453,6 +454,24 @@ DEFINITIONS = [
     template_attrs: {
       "required_executable": "cargo (1.54)",
       "user_editable_file": "src/main.rs"
+    }
+  ),
+
+  # ------------------- REACT ------------------------------
+  Repo.new(
+    course: react,
+    language: javascript,
+    file_mappings: [
+      FM.new("README.md", "react/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("react/index.js", "react/javascript/react/index.js"),
+      FM.new("react/package.json", "react/javascript/react/package.json"),
+      FM.new("react-dom/index.js", "react/javascript/react-dom/index.js"),
+      FM.new("react-dom/package.json", "react/javascript/react-dom/package.json"),
+    ],
+    template_attrs: {
+      "required_executable": "node (16)",
+      "user_editable_file": "react/index.js"
     }
   ),
 ]
