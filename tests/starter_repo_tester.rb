@@ -117,6 +117,7 @@ class StarterRepoTester < TestHarness
       "-v #{File.expand_path(starter_tester_path)}:/tester:ro",
       "-e CODECRAFTERS_SUBMISSION_DIR=/app",
       "-e CODECRAFTERS_COURSE_PAGE_URL=http://test-app.codecrafters.io/url",
+      "-e CODECRAFTERS_CURRENT_STAGE_SLUG=init",
       "-e TESTER_DIR=/tester",
       "-w /app",
       "#{slug} /tester/test.sh"
