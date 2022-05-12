@@ -83,7 +83,13 @@ class StarterRepoTester < TestHarness
   end
 
   def language_pack
-    language.eql?("javascript") ? "nodejs" : language
+    if language.eql?("javascript")
+      "nodejs"
+    elsif language.eql?("csharp")
+      "dotnet"
+    else
+      language
+    end
   end
 
   def dockerfile_path

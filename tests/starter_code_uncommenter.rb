@@ -69,6 +69,7 @@ class StarterCodeUncommenter
       "c" => "c",
       "clojure" => "clj",
       "crystal" => "cr",
+      "csharp" => "cs",
       "elixir" => "ex",
       "go" => "go",
       "haskell" => "hs",

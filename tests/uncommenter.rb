@@ -5,6 +5,7 @@ class Uncommenter
 
   REGEX_PATTERNS = {
     "c" => DOUBLE_SLASHES,
+    "csharp" => DOUBLE_SLASHES,
     "clojure" => /(^\s*)(;;\s{0,1})/,
     "elixir" => POUND_SIGN,
     "go" => DOUBLE_SLASHES,

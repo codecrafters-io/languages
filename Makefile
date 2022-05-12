@@ -84,6 +84,10 @@ test_redis_crystal: download_starter_testers
 	bundle exec ruby template_compiler/compile.rb redis crystal
 	bundle exec ruby tests/test_course.rb redis crystal
 
+test_redis_csharp: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb redis csharp
+	bundle exec ruby tests/test_course.rb redis csharp
+
 test_redis_php: download_starter_testers
 	bundle exec ruby template_compiler/compile.rb redis php
 	bundle exec ruby tests/test_course.rb redis php

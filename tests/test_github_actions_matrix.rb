@@ -21,6 +21,11 @@ class TestGitHubActionsMatrix < Minitest::Test
         expected_languages << "javascript" unless expected_languages.include?("javascript")
       end
 
+      if expected_languages.include?("dotnet")
+        expected_languages = expected_languages - ["dotnet"]
+        expected_languages << "csharp" unless expected_languages.include?("csharp")
+      end
+
       assert_equal(expected_languages.sort, actual_languages.sort, "add missing languages for #{course} to jobs.#{course}.matrix.language in .github/workflows/test.yml")
     end
   end
