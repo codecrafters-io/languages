@@ -10,6 +10,7 @@ react = Course.new(slug: "react", name: "React")
 c = Language.new(slug: "c", name: "C", repo_suffix: "c")
 clojure = Language.new(slug: "clojure", name: "Clojure", repo_suffix: "clojure")
 crystal = Language.new(slug: "crystal", name: "Crystal", repo_suffix: "crystal")
+csharp = Language.new(slug: "csharp", name: "C#", repo_suffix: "csharp")
 elixir = Language.new(slug: "elixir", name: "Elixir", repo_suffix: "elixir")
 go = Language.new(slug: "go", name: "Go", repo_suffix: "go")
 haskell = Language.new(slug: "haskell", name: "Haskell", repo_suffix: "haskell")
@@ -40,6 +41,7 @@ DEFINITIONS = [
       "user_editable_file": "src/redis/core.clj"
     }
   ),
+
   Repo.new(
     course: redis,
     language: crystal,
@@ -54,6 +56,25 @@ DEFINITIONS = [
       "user_editable_file": "app/main.cr"
     }
   ),
+
+  Repo.new(
+    course: redis,
+    language: csharp,
+    file_mappings: [
+      FM.new("README.md", "redis/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new(".gitignore", "redis/csharp/.gitignore"),
+      FM.new("codecrafters-redis.sln", "redis/csharp/codecrafters-redis.sln"),
+      FM.new("codecrafters-redis.csproj", "redis/csharp/codecrafters-redis.csproj"),
+      FM.new("src/Server.cs", "redis/csharp/src/Server.cs"),
+      FM.new("spawn_redis_server.sh", "redis/csharp/spawn_redis_server.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "dotnet (6.0)",
+      "user_editable_file": "src/Server.cs"
+    }
+  ),
+
   Repo.new(
     course: redis,
     language: python,
