@@ -2,14 +2,20 @@ FROM haskell:8.8.3-buster
 
 WORKDIR /app
 
-# Absence of this causes `stack run` to raise permissionins error
 RUN mkdir -p /etc/stack
-RUN echo "allow-different-user: true" > /etc/stack/config.yaml
+
+# Absence of this causes `stack run` to raise a permissions error
+RUN echo "allow-different-user: true" >> /etc/stack/config.yaml
+
+# Force usage of the system GHC installation
+RUN echo "install-ghc: false" >> /etc/stack/config.yaml
+RUN echo "system-ghc: true" >> /etc/stack/config.yaml
 
 COPY stack.yaml package.yaml stack.yaml.lock /app/
-RUN stack build --system-ghc --dependencies-only
 
-# Add and Install Application Code
-# TODO: Find a way to only copy repo-independent files
-COPY . /app
+# Dummy static content to circumvent the /app doesn't exist warning
+RUN mkdir /app/app
+RUN echo 'main :: IO ()' >> /app/app/Main.hs
+RUN echo 'main = putStrLn "Hello, World!"' >> /app/app/Main.hs
+
 RUN stack build

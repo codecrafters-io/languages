@@ -26,7 +26,7 @@ class StarterRepoTester < TestHarness
 
     log_info "Executing starter repo script"
     assert_time_under(15) {
-      assert_script_output("Your code goes here", expected_exit_code=1)
+      assert_script_output("Logs from your program will appear here", expected_exit_code=1)
     }
 
     log_success "Script output verified"
@@ -83,9 +83,13 @@ class StarterRepoTester < TestHarness
   end
 
   def language_pack
-    return "nodejs" if language.eql?("javascript")
-    return "dotnet" if language.eql?("csharp")
-    language
+    if language.eql?("javascript")
+      "nodejs"
+    elsif language.eql?("csharp")
+      "dotnet"
+    else
+      language
+    end
   end
 
   def dockerfile_path
@@ -108,12 +112,18 @@ class StarterRepoTester < TestHarness
   end
 
   def assert_script_output(expected_output, expected_exit_code=0)
+    tmp_dir = Dir.mktmpdir
+
+    `rm -rf #{tmp_dir}`
+    `cp -R #{File.expand_path(starter_dir)} #{tmp_dir}`
+
     command = [
       "docker run",
-      "-v #{File.expand_path(starter_dir)}:/app",
-      "-v #{File.expand_path(starter_tester_path)}:/tester",
+      "-v #{tmp_dir}:/app",
+      "-v #{File.expand_path(starter_tester_path)}:/tester:ro",
       "-e CODECRAFTERS_SUBMISSION_DIR=/app",
       "-e CODECRAFTERS_COURSE_PAGE_URL=http://test-app.codecrafters.io/url",
+      "-e CODECRAFTERS_CURRENT_STAGE_SLUG=init",
       "-e TESTER_DIR=/tester",
       "-w /app",
       "#{slug} /tester/test.sh"

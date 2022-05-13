@@ -13,29 +13,20 @@ and more.
 
 # Passing the first stage
 
-CodeCrafters runs tests when you do a `git push`. Make an empty commit and push
-your solution to see the first stage fail.
-
-```sh
-git commit --allow-empty -m "Running tests"
-git push origin master
-```
-
-You should see a failure message that says it expected "number of tables: <n>"
-to be present.
-
-Go to `app/main.go` and uncomment the `.dbinfo` command implementation. Commit
-and push your changes to pass the first stage:
+The entry point for your SQLite implementation is in `app/main.go`. Study and
+uncomment the relevant code, and push your changes to pass the first stage:
 
 ```sh
 git add .
-git commit -m "pass the first stage"
+git commit -m "pass 1st stage" # any msg
 git push origin master
 ```
 
 Time to move on to the next stage!
 
-# Running Your Program Locally
+# Stage 2 & beyond
+
+Note: This section is for stages 2 and beyond.
 
 1. Ensure you have `go (1.16)` installed locally
 1. Run `./your_sqlite3.sh` to run your program, which is implemented in

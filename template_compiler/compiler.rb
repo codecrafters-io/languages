@@ -1,6 +1,7 @@
 require_relative 'models'
 require_relative 'definitions'
 require "fileutils"
+require "pmap"
 
 class TemplateCompiler
   POSTPROCESSORS = {
@@ -14,7 +15,7 @@ class TemplateCompiler
   end
 
   def compile_all
-    DEFINITIONS.each do |definition|
+    DEFINITIONS.pmap do |definition|
       puts "compiling #{definition.course.slug}-#{definition.language.slug}"
       compile_definition(definition)
     end

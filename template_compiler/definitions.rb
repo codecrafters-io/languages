@@ -5,6 +5,7 @@ redis = Course.new(slug: "redis", name: "Redis")
 docker = Course.new(slug: "docker", name: "Docker")
 git = Course.new(slug: "git", name: "Git")
 sqlite = Course.new(slug: "sqlite", name: "SQLite")
+react = Course.new(slug: "react", name: "React")
 
 c = Language.new(slug: "c", name: "C", repo_suffix: "c")
 clojure = Language.new(slug: "clojure", name: "Clojure", repo_suffix: "clojure")
@@ -40,6 +41,7 @@ DEFINITIONS = [
       "user_editable_file": "src/redis/core.clj"
     }
   ),
+
   Repo.new(
     course: redis,
     language: crystal,
@@ -54,6 +56,25 @@ DEFINITIONS = [
       "user_editable_file": "app/main.cr"
     }
   ),
+
+  Repo.new(
+    course: redis,
+    language: csharp,
+    file_mappings: [
+      FM.new("README.md", "redis/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new(".gitignore", "redis/csharp/.gitignore"),
+      FM.new("codecrafters-redis.sln", "redis/csharp/codecrafters-redis.sln"),
+      FM.new("codecrafters-redis.csproj", "redis/csharp/codecrafters-redis.csproj"),
+      FM.new("src/Server.cs", "redis/csharp/src/Server.cs"),
+      FM.new("spawn_redis_server.sh", "redis/csharp/spawn_redis_server.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "dotnet (6.0)",
+      "user_editable_file": "src/Server.cs"
+    }
+  ),
+
   Repo.new(
     course: redis,
     language: python,
@@ -116,7 +137,6 @@ DEFINITIONS = [
     file_mappings: [
       FM.new("README.md", "redis/README.md"),
       FM.new("codecrafters.yml", "codecrafters.yml"),
-      FM.new("hs-redis-clone.cabal", "redis/haskell/hs-redis-clone.cabal"),
       FM.new(".gitignore", "redis/haskell/.gitignore"),
       FM.new("package.yaml", "redis/haskell/package.yaml"),
       FM.new("stack.yaml", "redis/haskell/stack.yaml"),
@@ -200,7 +220,7 @@ DEFINITIONS = [
       FM.new("spawn_redis_server.sh", "redis/javascript/spawn_redis_server.sh", is_executable=true),
     ],
     template_attrs: {
-      "required_executable": "node (14)",
+      "required_executable": "node (16)",
       "user_editable_file": "app/main.js"
     }
   ),
@@ -429,7 +449,7 @@ DEFINITIONS = [
       FM.new("download_sample_databases.sh", "sqlite/download_sample_databases.sh", is_executable=true),
     ],
     template_attrs: {
-      "required_executable": "node (14)",
+      "required_executable": "node (16)",
       "user_editable_file": "app/main.js"
     }
   ),
@@ -479,6 +499,24 @@ DEFINITIONS = [
     template_attrs: {
       "required_executable": "dotnet (6.0)",
       "user_editable_file": "src/App/Program.cs"
+    }
+  ),
+
+  # ------------------- REACT ------------------------------
+  Repo.new(
+    course: react,
+    language: javascript,
+    file_mappings: [
+      FM.new("README.md", "react/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("react/index.js", "react/javascript/react/index.js"),
+      FM.new("react/package.json", "react/javascript/react/package.json"),
+      FM.new("react-dom/index.js", "react/javascript/react-dom/index.js"),
+      FM.new("react-dom/package.json", "react/javascript/react-dom/package.json"),
+    ],
+    template_attrs: {
+      "required_executable": "node (16)",
+      "user_editable_file": "react/index.js"
     }
   ),
 ]

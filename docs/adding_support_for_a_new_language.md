@@ -6,8 +6,8 @@ send us a PR, like [this one](https://github.com/codecrafters-io/languages/pull/
 We have extensive CI tooling available that'll test your changes and make sure they're compatible. These
 tests run when you open a PR.
 
-Once you're PR is approved an merged, we'll then activate the language on an [Early Access](https://codecrafters.io/early-access) 
-instance for you to try out.
+Once you're PR is approved and merged, we'll then activate the language on [app.codecrafters.io](https://app.codecrafters.io/)
+for you to try out.
 
 If you get stuck anywhere, feel free to ping @rohitpaulk in Discord! Use the `#contributors` 
 channel.

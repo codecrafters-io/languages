@@ -10,56 +10,40 @@ we'll learn about [chroot](https://en.wikipedia.org/wiki/Chroot),
 **Note**: If you're viewing this repo on GitHub, head over to
 [codecrafters.io](https://codecrafters.io) to signup for early access.
 
-# Usage
+# Passing the first stage
 
-1. Ensure you have [Docker](https://www.docker.com/) installed locally.
-1. Follow the details below ("Running your program locally") to run your Docker
-   implementation, which is implemented in `app/main.nim`.
-1. Commit your changes and run `git push origin master` to submit your solution
-   to CodeCrafters. Test output will be streamed to your terminal.
-
-# Running your program locally
-
-Since you'll need to use linux-specific syscalls in this challenge, we'll run
-your code _inside_ a docker container.
+The entry point for your Docker implementation is `app/main.nim`. Study and
+uncomment the relevant code, and push your changes to pass the first stage:
 
 ```sh
-docker build -t my_docker . && docker run --cap-add="SYS_ADMIN" my_docker run some_image /usr/local/bin/docker-explorer echo hey
+git add .
+git commit -m "pass 1st stage" # any msg
+git push origin master
 ```
 
-(The `--cap-add="SYS_ADMIN"` flag is required to create
-[PID Namespaces](https://man7.org/linux/man-pages/man7/pid_namespaces.7.html))
+That's all!
 
-To make this easier to type out, you could add a
-[shell alias](https://shapeshed.com/unix-alias/):
+# Stage 2 & beyond
+
+Note: This section is for stages 2 and beyond.
+
+You'll use linux-specific syscalls in this challenge. so we'll run your code
+_inside_ a Docker container.
+
+Please ensure you have [Docker installed](https://docs.docker.com/get-docker/)
+locally.
+
+Next, add a [shell alias](https://shapeshed.com/unix-alias/):
 
 ```sh
 alias mydocker='docker build -t mydocker . && docker run --cap-add="SYS_ADMIN" mydocker'
 ```
 
-You can then execute your program like this:
+(The `--cap-add="SYS_ADMIN"` flag is required to create
+[PID Namespaces](https://man7.org/linux/man-pages/man7/pid_namespaces.7.html))
+
+You can now execute your program like this:
 
 ```sh
 mydocker run ubuntu:latest /usr/local/bin/docker-explorer echo hey
 ```
-
-# Passing the first stage
-
-CodeCrafters runs tests when you do a `git push`. Make an empty commit and push
-your solution to see the first stage fail.
-
-```sh
-git commit --allow-empty -m "Running tests"
-git push origin master
-```
-
-Go to `app/main.nim` and uncomment the implementation. Commit and push your
-changes to pass the first stage:
-
-```sh
-git add .
-git commit -m "pass the first stage"
-git push origin master
-```
-
-Time to move on to the next stage!
