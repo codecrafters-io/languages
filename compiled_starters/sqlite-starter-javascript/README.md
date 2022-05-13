@@ -4,17 +4,19 @@ This is a starting point for JavaScript solutions to the
 In this challenge, you'll build a barebones SQLite implementation that supports
 basic SQL queries like `SELECT`. Along the way we'll learn about
 [SQLite's file format](https://www.sqlite.org/fileformat.html), how indexed data
-is [stored in B-trees](https://jvns.ca/blog/2014/10/02/how-does-sqlite-work-part-2-btrees/) and more.
+is
+[stored in B-trees](https://jvns.ca/blog/2014/10/02/how-does-sqlite-work-part-2-btrees/)
+and more.
 
 **Note**: If you're viewing this repo on GitHub, head over to
 [codecrafters.io](https://codecrafters.io) to signup for early access.
 
 # Passing the first stage
 
-The entry point for your SQLite implementation is in `app/main.js`. Study and uncomment the relevant code, and
-push your changes to pass the first stage:
+The entry point for your SQLite implementation is in `app/main.js`. Study and
+uncomment the relevant code, and push your changes to pass the first stage:
 
-``` sh
+```sh
 git add .
 git commit -m "pass 1st stage" # any msg
 git push origin master
@@ -34,11 +36,11 @@ Note: This section is for stages 2 and beyond.
 
 # Sample Databases
 
-To make it easy to test queries locally, we've added a sample database in the root
-of this repository: `sample.db`.
+To make it easy to test queries locally, we've added a sample database in the
+root of this repository: `sample.db`.
 
-This contains two tables: `apples` & `oranges`. You can use this
-to test your implementation for the first 6 stages.
+This contains two tables: `apples` & `oranges`. You can use this to test your
+implementation for the first 6 stages.
 
 You can explore this database by running queries against it like this:
 
@@ -61,11 +63,13 @@ There are two other databases that you can use:
    - It contains one table: `companies`, and one index: `idx_companies_country`
    - It is ~7MB in size.
 
-These aren't included in the repository because they're large in size. You can download them by running this script:
+These aren't included in the repository because they're large in size. You can
+download them by running this script:
 
 ```sh
 ./download_sample_databases.sh
 ```
 
-If the script doesn't work for some reason, you can download the databases directly from
+If the script doesn't work for some reason, you can download the databases
+directly from
 [codecrafters-io/sample-sqlite-databases](https://github.com/codecrafters-io/sample-sqlite-databases).
