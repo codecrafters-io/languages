@@ -38,7 +38,7 @@ if (command == ".dbinfo")
         })
         .ToArray();
 
-    Console.WriteLine("Your code goes here!");
+    Console.WriteLine("Logs from your program will appear here!");
 
     // Uncomment this line to pass the first stage
     // Console.WriteLine($"number of tables: {schemas.Length}");
