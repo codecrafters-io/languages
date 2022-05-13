@@ -33,7 +33,7 @@ Note: This section is for stages 2 and beyond.
    will be fast.{{/ language_is_rust}}
 1. Commit your changes and run `git push origin master` to submit your solution
    to CodeCrafters. Test output will be streamed to your terminal.
-   
+
 # Sample Databases
 
 To make it easy to test queries locally, we've added a sample database in the root
