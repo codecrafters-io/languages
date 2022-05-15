@@ -498,7 +498,7 @@ DEFINITIONS = [
     ],
     template_attrs: {
       "required_executable": "dotnet (6.0)",
-      "user_editable_file": "src/App/Program.cs"
+      "user_editable_file": "src/Program.cs"
     }
   ),
 
