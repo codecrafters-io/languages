@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32002.185
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App", "src\App\App.csproj", "{121ED645-F956-4011-8A49-D71594F905B2}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5B2E3BB2-632C-4F7B-A131-59A4343B498E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "codecrafters-sqlite", "codecrafters-sqlite.csproj", "{121ED645-F956-4011-8A49-D71594F905B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,9 +18,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{121ED645-F956-4011-8A49-D71594F905B2} = {5B2E3BB2-632C-4F7B-A131-59A4343B498E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4DA19FCC-1A20-4BD6-8613-17703321A674}

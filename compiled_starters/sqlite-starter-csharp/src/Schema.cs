@@ -1,4 +1,4 @@
-﻿namespace App;
+﻿namespace codecrafters_sqlite;
 
 using static System.Text.Encoding;
 

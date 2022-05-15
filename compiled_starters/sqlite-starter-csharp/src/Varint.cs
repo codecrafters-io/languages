@@ -1,4 +1,4 @@
-﻿namespace App;
+﻿namespace codecrafters_sqlite;
 
 public static class Varint
 {
@@ -23,7 +23,7 @@ public static class Varint
 
     private static IEnumerable<byte> ReadUsableBytes(this ReadOnlyMemory<byte> stream)
     {
-        for (int i = 0; i < 9; i++)
+        for (var i = 0; i < 9; i++)
         {
             var b = stream.Span[i];
             yield return b;

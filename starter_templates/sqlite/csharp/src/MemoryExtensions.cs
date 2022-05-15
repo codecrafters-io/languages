@@ -1,4 +1,4 @@
-﻿namespace App;
+﻿namespace codecrafters_sqlite;
 
 public static class MemoryExtensions
 {
@@ -9,7 +9,7 @@ public static class MemoryExtensions
     /// <seealso>https://docs.microsoft.com/dotnet/api/system.linq.enumerable.chunk</seealso>
     public static IEnumerable<Memory<T>> Chunk<T>(this Memory<T> source, int size)
     {
-        for (int i = 0; i < source.Length; i += size)
+        for (var i = 0; i < source.Length; i += size)
         {
             yield return i + size < source.Length
                 ? source.Slice(i, length: size)
