@@ -224,6 +224,20 @@ DEFINITIONS = [
       "user_editable_file": "app/main.js"
     }
   ),
+  Repo.new(
+    course: redis,
+    language: kotlin,
+    file_mappings: [
+      FM.new("README.md", "redis/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("src/main/kotlin/Main.kt", "redis/kotlin/src/main/kotlin/Main.kt"),
+      FM.new("spawn_redis_server.sh", "redis/kotlin/spawn_redis_server.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "kotlin",
+      "user_editable_file": "src/main/kotlin/Main.kt"
+    }
+  ),
 
   # ------------------- DOCKER ------------------------------
 
