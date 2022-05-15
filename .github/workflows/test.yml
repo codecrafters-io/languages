@@ -59,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        language: ["c", "clojure", "crystal", "csharp", "elixir", "go", "haskell", "java", "javascript", "php", "python", "ruby", "rust"]
+        language: ["c", "clojure", "crystal", "csharp", "elixir", "go", "haskell", "java", "javascript", "kotlin", "php", "python", "ruby", "rust"]
 
     steps:
     - uses: actions/setup-ruby@v1
