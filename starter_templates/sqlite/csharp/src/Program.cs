@@ -17,12 +17,12 @@ var database = File.ReadAllBytes(path).AsMemory();
 if (command == ".dbinfo")
 {
     // Parse page header from database
-    var pageheader = PageHeader.Parse(database[100..108]);
+    var pageHeader = PageHeader.Parse(database[100..108]);
 
     // Obtain all cell pointers
     var cellPointers = database[108..]
         .Chunk(2)
-        .Take(pageheader.NumberOfCells)
+        .Take(pageHeader.NumberOfCells)
         .Select(bytes => ReadUInt16BigEndian(bytes.Span));
 
     // Obtain all schema records
