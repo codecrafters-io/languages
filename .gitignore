@@ -6,6 +6,7 @@ __pycache__
 .bundle
 .starter_testers
 node_modules
+.vscode
 
 # Haskell
 dist-newstyle

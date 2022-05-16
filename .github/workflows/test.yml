@@ -125,7 +125,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        language: ["go", "javascript", "python", "rust"]
+        language: ["csharp", "go", "javascript", "python", "rust"]
 
     steps:
       - uses: actions/setup-ruby@v1

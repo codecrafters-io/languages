@@ -477,6 +477,30 @@ DEFINITIONS = [
       "user_editable_file": "src/main.rs"
     }
   ),
+  Repo.new(
+    course: sqlite,
+    language: csharp,
+    file_mappings: [
+      FM.new("README.md", "sqlite/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("src/Program.cs", "sqlite/csharp/src/Program.cs"),
+      FM.new("src/PageHeader.cs", "sqlite/csharp/src/PageHeader.cs"),
+      FM.new("src/Record.cs", "sqlite/csharp/src/Record.cs"),
+      FM.new("src/Schema.cs", "sqlite/csharp/src/Schema.cs"),
+      FM.new("src/Varint.cs", "sqlite/csharp/src/Varint.cs"),
+      FM.new("src/MemoryExtensions.cs", "sqlite/csharp/src/MemoryExtensions.cs"),
+      FM.new("codecrafters-sqlite.csproj", "sqlite/csharp/codecrafters-sqlite.csproj"),
+      FM.new("codecrafters-sqlite.sln", "sqlite/csharp/codecrafters-sqlite.sln"),
+      FM.new(".gitignore", "sqlite/csharp/.gitignore"),
+      FM.new("your_sqlite3.sh", "sqlite/csharp/your_sqlite3.sh", is_executable=true),
+      FM.new("sample.db", "sqlite/sample.db"),
+      FM.new("download_sample_databases.sh", "sqlite/download_sample_databases.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "dotnet (6.0)",
+      "user_editable_file": "src/Program.cs"
+    }
+  ),
 
   # ------------------- REACT ------------------------------
   Repo.new(

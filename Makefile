@@ -144,6 +144,10 @@ test_sqlite_rust: download_starter_testers
 	bundle exec ruby template_compiler/compile.rb sqlite rust
 	bundle exec ruby tests/test_course.rb sqlite rust
 
+test_sqlite_csharp: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb sqlite csharp
+	bundle exec ruby tests/test_all.rb sqlite csharp
+
 sync_with_github: compile
 	bundle exec ruby repo_syncer/sync.rb
 
