@@ -126,6 +126,8 @@ class StarterRepoTester < TestHarness
       "-e CODECRAFTERS_CURRENT_STAGE_SLUG=init",
       "-e TESTER_DIR=/tester",
       "-w /app",
+      "--memory=2g",
+      "--cpus=2",
       "#{slug} /tester/test.sh"
     ].join(" ")
 
