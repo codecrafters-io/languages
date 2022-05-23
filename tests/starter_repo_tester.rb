@@ -127,7 +127,7 @@ class StarterRepoTester < TestHarness
       "-e TESTER_DIR=/tester",
       "-w /app",
       "--memory=2g",
-      "--cpus=2",
+      "--cpus=0.5",
       "#{slug} /tester/test.sh"
     ].join(" ")
 
