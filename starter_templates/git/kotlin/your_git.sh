@@ -7,4 +7,4 @@
 # DON'T EDIT THIS!
 set -e
 
-exec $(dirname $0)/gradlew --console plain run
+exec $(dirname $0)/gradlew -q --console plain run
