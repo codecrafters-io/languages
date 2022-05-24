@@ -373,6 +373,11 @@ DEFINITIONS = [
     file_mappings: [
       FM.new("README.md", "git/README.md"),
       FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/build.gradle.kts", "git/kotlin/app/build.gradle.kts"),
+      FM.new("gradle/wrapper/gradle-wrapper.jar", "git/kotlin/gradle/wrapper/gradle-wrapper.jar"),
+      FM.new("gradle/wrapper/gradle-wrapper.properties", "git/kotlin/gradle/wrapper/gradle-wrapper.properties"),
+      FM.new("gradlew", "git/kotlin/gradlew", is_executable=true),
+      FM.new("gradlew.bat", "git/kotlin/gradlew.bat", is_executable=true),
       FM.new("app/main.kt", "git/kotlin/app/main.kt"),
       FM.new("your_git.sh", "git/kotlin/your_git.sh", is_executable=true),
     ],
