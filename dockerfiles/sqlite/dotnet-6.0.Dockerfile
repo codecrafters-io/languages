@@ -9,3 +9,7 @@ RUN echo 'System.Console.WriteLine("Hello World 2!");' > /app/src/Program.cs
 WORKDIR /app
 
 RUN dotnet run --project . --configuration Release "$@" # This saves nuget packages to ~/.nuget
+
+RUN mkdir /app-cached
+RUN mv /app/obj /app-cached/obj
+RUN mv /app/bin /app-cached/bin
