@@ -13,3 +13,6 @@ RUN dotnet run --project . --configuration Release "$@" # This saves nuget packa
 RUN mkdir /app-cached
 RUN mv /app/obj /app-cached/obj
 RUN mv /app/bin /app-cached/bin
+
+RUN echo "cd \${CODECRAFTERS_SUBMISSION_DIR} && dotnet build --configuration Release ." > /codecrafters-precompile.sh
+RUN chmod +x /codecrafters-precompile.sh
