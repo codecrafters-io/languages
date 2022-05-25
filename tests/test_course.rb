@@ -1,4 +1,6 @@
 # Usage: ruby tests/test_course.rb [course_filter] [language_filter]
+#
+ENV["DOCKER_BUILDKIT"] = "0"
 
 require_relative "dockerfile_tester"
 require_relative "starter_repo_tester"

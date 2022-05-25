@@ -121,12 +121,15 @@ class StarterRepoTester < TestHarness
       "docker run",
       "-v #{tmp_dir}:/app",
       "-v #{File.expand_path(starter_tester_path)}:/tester:ro",
+      "-v #{File.expand_path("tests/init.sh")}:/init.sh:ro",
       "-e CODECRAFTERS_SUBMISSION_DIR=/app",
       "-e CODECRAFTERS_COURSE_PAGE_URL=http://test-app.codecrafters.io/url",
       "-e CODECRAFTERS_CURRENT_STAGE_SLUG=init",
       "-e TESTER_DIR=/tester",
       "-w /app",
-      "#{slug} /tester/test.sh"
+      "--memory=2g",
+      "--cpus=0.5",
+      "#{slug} /init.sh"
     ].join(" ")
 
     assert_stdout_contains(
