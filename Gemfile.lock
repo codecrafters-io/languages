@@ -9,7 +9,7 @@ GEM
     faraday (1.0.0)
       multipart-post (>= 1.2, < 3)
     method_source (1.0.0)
-    minitest (5.14.0)
+    minitest (5.15.0)
     minitest-color (0.0.2)
       minitest (~> 5)
     multipart-post (2.1.1)
