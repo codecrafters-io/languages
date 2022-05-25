@@ -7,4 +7,6 @@
 # DON'T EDIT THIS!
 set -e
 
-exec $(dirname $0)/gradlew -q --console plain run
+# mv /app-cached/build $(dirname $0)/build
+
+exec $(dirname $0)/gradlew --project-dir $(dirname $0) --project-cache-dir ~/.gradle/codecrafters-git --stacktrace --console plain run

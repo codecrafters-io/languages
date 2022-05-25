@@ -23,4 +23,10 @@ RUN echo 'println("Logs from your program will appear here!")' >> /app/app/src/m
 RUN echo '}' >> /app/app/src/main/kotlin/codecrafters/git/App.kt
 
 WORKDIR /app
-RUN /app/gradlew --no-daemon --console plain build
+RUN /app/gradlew --project-dir /app --project-cache-dir ~/.gradle/codecrafters-git --no-daemon --console plain build
+
+RUN ls -lah /app
+RUN ls -lah ~/.gradle/codecrafters-git
+
+RUN mkdir /app-cached
+RUN mv /app/build /app-cached/build
