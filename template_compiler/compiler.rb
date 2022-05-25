@@ -5,8 +5,8 @@ require "pmap"
 
 class TemplateCompiler
   POSTPROCESSORS = {
-    "md" => Proc.new { |filepath| `npx prettier --prose-wrap="always" --write #{filepath}` },
-    "js" => Proc.new { |filepath| `npx prettier --write #{filepath}` }
+    "md" => Proc.new { |filepath| `npx -y prettier --prose-wrap="always" --write #{filepath}` },
+    "js" => Proc.new { |filepath| `npx -y prettier --write #{filepath}` }
   }
 
   def initialize(templates_path, output_directory)
