@@ -371,9 +371,16 @@ DEFINITIONS = [
     course: git,
     language: kotlin,
     file_mappings: [
+      FM.new(".gitignore", "git/kotlin/.gitignore"),
       FM.new("README.md", "git/README.md"),
+      FM.new("app/build.gradle.kts", "git/kotlin/app/build.gradle.kts"),
+      FM.new("app/src/main/kotlin/codecrafters/git/App.kt", "git/kotlin/app/src/main/kotlin/codecrafters/git/App.kt"),
       FM.new("codecrafters.yml", "codecrafters.yml"),
-      FM.new("app/main.kt", "git/kotlin/app/main.kt"),
+      FM.new("gradle/wrapper/gradle-wrapper.jar", "git/kotlin/gradle/wrapper/gradle-wrapper.jar"),
+      FM.new("gradle/wrapper/gradle-wrapper.properties", "git/kotlin/gradle/wrapper/gradle-wrapper.properties"),
+      FM.new("gradlew", "git/kotlin/gradlew", is_executable=true),
+      FM.new("gradlew.bat", "git/kotlin/gradlew.bat", is_executable=true),
+      FM.new("settings.gradle.kts", "git/kotlin/settings.gradle.kts"),
       FM.new("your_git.sh", "git/kotlin/your_git.sh", is_executable=true),
     ],
     template_attrs: {
