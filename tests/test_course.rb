@@ -7,6 +7,7 @@ require_relative "starter_repo_tester"
 
 DOCKERFILE_PATHS_TO_SKIP = [
   "dockerfiles/sqlite/rust-1.43.Dockerfile", # Newer dependencies aren't compatible
+  "dockerfiles/redis/haskell-8.8.Dockerfile", # Newer dependencies aren't compatible
 ]
 
 course_filter = ARGV[0]
