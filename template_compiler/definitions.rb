@@ -22,6 +22,7 @@ php = Language.new(slug: "php", name: "PHP", repo_suffix: "php")
 python = Language.new(slug: "python", name: "Python", repo_suffix: "python")
 ruby = Language.new(slug: "ruby", name: "Ruby", repo_suffix: "ruby")
 rust = Language.new(slug: "rust", name: "Rust", repo_suffix: "rust")
+swift = Language.new(slug: "swift", name: "Swift", repo_suffix: "swift")
 
 DEFINITIONS = [
   # ------------------- REDIS ------------------------------
@@ -303,6 +304,21 @@ DEFINITIONS = [
     template_attrs: {
       "required_executable": "cargo (1.54)",
       "user_editable_file": "src/main.rs"
+    }
+  ),
+  Repo.new(
+    course: docker,
+    language: swift,
+    file_mappings: [
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("Sources/swift-docker-challenge/Main.swift", "docker/swift/Sources/swift-docker-challenge/Main.swift"),
+      FM.new("Package.swift", "docker/swift/Package.swift"),
+      FM.new(".gitignore", "docker/swift/.gitignore"),
+      FM.new("your_docker.sh", "docker/swift/your_docker.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "swift",
+      "user_editable_file": "Source/swift-docker-challange/Main.swift"
     }
   ),
 
