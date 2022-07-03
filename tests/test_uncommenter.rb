@@ -182,6 +182,20 @@ var b = 2;
 Console.WriteLine(a + b);
 """
 
+SAMPLE_SWIFT_COMMENTED = """
+// Uncomment this to pass the first stage
+// let a = 1
+// let b = 2
+// print(a + b)
+"""
+
+SAMPLE_SWIFT_UNCOMMENTED = """
+// Uncomment this to pass the first stage
+let a = 1
+let b = 2
+print(a + b)
+"""
+
 UNCOMMENT_PATTERN = /Uncomment this/
 
 class TestUncommenter < Minitest::Test
@@ -270,6 +284,18 @@ class TestUncommenter < Minitest::Test
   def test_twice_csharp
     actual = Uncommenter.new("csharp", SAMPLE_CSHARP_UNCOMMENTED, UNCOMMENT_PATTERN).uncommented
     expected = SAMPLE_CSHARP_UNCOMMENTED
+    assert_equal expected, actual
+  end
+
+  def test_swift
+    actual = Uncommenter.new("swift", SAMPLE_SWIFT_COMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_SWIFT_UNCOMMENTED
+    assert_equal expected, actual
+  end
+
+  def test_twice_swift
+    actual = Uncommenter.new("swift", SAMPLE_SWIFT_UNCOMMENTED, UNCOMMENT_PATTERN).uncommented
+    expected = SAMPLE_SWIFT_UNCOMMENTED
     assert_equal expected, actual
   end
 

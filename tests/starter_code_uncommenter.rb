@@ -81,6 +81,7 @@ class StarterCodeUncommenter
       "python" => "py",
       "ruby" => "rb",
       "rust" => "rs",
+      "swift" => "swift"
     }.fetch(language)
   end
 end
