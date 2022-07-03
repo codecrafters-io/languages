@@ -68,6 +68,10 @@ test_docker_php: download_starter_testers
 	bundle exec ruby template_compiler/compile.rb docker php
 	bundle exec ruby tests/test_course.rb docker php
 
+test_docker_swift: download_starter_testers
+	bundle exec ruby template_compiler/compile.rb docker swift
+	bundle exec ruby tests/test_course.rb docker swift
+
 test_react: download_starter_testers
 	bundle exec ruby template_compiler/compile.rb react
 	bundle exec ruby tests/test_course.rb react
