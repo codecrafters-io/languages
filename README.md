@@ -1,6 +1,7 @@
 This repository powers multiple language support for
 [CodeCrafters](https://codecrafters.io) challenges.
 
+## Table of Contents
 <!-- toc -->
 
 - [Objective](#objective)
