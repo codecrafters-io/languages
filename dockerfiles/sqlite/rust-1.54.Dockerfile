@@ -19,3 +19,6 @@ RUN rm -f /tmp/codecrafters-sqlite-target/release/.fingerprint/*sqlite_starter_r
 RUN rm -f /tmp/codecrafters-sqlite-target/release/.fingerprint/sqlite_starter_rust*
 
 RUN rm -rf /app/src
+
+RUN echo "cd \${CODECRAFTERS_SUBMISSION_DIR} && cargo build --release --target-dir=/tmp/codecrafters-sqlite-target --manifest-path Cargo.toml" > /codecrafters-precompile.sh
+RUN chmod +x /codecrafters-precompile.sh
