@@ -21,3 +21,6 @@ RUN rm -f /tmp/codecrafters-git-target/release/.fingerprint/*git_starter_rust*
 RUN rm -f /tmp/codecrafters-git-target/release/.fingerprint/git_starter_rust*
 
 RUN rm -rf /app/src
+
+RUN echo "cd \${CODECRAFTERS_SUBMISSION_DIR} && cargo build --release --target-dir=/tmp/codecrafters-git-target --manifest-path Cargo.toml" > /codecrafters-precompile.sh
+RUN chmod +x /codecrafters-precompile.sh

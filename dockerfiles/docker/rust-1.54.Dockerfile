@@ -17,3 +17,6 @@ RUN cargo build --release --target-dir=/tmp/codecrafters-docker-target
 RUN cargo clean -p docker-starter-rust --release --target-dir=/tmp/codecrafters-docker-target
 
 RUN rm -rf /app/src
+
+RUN echo "cd \${CODECRAFTERS_SUBMISSION_DIR} && cargo build --release --target-dir=/tmp/codecrafters-docker-target --manifest-path Cargo.toml" > /codecrafters-precompile.sh
+RUN chmod +x /codecrafters-precompile.sh
