@@ -58,6 +58,7 @@ jobs:
   redis:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         language: ["c", "clojure", "crystal", "csharp", "elixir", "go", "haskell", "java", "javascript", "php", "python", "ruby", "rust"]
 
@@ -80,6 +81,7 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         language: ["c", "go", "nim", "php", "rust"]
 
@@ -102,6 +104,7 @@ jobs:
   git:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         language: ["go", "kotlin", "python", "ruby", "rust"]
 
@@ -124,6 +127,7 @@ jobs:
   sqlite:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         language: ["csharp", "go", "javascript", "python", "rust"]
 
@@ -146,6 +150,7 @@ jobs:
   react:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         language: ["javascript"]
 
