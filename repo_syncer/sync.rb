@@ -24,17 +24,11 @@ class RepoSyncer
     gh_files = file_paths.map do |file_path|
       file_contents = File.read(file_path)
 
-      content_params = if file_contents.valid_encoding? # If it isn't utf-8, encode with base64
-        { content: file_contents }
-      else
-        { sha: @github_client.create_blob(repo.full_name, Base64.encode64(file_contents), "base64") }
-      end
-
       {
         path: Pathname.new(file_path).relative_path_from(Pathname.new(directory)),
         mode: File.executable?(file_path) ? "100755" : "100644",
         type: "blob",
-        **content_params
+        sha: @github_client.create_blob(repo.full_name, Base64.encode64(file_contents), "base64")
       }
     end
 
