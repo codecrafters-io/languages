@@ -6,7 +6,14 @@ require_relative "dockerfile_tester"
 require_relative "starter_repo_tester"
 
 DOCKERFILE_PATHS_TO_SKIP = [
+  "dockerfiles/redis/rust-1.43.Dockerfile", # Newer dependencies aren't compatible
+  "dockerfiles/docker/rust-1.43.Dockerfile", # Newer dependencies aren't compatible
+  "dockerfiles/git/rust-1.43.Dockerfile", # Newer dependencies aren't compatible
   "dockerfiles/sqlite/rust-1.43.Dockerfile", # Newer dependencies aren't compatible
+  "dockerfiles/redis/rust-1.54.Dockerfile", # Newer dependencies aren't compatible
+  "dockerfiles/docker/rust-1.54.Dockerfile", # Newer dependencies aren't compatible
+  "dockerfiles/git/rust-1.54.Dockerfile", # Newer dependencies aren't compatible
+  "dockerfiles/sqlite/rust-1.54.Dockerfile", # Newer dependencies aren't compatible
   "dockerfiles/redis/haskell-8.8.Dockerfile", # Newer dependencies aren't compatible
 ]
 
