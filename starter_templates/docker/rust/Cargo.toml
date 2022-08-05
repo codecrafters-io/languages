@@ -20,8 +20,10 @@ edition = "2018"
 # DON'T EDIT THIS!
 [dependencies]
 reqwest = { version = "0.10", features = ["json", "blocking"] } # http requests
-bytes = "0.5" # helps wrap responses from reqwest
-tokio = { version = "0.2", features = ["full"] } # async http requests
-libc = "0.2.103" # for syscalls like chroot
-serde = "1.0.136" # for json mangling
-serde_json = "1.0.79" # for json mangling
+bytes = "0.5"                                                   # helps wrap responses from reqwest
+tokio = { version = "0.2", features = ["full"] }                # async http requests
+libc = "0.2.103"                                                # for syscalls like chroot
+serde = "1.0.136"                                               # for json mangling
+serde_json = "1.0.79"                                           # for json mangling
+anyhow = "1.0.59"                                               # error handling
+thiserror = "1.0.32"                                            # error handling
