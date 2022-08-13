@@ -83,7 +83,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ["c", "go", "nim", "php", "rust"]
+        language: ["c", "go", "nim", "php", "rust", "swift"]
 
     steps:
     - uses: actions/setup-ruby@v1
