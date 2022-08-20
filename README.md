@@ -1,5 +1,15 @@
-This repository powers multiple language support for
+This repository was previously used to power multiple language support for
 [CodeCrafters](https://codecrafters.io) challenges.
+
+**IMPORTANT**: The content in this repository has since been migrated to challenge-specific repositories like this: 
+
+- [codecrafters-io/build-your-own-redis](https://github.com/codecrafters-io/build-your-own-redis)
+- [codecrafters-io/build-your-own-docker](https://github.com/codecrafters-io/build-your-own-docker)
+- [codecrafters-io/build-your-own-git](https://github.com/codecrafters-io/build-your-own-git)
+- [codecrafters-io/build-your-own-sqlite](https://github.com/codecrafters-io/build-your-own-sqlite)
+- [codecrafters-io/build-your-own-grep](https://github.com/codecrafters-io/build-your-own-grep)
+
+New PRs must be sent to the above repositories. We're still updating docs around contributing support.
 
 ## Table of Contents
 <!-- toc -->
