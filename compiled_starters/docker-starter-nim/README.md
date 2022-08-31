@@ -8,7 +8,7 @@ we'll learn about [chroot](https://en.wikipedia.org/wiki/Chroot),
 [docker registry API](https://docs.docker.com/registry/spec/api/) and much more.
 
 **Note**: If you're viewing this repo on GitHub, head over to
-[codecrafters.io](https://codecrafters.io) to signup for early access.
+[codecrafters.io](https://codecrafters.io) to try the challenge.
 
 # Passing the first stage
 

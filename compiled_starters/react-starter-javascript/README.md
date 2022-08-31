@@ -6,7 +6,7 @@ function components and hooks. Along the way, you’ll learn about React’s API
 DOM-diffing algorithm, hooks and more!
 
 **Note**: If you're viewing this repo on GitHub, head over to
-[codecrafters.io](https://codecrafters.io) to signup for early access.
+[codecrafters.io](https://codecrafters.io) to try the challenge.
 
 # Passing the first stage
 
